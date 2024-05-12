@@ -1,0 +1,10 @@
+hardisc_*.log
+sim/
+transcript
+vsim.wlf
+vsim_stacktrace.vstf
+
+# Editor specific stuff
+.nvim
+.vscode
+

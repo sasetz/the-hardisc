@@ -33,7 +33,14 @@ module decoder (
     output imiscon s_imiscon_o      //instruction misconduct indicator 
 );
     logic s_load, s_store, s_branch, s_jalr, s_jal, s_op, s_op_imm, s_lui, s_system, s_auipc, s_fence, s_srla, s_add, s_m_op; 
-	logic s_csr_need_rs1, s_sub_sra, s_ecb, s_mret, s_csr, s_illegal;
+    logic s_csr_need_rs1, s_sub_sra, s_ecb, s_mret, s_csr, s_illegal;
+
+    logic s_b_binvbclr, s_b_shadd, s_b_bsetbext, s_b_minmax, s_b_clmul, s_b_ror, s_b_rol, s_b_gates;
+    logic s_b_sextb, s_b_sexth, s_b_zexth, s_b_rev8, s_b_orcb, s_b_clz, s_b_cpop, s_b_ctz;
+    logic s_b_is_min, s_b_misc, s_b_op, s_b_op_imm;
+    logic s_b_primary, s_b_secondary, s_b_tertiary;
+    logic[6:0] s_b_opcode;
+
     logic[1:0] s_csr_fun;
     logic[2:0] s_brj_f;
     logic[19:0] s_imm, s_c_imm, s_imm_lui_auipc, s_imm_jal, s_imm_ls_i_jalr, s_imm_branch, s_imm_csr;
@@ -55,8 +62,8 @@ module decoder (
     assign s_rs2_o      = (s_rvc) ? s_c_rs2 : s_rs2;
     assign s_f_o        = (s_rvc) ? s_c_f : s_i_f;
     assign s_sctrl_o    = (s_rvc) ? s_c_src_ctrl : s_src_ctrl;
-    assign s_ictrl_o    = (s_imiscon_o != IMISCON_FREE) ? 
-                          {s_align_error_i | s_rvc, 6'b000000} : //The RVC means the Predictor will not increment address before invalidiation
+    assign s_ictrl_o    = (s_imiscon_o != IMISCON_FREE) ?
+                          {s_align_error_i | s_rvc, 7'b0000000} : //The RVC means the Predictor will not increment address before invalidiation
                           (s_rvc) ? s_c_instr_ctrl : s_instr_ctrl;
     assign s_imiscon_o  = (s_align_error_i) ? IMISCON_DSCR : //Restart due to wrong alignment, probably caused by the Predictor
                           ((s_fetch_error_i != FETCH_VALID) & (s_fetch_error_i != FETCH_INCER)) ? s_fetch_error_i : s_dec_imiscon;
@@ -64,7 +71,7 @@ module decoder (
 
     //Payload information - leveraged by upper stages
     assign s_payload_o[20]  = s_prediction_i;
-    assign s_payload_o[19:0]= (s_rvc) ? s_c_imm : (s_fence) ? (20'h2) : s_imm;
+    assign s_payload_o[19:0]= (s_b_misc) ? {8'b0, s_instr_i[31:20]} : (s_rvc) ? s_c_imm : (s_fence) ? (20'h2) : s_imm;
 
     //RVC decoder
     c_decoder m_cdecoder
@@ -89,6 +96,10 @@ module decoder (
     assign s_rs1        = s_instr_i[19:15];
     assign s_rs2        = s_instr_i[24:20];
     assign s_opcode     = s_instr_i[6:2];
+
+    assign s_b_op       = s_opcode == OPC_OP;
+    assign s_b_op_imm   = s_opcode == OPC_OP_IMM;
+    assign s_b_opcode   = s_instr_i[31:25];
     
     //Instruction group analyzer
     assign s_load 		= (s_opcode == OPC_LOAD) & s_instr_i[14:12] != 3'b011 & s_instr_i[14:12] != 3'b111 & s_instr_i[14:12] != 3'b110;
@@ -107,7 +118,63 @@ module decoder (
 	assign s_system 	= (s_opcode == OPC_SYSTEM);
 	assign s_auipc      = (s_opcode == OPC_AUIPC);
 	assign s_fence 	    = (s_opcode == OPC_FENCE) & (s_instr_i[14:12] == 3'b000 | s_instr_i[14:12] == 3'b001);
-    assign s_known      = (s_load | s_store | s_branch | s_jalr | s_jal | s_op | s_op_imm | s_lui | s_auipc | s_fence | s_csr | s_mret | s_ecb);
+
+    // Bit extension group analyzer
+    // 2+ instructions per group
+    assign s_b_binvbclr = (s_b_op || s_b_op_imm) &
+                          (s_b_opcode == BE_GROUP_BINV || s_b_opcode == BE_GROUP_BCLR) &
+                          (s_instr_i[14:12] == 3'b001);
+    assign s_b_shadd    = s_b_op &
+                          s_b_opcode == BE_GROUP_SHADD &
+                          s_instr_i[14:12] != 3'b000 & s_instr_i[12] == 1'b0;
+    assign s_b_bsetbext = (s_b_op || s_b_op_imm) &
+                          ((s_instr_i[14:12] == 3'b001 & s_b_opcode == BE_GROUP_BSET) |
+                          (s_instr_i[14:12] == 3'b101 & s_b_opcode == BE_GROUP_BEXT));
+    assign s_b_minmax   = s_b_op &
+                          s_b_opcode == BE_GROUP_MINMAX &
+                          s_instr_i[14] == 1'b1;
+    assign s_b_clmul    = 0 & s_b_op & // FIXME: complete/remove CLMUL
+                          s_b_opcode == BE_GROUP_CLMUL &
+                          s_instr_i[14:12] != 3'b000 & s_instr_i[14] == 1'b0;
+    assign s_b_ror      = (s_b_op || s_b_op_imm) &
+                          (s_b_opcode == BE_GROUP_ROT) &
+                          (s_instr_i[14:12] == 3'b101);
+    assign s_b_rol      = s_b_op &
+                          s_b_opcode == BE_GROUP_ROT &
+                          s_instr_i[14:12] == 3'b001;
+    assign s_b_gates    = s_b_op &
+                          s_b_opcode == BE_GROUP_GATES &
+                          s_instr_i[14:12] != 3'b101 & s_instr_i[14] == 1'b1;
+
+    // one instruction per group
+    assign s_b_sextb    = s_b_op_imm &
+                          s_instr_i[31:20] == BEU_I_SEXTB &
+                          s_instr_i[14:12] == 3'b001;
+    assign s_b_sexth    = s_b_op_imm &
+                          s_instr_i[31:20] == BEU_I_SEXTH &
+                          s_instr_i[14:12] == 3'b001;
+    assign s_b_zexth    = s_b_op &
+                          s_instr_i[31:20] == BEU_I_ZEXTH &
+                          s_instr_i[14:12] == 3'b100;
+    assign s_b_rev8     = s_b_op_imm &
+                          s_instr_i[31:20] == BEU_I_REV8 &
+                          s_instr_i[14:12] == 3'b101;
+    assign s_b_orcb     = s_b_op_imm &
+                          s_instr_i[31:20] == BEU_I_ORCB &
+                          s_instr_i[14:12] == 3'b101;
+    assign s_b_clz      = s_b_op_imm &
+                          s_instr_i[31:20] == BEU_I_CLZ &
+                          s_instr_i[14:12] == 3'b001;
+    assign s_b_cpop     = s_b_op_imm &
+                          s_instr_i[31:20] == BEU_I_CPOP &
+                          s_instr_i[14:12] == 3'b001;
+    assign s_b_ctz      = s_b_op_imm &
+                          s_instr_i[31:20] == BEU_I_CTZ &
+                          s_instr_i[14:12] == 3'b001;
+
+    assign s_known      = (s_load | s_store | s_branch | s_jalr | s_jal | s_op | s_op_imm | s_lui | s_auipc | s_fence | s_csr | s_mret | s_ecb |
+                           s_b_binvbclr | s_b_shadd | s_b_bsetbext | s_b_minmax | s_b_clmul | s_b_ror | s_b_rol | s_b_gates |
+                           s_b_sextb | s_b_sexth | s_b_zexth | s_b_rev8 | s_b_orcb | s_b_clz | s_b_cpop | s_b_ctz);
     assign s_illegal    = (~s_known) | (s_csr & (s_csr_add == 5'b11111));
 
     //Auxiliary values
@@ -117,6 +184,11 @@ module decoder (
     assign s_ecb        = s_system & ~((|s_instr_i[31:21]) | (|s_instr_i[19:7]));
     assign s_mret       = s_system & s_instr_i[31:25] == 7'b0011000 & s_instr_i[24:20] == 5'b00010 & ~(|s_instr_i[19:7]);
     assign s_csr        = s_system & s_instr_i[14:12] != 3'b000;
+    assign s_b_is_min   = (s_instr_i[14:13] == 2'b10);
+    assign s_b_misc  = (s_b_sextb | s_b_sexth | s_b_zexth | s_b_rev8 | s_b_orcb | s_b_clz | s_b_cpop | s_b_ctz);
+    assign s_b_primary  = (s_b_shadd | s_b_bsetbext | s_b_ror | s_b_rol | s_b_gates);
+    assign s_b_secondary= s_b_binvbclr;
+    assign s_b_tertiary = (s_b_clmul | s_b_minmax | s_b_misc);
     
     //Immediate value, note that if LSB is defined to be 1'b0, it is not propagated from the ID stage
     assign s_imm_lui_auipc  = {s_instr_i[31:12]}; //lui, auipc
@@ -133,8 +205,20 @@ module decoder (
                             (s_instr_i[13:12] == 2'b00 ) ? 3'b010 :
                             (s_instr_i[14:12] == 3'b101) ? 3'b110 :
                             (s_instr_i[14:12] == 3'b110) ? 3'b011 : s_instr_i[14:12];
-    assign s_i_f[3]     = (s_jalr | s_jal | s_fence | s_auipc | s_sub_sra | s_store | (s_branch & s_instr_i[14:12] != 3'b110 & s_instr_i[14:12] != 3'b100));
-    assign s_i_f[2:0]   = (s_instr_ctrl[ICTRL_UNIT_BRU]) ? s_brj_f: (s_lui | s_auipc) ? ((s_auipc) ? 3'b100 : 3'b000) : s_instr_i[14:12];
+    assign s_i_f[3]     = (s_jalr | s_jal | s_fence | s_auipc | s_sub_sra | s_store | (s_branch & s_instr_i[14:12] != 3'b110 & s_instr_i[14:12] != 3'b100) |
+                          s_b_shadd | s_b_bsetbext | s_b_clmul | (s_b_is_min & s_b_minmax) | s_b_misc);
+    assign s_i_f[2:0]   = (s_b_primary)   ? s_instr_i[14:12] :
+                          (s_b_secondary) ? s_instr_i[31:29] :
+                          (s_b_tertiary)  ? (
+                              s_b_misc    ? BEU_MISC[2:0] :
+                              s_b_minmax  ? {s_b_is_min, 1'b1, s_instr_i[12]} :
+                              s_b_clmul ? (
+                                  s_instr_i[13:12] == 2'b01 ? 3'd0 :
+                                  s_instr_i[13:12] == 2'b11 ? 3'd1 :
+                                                              3'd2
+                                  ) : 3'bxxx // FIXME: for debugging purposes
+                              ) :
+                          (s_instr_ctrl[ICTRL_UNIT_BRU]) ? s_brj_f: (s_lui | s_auipc) ? ((s_auipc) ? 3'b100 : 3'b000) : s_instr_i[14:12];
 
     //CSR address compressor
     always_comb begin : machine_csr_address
@@ -167,18 +251,20 @@ module decoder (
     assign s_csr_need_rs1   = (~s_instr_i[14] & (s_instr_i[12] | s_instr_i[13]));
 
     //Instruction source specifier
-    assign s_src_ctrl[SCTRL_RFRP1]  = (s_op | s_op_imm | s_branch | s_jalr | s_store | s_load | (s_csr & s_csr_need_rs1));
-    assign s_src_ctrl[SCTRL_RFRP2]  = (s_op | s_branch | s_store); 
+    assign s_src_ctrl[SCTRL_RFRP1]  = (s_op | s_op_imm | s_branch | s_jalr | s_store | s_load | (s_csr & s_csr_need_rs1) | s_instr_ctrl[ICTRL_UNIT_BEU]);
+    assign s_src_ctrl[SCTRL_RFRP2]  = (s_op | s_branch | s_store | s_b_shadd | s_b_clmul | s_b_minmax | s_b_rol | s_b_gates |
+        (~s_b_op_imm & (s_b_bsetbext | s_b_binvbclr | s_b_ror | (s_b_misc & ~s_b_zexth))));
     assign s_src_ctrl[SCTRL_ZERO1]  = (s_rs1 == 5'b0) | s_lui;
-    assign s_src_ctrl[SCTRL_ZERO2]  = s_rs2 == 5'b0; 
+    assign s_src_ctrl[SCTRL_ZERO2]  = s_rs2 == 5'b0;
 
     //Instruction control specifier
-    assign s_instr_ctrl[ICTRL_UNIT_ALU] = ((s_op & ~s_m_op) | s_op_imm | s_auipc | s_lui);
+    assign s_instr_ctrl[ICTRL_UNIT_ALU] = ((s_op & ~s_m_op) | s_op_imm | s_auipc | s_lui | s_b_minmax);
     assign s_instr_ctrl[ICTRL_UNIT_BRU] = (s_branch | s_jal | s_jalr | s_fence);
     assign s_instr_ctrl[ICTRL_UNIT_LSU] = (s_store | s_load);
     assign s_instr_ctrl[ICTRL_UNIT_CSR] = (s_system);
-    assign s_instr_ctrl[ICTRL_UNIT_MDU] = (s_op & s_m_op);
-    assign s_instr_ctrl[ICTRL_REG_DEST] = (|s_rd) & (s_lui | s_auipc | s_jal | s_jalr | s_op | s_op_imm | s_csr | s_load);
+    assign s_instr_ctrl[ICTRL_UNIT_MDU] = ((s_op & s_m_op) | s_b_clmul);
+    assign s_instr_ctrl[ICTRL_UNIT_BEU] = (s_b_primary | s_b_secondary | s_b_tertiary);
+    assign s_instr_ctrl[ICTRL_REG_DEST] = (|s_rd) & (s_lui | s_auipc | s_jal | s_jalr | s_op | s_op_imm | s_csr | s_load | s_instr_ctrl[ICTRL_UNIT_BEU]);
     assign s_instr_ctrl[ICTRL_RVC]      = 1'b0;
     //Prediction is not allowed from other instructions than branch/jump
     assign s_pred_not_allowed           = s_prediction_i & (~s_instr_ctrl[ICTRL_UNIT_BRU] | s_fence);

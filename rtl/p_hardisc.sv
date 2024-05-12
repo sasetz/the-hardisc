@@ -43,7 +43,7 @@ package p_hardisc;
                 OPC_JALR	= 5'b11001,
                 OPC_JAL		= 5'b11011,
                 OPC_SYSTEM  = 5'b11100;
-    parameter[3:0]  
+    parameter[3:0]
                 ALU_ADD = 4'b0000,
                 ALU_SLL = 4'b0001,
                 ALU_SLT = 4'b0010,
@@ -60,6 +60,41 @@ package p_hardisc;
                 ALU_SRA = 4'b1101,
                 ALU_GE  = 4'b1110,
                 ALU_GEU = 4'b1111;
+    parameter[3:0]
+                BEU_SH1ADD = 4'b1010,
+                BEU_SH2ADD = 4'b1100,
+                BEU_SH3ADD = 4'b1110,
+                BEU_BSET   = 4'b1001,
+                BEU_BEXT   = 4'b1101,
+                BEU_BINV   = 4'b0011,
+                BEU_BCLR   = 4'b0010,
+                BEU_CLMUL  = 4'b0000, // cooperation with MDU
+                BEU_MINMAX = 4'b1000, // cooperation with ALU
+                BEU_MISC   = 4'b1011, // composite for single register instructions
+                BEU_ROR    = 4'b0101,
+                BEU_ROL    = 4'b0001,
+                BEU_XNOR   = 4'b0100,
+                BEU_ANDN   = 4'b0111,
+                BEU_ORN    = 4'b0110;
+    parameter[11:0]
+                BEU_I_SEXTB = 12'b011000000100,
+                BEU_I_SEXTH = 12'b011000000101,
+                BEU_I_ZEXTH = 12'b000010000000,
+                BEU_I_REV8  = 12'b011010011000,
+                BEU_I_ORCB  = 12'b001010000111,
+                BEU_I_CLZ   = 12'b011000000000,
+                BEU_I_CPOP  = 12'b011000000010,
+                BEU_I_CTZ   = 12'b011000000001;
+    parameter[6:0]
+                BE_GROUP_SHADD = 7'b0010000,
+                BE_GROUP_BSET  = 7'b0010100,
+                BE_GROUP_BEXT  = 7'b0100100,
+                BE_GROUP_BINV  = 7'b0110100,
+                BE_GROUP_BCLR  = 7'b0100100,
+                BE_GROUP_ROT   = 7'b0110000,
+                BE_GROUP_MINMAX= 7'b0000101,
+                BE_GROUP_CLMUL = 7'b0000101,
+                BE_GROUP_GATES = 7'b0100000;
     parameter[1:0]
                 CSR_RW  = 2'b01,
                 CSR_RS  = 2'b10,
@@ -76,8 +111,9 @@ package p_hardisc;
                 ICTRL_UNIT_LSU  = 3'd2,
                 ICTRL_UNIT_CSR  = 3'd3,
                 ICTRL_UNIT_MDU  = 3'd4,
-                ICTRL_REG_DEST  = 3'd5,
-                ICTRL_RVC       = 3'd6;
+                ICTRL_UNIT_BEU  = 3'd5,
+                ICTRL_REG_DEST  = 3'd6,
+                ICTRL_RVC       = 3'd7;
     parameter [6:0]
                 ICTRL_PRR_VAL   = 7'h03;     
     parameter [7:0]
@@ -172,7 +208,7 @@ package p_hardisc;
                 CSR_MINSTRETH   = {2'b10,LEVEL_MACHINE,CSR_INSTRETH},
                 CSR_MHARTID     = {2'b11,LEVEL_MACHINE,CSR_HARTID},
                 CSR_MADDRERR    = {2'b11,LEVEL_MACHINE,CSR_ADDRERR};
-    parameter [1:0] 
+    parameter [1:0]
                 CSR_FUN_ECALL   = 2'b0,
                 CSR_FUN_EBREAK  = 2'b01,
                 CSR_FUN_RET     = 2'b10;
@@ -184,8 +220,8 @@ package p_hardisc;
                 EXC_IACCESS     = 3'd4,
                 EXC_LSACCESS    = 3'd5;
     parameter [4:0]
-                EXC_MISALIGI_VAL = 5'd0, 
-                EXC_IACCES_VAL   = 5'd1,  
+                EXC_MISALIGI_VAL = 5'd0,
+                EXC_IACCES_VAL   = 5'd1,
                 EXC_ILLEGALI_VAL = 5'd2,
                 EXC_EBREAK_M_VAL = 5'd3,
                 EXC_LADD_MISS_VAL= 5'd4,
@@ -228,7 +264,7 @@ package p_hardisc;
     typedef logic[3:0]f_part;
     typedef logic[3:0]operr;
     typedef logic[3:0]sctrl;
-    typedef logic[6:0]ictrl;
+    typedef logic[7:0]ictrl;
     typedef logic[2:0]imiscon;
     typedef logic[1:0]rp_info;
     typedef logic[4:0]ld_info;

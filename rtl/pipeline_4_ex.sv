@@ -215,7 +215,8 @@ module pipeline_4_ex #(
                 //Select EX stage result
                 s_wexma_val[i]      = (s_opex_ictrl_i[i%2][ICTRL_UNIT_ALU] | 
                                        s_opex_ictrl_i[i%2][ICTRL_UNIT_BRU] | 
-                                       s_opex_ictrl_i[i%2][ICTRL_UNIT_MDU]) ? s_result[i%2] : s_operand1[i];
+                                       s_opex_ictrl_i[i%2][ICTRL_UNIT_MDU] |
+                                       s_opex_ictrl_i[i%2][ICTRL_UNIT_BEU]) ? s_result[i%2] : s_operand1[i];
                 //Payload for the MA stage
                 s_wexma_payload[i]  = {s_opex_payload_i[i%2][20],s_opex_payload_i[i%2][10:0]};
                 s_wexma_imiscon[i]  = 
