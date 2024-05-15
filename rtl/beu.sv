@@ -17,12 +17,66 @@
 import p_hardisc::*;
 
 module beu (
-    input f_part s_function_i,          //instruction function
+    input f_part s_function_i,          // instruction function
     input logic s_compare_i,            // response from ALU
-    input logic[31:0] s_op1_i,          //operand 1
-    input logic[31:0] s_op2_i,          //operand 2
-    output logic[31:0] s_result_o       //combinatorial result
+    input logic[31:0] s_op1_i,          // operand 1
+    input logic[31:0] s_op2_i,          // operand 2
+    output logic[31:0] s_result_o       // combinatorial result
 );
+    logic[31:0] s_cpop[32], s_ctz[32], s_clz[32], s_rev8, s_orcb;
+    logic s_ctz_prev[32], s_clz_prev[32];
+
+    assign s_cpop[0] = {31'b0, s_op1_i[0]};
+    assign s_ctz[0] = {31'b0, ~s_op1_i[0]};
+    assign s_clz[0] = {31'b0, ~s_op1_i[31]};
+
+    assign s_ctz_prev[0] = ~s_op1_i[0];
+    assign s_clz_prev[0] = ~s_op1_i[31];
+
+    // s_ctz_prev
+    // it accumulates the data if we should continue to add zeros to the total
+    // count or not. It needs to multiply its previous value with the current
+    // bit in the op1. Then, this value is used to add up to the total count
+    // of trailing/leading zeros
+    //
+    // 31  30  29  28  27  26  25  24  23  22  21  20  19  18  17  16  15 ...
+    // [1] [1] [1] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0]...
+    //
+    // ...if s_op1_i is the following
+    //
+    // 31  30  29  28  27  26  25  24  23  22  21  20  19  18  17  16  15 ...
+    // [0] [0] [0] [1] [0] [1] [1] [0] [1] [0] [1] [0] [1] [1] [1] [1] [1]...
+
+    genvar i;
+    generate
+        for(i = 1; i < 32; i++) begin: gen_bitcounting
+            // calculate trailing zeros
+            assign s_ctz_prev[i] = s_ctz_prev[i - 1] & ~s_op1_i[i];
+            assign s_ctz[i]  = s_ctz[i - 1] + s_ctz_prev[i];
+
+            // calculate leading zeros
+            assign s_clz_prev[i] = s_clz_prev[i - 1] & ~s_op1_i[31 - i];
+            assign s_clz[i]  = s_clz[i - 1] + s_clz_prev[i];
+
+            // count set bits
+            assign s_cpop[i] = s_cpop[i - 1] + s_op1_i[i];
+        end
+    endgenerate
+
+    genvar i;
+    generate
+        for (i = 0; i < 32; i += 8) begin: gen_rev8
+            assign s_rev8[i +: 8] = s_op1_i[(31 - i) -: 8];
+        end
+    endgenerate
+
+    genvar i;
+    generate
+        for (i = 0; i < 32; i += 8) begin: gen_orcb
+            assign s_orcb[i +: 8] = s_op1_i[i +: 8] == 8'b0 ? 8'b00000000 : 8'b11111111;
+        end
+    endgenerate
+
     always_comb begin : beu_comb
         case (s_function_i)
             BEU_SH1ADD:
@@ -51,52 +105,16 @@ module beu (
                         s_result_o = {{16{s_op1_i[15]}}, s_op1_i[15:0]};
                     BEU_I_ZEXTH:
                         s_result_o = {16'b0, s_op1_i[15:0]};
-                    BEU_I_REV8: begin : rev8_logic
-                        for (integer i = 0; i < 32; i += 8) begin
-                            s_result_o[i +: 8] =
-                                s_op1_i[(31 - i) -: 8];
-                        end
-                    end
-                    BEU_I_ORCB: begin : orcb_logic
-                        for (integer i = 0; i < 32; i += 8) begin
-                            s_result_o[i +: 8] = s_op1_i[i +: 8] == 8'b0 ?
-                                8'b00000000 : 8'b11111111;
-                        end
-                    end
-                    BEU_I_CLZ: begin : clz_logic
-                        logic[31:0] s_clear_count;
-                        logic[31:0] s_previous_result;
-                        s_previous_result[0] = s_op1_i[31] == 1'b0 ? 1'b1 : 1'b0;
-                        s_clear_count = {31'b0, s_previous_result[0]};
-                        for (integer i = 1; i < 32; i++) begin
-                            s_previous_result[i] = s_previous_result[i - 1] &
-                                (s_op1_i[31 - i] == 1'b0 ? 1'b1 : 1'b0);
-                            s_clear_count += s_previous_result[i - 1] &
-                                (s_op1_i[31 - i] == 1'b0 ? 1'b1 : 1'b0);
-                        end
-                        s_result_o = s_clear_count;
-                    end
-                    BEU_I_CPOP: begin : cpop_logic
-                        logic[31:0] s_pop_count;
-                        s_pop_count = 32'd0;
-                        for (integer i = 0; i < 32; i++) begin
-                            s_pop_count += s_op1_i[i];
-                        end
-                        s_result_o = s_pop_count;
-                    end
-                    BEU_I_CTZ: begin : ctz_logic
-                        logic[31:0] s_clear_count;
-                        logic[31:0] s_previous_result;
-                        s_previous_result[0] = s_op1_i[0] == 1'b0 ? 1'b1 : 1'b0;
-                        s_clear_count = {31'b0, s_previous_result[0]};
-                        for (integer i = 1; i < 32; i++) begin
-                            s_previous_result[i] = s_previous_result[i - 1] &
-                                (s_op1_i[i] == 1'b0 ? 1'b1 : 1'b0);
-                            s_clear_count += s_previous_result[i - 1] &
-                                (s_op1_i[i] == 1'b0 ? 1'b1 : 1'b0);
-                        end
-                        s_result_o = s_clear_count;
-                    end
+                    BEU_I_REV8:
+                        s_result_o = s_rev8;
+                    BEU_I_ORCB:
+                        s_result_o = s_orcb;
+                    BEU_I_CLZ:
+                        s_result_o = s_clz[31][31:0];
+                    BEU_I_CPOP:
+                        s_result_o = s_cpop[31][31:0];
+                    BEU_I_CTZ:
+                        s_result_o = s_ctz[31][31:0];
                     default:
                         s_result_o = 32'd0;
                 endcase
