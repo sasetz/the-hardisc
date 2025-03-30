@@ -23,12 +23,12 @@ module beu (
     input logic[31:0] s_op2_i,          // operand 2
     output logic[31:0] s_result_o       // combinatorial result
 );
-    logic[31:0] s_cpop[32], s_ctz[32], s_clz[32], s_rev8, s_orcb;
+    logic[5:0] s_cpop[32], s_ctz[32], s_clz[32], s_rev8, s_orcb;
     logic s_ctz_prev[32], s_clz_prev[32];
 
-    assign s_cpop[0] = {31'b0, s_op1_i[0]};
-    assign s_ctz[0] = {31'b0, ~s_op1_i[0]};
-    assign s_clz[0] = {31'b0, ~s_op1_i[31]};
+    assign s_cpop[0] = {4'b0, s_op1_i[0]};
+    assign s_ctz[0] = {4'b0, ~s_op1_i[0]};
+    assign s_clz[0] = {4'b0, ~s_op1_i[31]};
 
     assign s_ctz_prev[0] = ~s_op1_i[0];
     assign s_clz_prev[0] = ~s_op1_i[31];
@@ -110,11 +110,11 @@ module beu (
                     BEU_I_ORCB:
                         s_result_o = s_orcb;
                     BEU_I_CLZ:
-                        s_result_o = s_clz[31][31:0];
+                        s_result_o = {26'b0, s_clz[31][5:0]};
                     BEU_I_CPOP:
-                        s_result_o = s_cpop[31][31:0];
+                        s_result_o = {26'b0, s_cpop[31][5:0]};
                     BEU_I_CTZ:
-                        s_result_o = s_ctz[31][31:0];
+                        s_result_o = {26'b0, s_ctz[31][5:0]};
                     default:
                         s_result_o = 32'd0;
                 endcase

@@ -1,5 +1,5 @@
 
-/home/sasetz/projects/verilog/the-hardisc/example/benchmarks/coremark.o:     file format elf32-littleriscv
+/home/sasetz/projects/verilog/sasetz/the-hardisc/example/benchmarks/coremark.o:     file format elf32-littleriscv
 
 
 Disassembly of section .init:

@@ -74,7 +74,7 @@ void test_zba()
     if (result != 0x5faa96ab) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sh1add rd, 0x8bfb2fcf, 0x47b4370d\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x5faa96ab, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x5faa96ab, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -88,7 +88,7 @@ void test_zba()
     if (result != 0xf2cbacad) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sh1add rd, 0x7f89b8c2, 0xf3b83b29\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xf2cbacad, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xf2cbacad, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -102,7 +102,7 @@ void test_zba()
     if (result != 0xb03e8cf2) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sh1add rd, 0xd582b559, 0x5392240\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xb03e8cf2, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xb03e8cf2, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -116,7 +116,7 @@ void test_zba()
     if (result != 0x5395fa20) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sh1add rd, 0x6f9e2874, 0x7459a938\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x5395fa20, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x5395fa20, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -130,7 +130,7 @@ void test_zba()
     if (result != 0xa3f64709) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sh1add rd, 0xcc34fbc0, 0xb8c4f89\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xa3f64709, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xa3f64709, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -144,7 +144,7 @@ void test_zba()
     if (result != 0x739f7405) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sh1add rd, 0x28e3549e, 0x21d8cac9\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x739f7405, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x739f7405, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -158,7 +158,7 @@ void test_zba()
     if (result != 0xf9a8f2d5) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sh1add rd, 0x4ce2446c, 0x5fe469fd\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xf9a8f2d5, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xf9a8f2d5, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -172,7 +172,7 @@ void test_zba()
     if (result != 0x78c414cb) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sh1add rd, 0x5951bd13, 0xc6209aa5\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x78c414cb, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x78c414cb, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -186,7 +186,7 @@ void test_zba()
     if (result != 0x2f141415) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sh1add rd, 0xddebc93e, 0x733c8199\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x2f141415, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x2f141415, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -200,7 +200,7 @@ void test_zba()
     if (result != 0xa7727996) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sh1add rd, 0x3ddc169d, 0x2bba4c5c\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xa7727996, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xa7727996, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -214,7 +214,7 @@ void test_zba()
     if (result != 0xc6b67882) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sh1add rd, 0xf1fc7b63, 0xe2bd81bc\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xc6b67882, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xc6b67882, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -228,7 +228,7 @@ void test_zba()
     if (result != 0x7fa70f3c) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sh1add rd, 0xf3977952, 0x98781c98\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x7fa70f3c, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x7fa70f3c, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -242,7 +242,7 @@ void test_zba()
     if (result != 0x358a75c3) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sh1add rd, 0xa2ea469, 0x212d2cf1\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x358a75c3, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x358a75c3, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -256,7 +256,7 @@ void test_zba()
     if (result != 0xa7653147) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sh1add rd, 0xcf0b637d, 0x94e6a4d\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xa7653147, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xa7653147, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -270,7 +270,7 @@ void test_zba()
     if (result != 0x1d48abcc) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sh1add rd, 0x380d82e7, 0xad2da5fe\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x1d48abcc, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x1d48abcc, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -284,7 +284,7 @@ void test_zba()
     if (result != 0x40614327) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sh1add rd, 0xa8ed904f, 0xee862289\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x40614327, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x40614327, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -298,7 +298,7 @@ void test_zba()
     if (result != 0x80d5608f) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sh2add rd, 0x6a701eba, 0xd714e5a7\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x80d5608f, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x80d5608f, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -312,7 +312,7 @@ void test_zba()
     if (result != 0x6426f22d) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sh2add rd, 0xa0a95327, 0xe181a591\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x6426f22d, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x6426f22d, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -326,7 +326,7 @@ void test_zba()
     if (result != 0x25840389) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sh2add rd, 0xca21ff9e, 0xfcfc0511\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x25840389, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x25840389, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -340,7 +340,7 @@ void test_zba()
     if (result != 0xf1296158) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sh2add rd, 0x52e196c4, 0xa5a30648\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xf1296158, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xf1296158, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -354,7 +354,7 @@ void test_zba()
     if (result != 0xdc024068) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sh2add rd, 0x80db5daa, 0xd894c9c0\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xdc024068, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xdc024068, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -368,7 +368,7 @@ void test_zba()
     if (result != 0x779910ae) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sh2add rd, 0x95a6e127, 0x20fd8c12\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x779910ae, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x779910ae, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -382,7 +382,7 @@ void test_zba()
     if (result != 0x1370a6d) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sh2add rd, 0x7ee146ba, 0x5b1ef85\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x1370a6d, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x1370a6d, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -396,7 +396,7 @@ void test_zba()
     if (result != 0x8251e3c6) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sh2add rd, 0x607ed801, 0x5683c2\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x8251e3c6, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x8251e3c6, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -410,7 +410,7 @@ void test_zba()
     if (result != 0xd82a1458) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sh2add rd, 0x26573b24, 0x3ecd27c8\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xd82a1458, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xd82a1458, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -424,7 +424,7 @@ void test_zba()
     if (result != 0x35a58de7) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sh2add rd, 0x154fd78c, 0xe0662fb7\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x35a58de7, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x35a58de7, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -438,7 +438,7 @@ void test_zba()
     if (result != 0xbe253c09) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sh2add rd, 0xbd2b357f, 0xc978660d\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xbe253c09, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xbe253c09, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -452,7 +452,7 @@ void test_zba()
     if (result != 0xcdf4255d) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sh2add rd, 0xcc4f84cf, 0x9cb61221\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xcdf4255d, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xcdf4255d, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -466,7 +466,7 @@ void test_zba()
     if (result != 0xb79ceb34) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sh2add rd, 0x44e2af0c, 0xa4122f04\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xb79ceb34, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xb79ceb34, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -480,7 +480,7 @@ void test_zba()
     if (result != 0xd81fe06a) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sh2add rd, 0x46a2f27, 0xc67723ce\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xd81fe06a, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xd81fe06a, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -494,7 +494,7 @@ void test_zba()
     if (result != 0x83150140) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sh2add rd, 0xc5f93133, 0x6b303c74\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x83150140, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x83150140, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -508,7 +508,7 @@ void test_zba()
     if (result != 0x7e43084) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sh2add rd, 0x8f94f97c, 0xc9904a94\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x7e43084, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x7e43084, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -522,7 +522,7 @@ void test_zba()
     if (result != 0xe14054f9) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sh3add rd, 0x8b98f2d8, 0x8478be39\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xe14054f9, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xe14054f9, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -536,7 +536,7 @@ void test_zba()
     if (result != 0xb5f3efbb) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sh3add rd, 0xd8384c35, 0xf4318e13\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xb5f3efbb, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xb5f3efbb, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -550,7 +550,7 @@ void test_zba()
     if (result != 0xf6a6d8) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sh3add rd, 0xc81a30e2, 0xc0251fc8\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xf6a6d8, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xf6a6d8, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -564,7 +564,7 @@ void test_zba()
     if (result != 0xf5853cd2) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sh3add rd, 0x75643486, 0x4a6398a2\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xf5853cd2, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xf5853cd2, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -578,7 +578,7 @@ void test_zba()
     if (result != 0x62e1c7c) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sh3add rd, 0x45b83e8, 0xe351fd3c\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x62e1c7c, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x62e1c7c, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -592,7 +592,7 @@ void test_zba()
     if (result != 0x3e9ab44b) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sh3add rd, 0xfb9137b7, 0x6210f693\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x3e9ab44b, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x3e9ab44b, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -606,7 +606,7 @@ void test_zba()
     if (result != 0x592ec018) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sh3add rd, 0xee1998f6, 0xe861f868\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x592ec018, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x592ec018, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -620,7 +620,7 @@ void test_zba()
     if (result != 0x4c5c06db) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sh3add rd, 0x2226235e, 0x3b2aebeb\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x4c5c06db, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x4c5c06db, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -634,7 +634,7 @@ void test_zba()
     if (result != 0xeb1880ed) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sh3add rd, 0xaac042c1, 0x95166ae5\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xeb1880ed, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xeb1880ed, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -648,7 +648,7 @@ void test_zba()
     if (result != 0x6f31820c) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sh3add rd, 0x8ffea8b7, 0xef3c3c54\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x6f31820c, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x6f31820c, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -662,7 +662,7 @@ void test_zba()
     if (result != 0xdb9c80b5) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sh3add rd, 0xa8258ac5, 0x9a702a8d\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xdb9c80b5, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xdb9c80b5, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -676,7 +676,7 @@ void test_zba()
     if (result != 0xdeab13a) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sh3add rd, 0x243e8221, 0xebf6a032\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xdeab13a, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xdeab13a, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -690,7 +690,7 @@ void test_zba()
     if (result != 0x28e44bfb) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sh3add rd, 0x26c9d24d, 0xf295b993\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x28e44bfb, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x28e44bfb, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -704,7 +704,7 @@ void test_zba()
     if (result != 0x6638841d) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sh3add rd, 0x1b3106d0, 0x8cb04d9d\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x6638841d, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x6638841d, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -718,7 +718,7 @@ void test_zba()
     if (result != 0xb040fcc3) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sh3add rd, 0xb982bf51, 0xe42b023b\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xb040fcc3, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xb040fcc3, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -732,7 +732,7 @@ void test_zba()
     if (result != 0xcdf32ab6) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sh3add rd, 0x7fe318c1, 0xceda64ae\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xcdf32ab6, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xcdf32ab6, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -754,7 +754,7 @@ void test_minmax()
     if (result != 0x424f7815) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("max rd, 0x9c1e5660, 0x424f7815\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x424f7815, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x424f7815, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -768,7 +768,7 @@ void test_minmax()
     if (result != 0x51f5a0a5) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("max rd, 0xbdd3392e, 0x51f5a0a5\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x51f5a0a5, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x51f5a0a5, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -782,7 +782,7 @@ void test_minmax()
     if (result != 0x7ebff687) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("max rd, 0x7ebff687, 0xaa9be9e\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x7ebff687, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x7ebff687, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -796,7 +796,7 @@ void test_minmax()
     if (result != 0x49c2ac87) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("max rd, 0x36f688ab, 0x49c2ac87\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x49c2ac87, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x49c2ac87, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -810,7 +810,7 @@ void test_minmax()
     if (result != 0x6b4df7d9) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("max rd, 0x6b4df7d9, 0xc299f04c\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x6b4df7d9, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x6b4df7d9, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -824,7 +824,7 @@ void test_minmax()
     if (result != 0x6246a67c) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("max rd, 0x6246a67c, 0x97515a3\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x6246a67c, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x6246a67c, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -838,7 +838,7 @@ void test_minmax()
     if (result != 0x74b18af7) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("max rd, 0xfd9510f, 0x74b18af7\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x74b18af7, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x74b18af7, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -852,7 +852,7 @@ void test_minmax()
     if (result != 0xfb255b6d) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("max rd, 0xfb255b6d, 0x9c381831\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xfb255b6d, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xfb255b6d, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -866,7 +866,7 @@ void test_minmax()
     if (result != 0xaf67e904) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("max rd, 0x9b321b18, 0xaf67e904\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xaf67e904, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xaf67e904, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -880,7 +880,7 @@ void test_minmax()
     if (result != 0x48b82d3e) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("max rd, 0x1459fa1e, 0x48b82d3e\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x48b82d3e, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x48b82d3e, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -894,7 +894,7 @@ void test_minmax()
     if (result != 0x245b3b70) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("max rd, 0x245b3b70, 0xc04b087a\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x245b3b70, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x245b3b70, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -908,7 +908,7 @@ void test_minmax()
     if (result != 0x2b9a7217) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("max rd, 0x2b9a7217, 0xc5802342\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x2b9a7217, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x2b9a7217, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -922,7 +922,7 @@ void test_minmax()
     if (result != 0x14fd8856) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("max rd, 0xd887cb59, 0x14fd8856\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x14fd8856, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x14fd8856, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -936,7 +936,7 @@ void test_minmax()
     if (result != 0x1eb26110) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("max rd, 0x1eb26110, 0x11c81f02\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x1eb26110, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x1eb26110, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -950,7 +950,7 @@ void test_minmax()
     if (result != 0xe9c49d91) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("max rd, 0xe9c49d91, 0xdb7d36f1\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xe9c49d91, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xe9c49d91, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -964,7 +964,7 @@ void test_minmax()
     if (result != 0x71b849df) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("max rd, 0x71b849df, 0xe41b6913\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x71b849df, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x71b849df, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -978,7 +978,7 @@ void test_minmax()
     if (result != 0x3749608c) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("maxu rd, 0x329b4c80, 0x3749608c\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x3749608c, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x3749608c, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -992,7 +992,7 @@ void test_minmax()
     if (result != 0x8d4ac0db) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("maxu rd, 0x8d4ac0db, 0x89d7858c\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x8d4ac0db, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x8d4ac0db, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1006,7 +1006,7 @@ void test_minmax()
     if (result != 0xfb6212b0) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("maxu rd, 0xfb6212b0, 0xb07d7e42\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xfb6212b0, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xfb6212b0, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1020,7 +1020,7 @@ void test_minmax()
     if (result != 0x774e92bf) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("maxu rd, 0x1b11f45d, 0x774e92bf\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x774e92bf, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x774e92bf, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1034,7 +1034,7 @@ void test_minmax()
     if (result != 0x152918a6) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("maxu rd, 0x637b5a1, 0x152918a6\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x152918a6, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x152918a6, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1048,7 +1048,7 @@ void test_minmax()
     if (result != 0x900b7336) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("maxu rd, 0x21f53298, 0x900b7336\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x900b7336, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x900b7336, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1062,7 +1062,7 @@ void test_minmax()
     if (result != 0xb64302cd) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("maxu rd, 0xb64302cd, 0x3140db0d\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xb64302cd, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xb64302cd, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1076,7 +1076,7 @@ void test_minmax()
     if (result != 0x4da91c90) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("maxu rd, 0x4da91c90, 0x1a2963af\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x4da91c90, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x4da91c90, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1090,7 +1090,7 @@ void test_minmax()
     if (result != 0x51a6b97a) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("maxu rd, 0x2a3d88ae, 0x51a6b97a\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x51a6b97a, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x51a6b97a, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1104,7 +1104,7 @@ void test_minmax()
     if (result != 0x8e1d0801) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("maxu rd, 0x5224d0ae, 0x8e1d0801\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x8e1d0801, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x8e1d0801, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1118,7 +1118,7 @@ void test_minmax()
     if (result != 0xa226860a) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("maxu rd, 0x4986a1ac, 0xa226860a\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xa226860a, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xa226860a, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1132,7 +1132,7 @@ void test_minmax()
     if (result != 0xa9d4ece2) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("maxu rd, 0xa9d4ece2, 0x5072ac34\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xa9d4ece2, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xa9d4ece2, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1146,7 +1146,7 @@ void test_minmax()
     if (result != 0xe1f69279) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("maxu rd, 0xe03d06e7, 0xe1f69279\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xe1f69279, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xe1f69279, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1160,7 +1160,7 @@ void test_minmax()
     if (result != 0xd830bce1) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("maxu rd, 0xbb9517a1, 0xd830bce1\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xd830bce1, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xd830bce1, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1174,7 +1174,7 @@ void test_minmax()
     if (result != 0xb3c6e936) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("maxu rd, 0xb3c6e936, 0x36eefb53\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xb3c6e936, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xb3c6e936, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1188,7 +1188,7 @@ void test_minmax()
     if (result != 0x6cad7f6b) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("maxu rd, 0x6cad7f6b, 0x3cb2e107\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x6cad7f6b, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x6cad7f6b, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1202,7 +1202,7 @@ void test_minmax()
     if (result != 0x17b2ea9d) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("min rd, 0x545c474a, 0x17b2ea9d\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x17b2ea9d, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x17b2ea9d, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1216,7 +1216,7 @@ void test_minmax()
     if (result != 0xb6eb04ee) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("min rd, 0x5a975163, 0xb6eb04ee\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xb6eb04ee, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xb6eb04ee, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1230,7 +1230,7 @@ void test_minmax()
     if (result != 0xd71519fb) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("min rd, 0xdc7d090b, 0xd71519fb\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xd71519fb, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xd71519fb, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1244,7 +1244,7 @@ void test_minmax()
     if (result != 0x2526eb82) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("min rd, 0x4f875e13, 0x2526eb82\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x2526eb82, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x2526eb82, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1258,7 +1258,7 @@ void test_minmax()
     if (result != 0x824f755f) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("min rd, 0x531bd419, 0x824f755f\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x824f755f, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x824f755f, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1272,7 +1272,7 @@ void test_minmax()
     if (result != 0x918e19da) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("min rd, 0x918e19da, 0xb3fcbd55\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x918e19da, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x918e19da, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1286,7 +1286,7 @@ void test_minmax()
     if (result != 0xa900732a) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("min rd, 0xe605d753, 0xa900732a\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xa900732a, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xa900732a, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1300,7 +1300,7 @@ void test_minmax()
     if (result != 0x99234b71) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("min rd, 0x99234b71, 0x3a148d01\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x99234b71, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x99234b71, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1314,7 +1314,7 @@ void test_minmax()
     if (result != 0x91b1deb8) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("min rd, 0xc14d72c4, 0x91b1deb8\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x91b1deb8, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x91b1deb8, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1328,7 +1328,7 @@ void test_minmax()
     if (result != 0xdbd317b5) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("min rd, 0xdbd317b5, 0x4158804d\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xdbd317b5, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xdbd317b5, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1342,7 +1342,7 @@ void test_minmax()
     if (result != 0xa931c6c4) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("min rd, 0xd94b561e, 0xa931c6c4\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xa931c6c4, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xa931c6c4, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1356,7 +1356,7 @@ void test_minmax()
     if (result != 0x28cdd180) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("min rd, 0x4884daf2, 0x28cdd180\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x28cdd180, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x28cdd180, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1370,7 +1370,7 @@ void test_minmax()
     if (result != 0xf3a3276e) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("min rd, 0xf3a3276e, 0x8216473\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xf3a3276e, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xf3a3276e, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1384,7 +1384,7 @@ void test_minmax()
     if (result != 0xcebe57f9) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("min rd, 0xcebe57f9, 0x615fa177\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xcebe57f9, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xcebe57f9, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1398,7 +1398,7 @@ void test_minmax()
     if (result != 0x8cddf7ff) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("min rd, 0x8cddf7ff, 0x343bdb62\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x8cddf7ff, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x8cddf7ff, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1412,7 +1412,7 @@ void test_minmax()
     if (result != 0xf8a9d054) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("min rd, 0xf8a9d054, 0x1e56d0d\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xf8a9d054, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xf8a9d054, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1426,7 +1426,7 @@ void test_minmax()
     if (result != 0x3858a69b) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("minu rd, 0x3858a69b, 0x66c61083\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x3858a69b, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x3858a69b, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1440,7 +1440,7 @@ void test_minmax()
     if (result != 0x63ce8ff2) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("minu rd, 0xfc504165, 0x63ce8ff2\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x63ce8ff2, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x63ce8ff2, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1454,7 +1454,7 @@ void test_minmax()
     if (result != 0x34cd7365) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("minu rd, 0xf7bfdfca, 0x34cd7365\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x34cd7365, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x34cd7365, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1468,7 +1468,7 @@ void test_minmax()
     if (result != 0x67db06c8) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("minu rd, 0xe536b890, 0x67db06c8\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x67db06c8, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x67db06c8, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1482,7 +1482,7 @@ void test_minmax()
     if (result != 0x223949b6) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("minu rd, 0x330e949f, 0x223949b6\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x223949b6, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x223949b6, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1496,7 +1496,7 @@ void test_minmax()
     if (result != 0x4561b016) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("minu rd, 0x65ae97de, 0x4561b016\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x4561b016, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x4561b016, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1510,7 +1510,7 @@ void test_minmax()
     if (result != 0x8d44d5f4) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("minu rd, 0xddc622a6, 0x8d44d5f4\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x8d44d5f4, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x8d44d5f4, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1524,7 +1524,7 @@ void test_minmax()
     if (result != 0x82318074) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("minu rd, 0x82318074, 0x9dc3b29f\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x82318074, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x82318074, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1538,7 +1538,7 @@ void test_minmax()
     if (result != 0xd12a5fb1) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("minu rd, 0xd12a5fb1, 0xef7ef0ea\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xd12a5fb1, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xd12a5fb1, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1552,7 +1552,7 @@ void test_minmax()
     if (result != 0x4c0c88e2) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("minu rd, 0x4c0c88e2, 0xc2666520\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x4c0c88e2, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x4c0c88e2, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1566,7 +1566,7 @@ void test_minmax()
     if (result != 0x86a590d5) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("minu rd, 0xf884a71d, 0x86a590d5\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x86a590d5, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x86a590d5, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1580,7 +1580,7 @@ void test_minmax()
     if (result != 0x1819247e) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("minu rd, 0x1819247e, 0xc664692e\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x1819247e, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x1819247e, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1594,7 +1594,7 @@ void test_minmax()
     if (result != 0x30463047) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("minu rd, 0x30463047, 0x71cfdf72\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x30463047, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x30463047, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1608,7 +1608,7 @@ void test_minmax()
     if (result != 0x6702def) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("minu rd, 0xd4780b11, 0x6702def\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x6702def, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x6702def, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1622,7 +1622,7 @@ void test_minmax()
     if (result != 0xc302521) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("minu rd, 0xc302521, 0xb451df99\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xc302521, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xc302521, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1636,7 +1636,7 @@ void test_minmax()
     if (result != 0x50dc351c) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("minu rd, 0x50dc351c, 0x84107f43\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x50dc351c, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x50dc351c, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1657,7 +1657,7 @@ void test_misc()
     if (result != 0x7c) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sext.b rd, 0xd84f957c\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x7c, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x7c, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1670,7 +1670,7 @@ void test_misc()
     if (result != 0xb) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sext.b rd, 0x10efd90b\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xb, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xb, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1683,7 +1683,7 @@ void test_misc()
     if (result != 0xffffffa2) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sext.b rd, 0x394ed6a2\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xffffffa2, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xffffffa2, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1696,7 +1696,7 @@ void test_misc()
     if (result != 0xffffff94) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sext.b rd, 0x1e748a94\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xffffff94, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xffffff94, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1709,7 +1709,7 @@ void test_misc()
     if (result != 0x56) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sext.b rd, 0xd69ca456\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x56, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x56, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1722,7 +1722,7 @@ void test_misc()
     if (result != 0xb) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sext.b rd, 0xba9f2c0b\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xb, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xb, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1735,7 +1735,7 @@ void test_misc()
     if (result != 0xffffffc1) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sext.b rd, 0xd70d53c1\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xffffffc1, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xffffffc1, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1748,7 +1748,7 @@ void test_misc()
     if (result != 0xffffff96) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sext.b rd, 0xd76f2e96\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xffffff96, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xffffff96, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1761,7 +1761,7 @@ void test_misc()
     if (result != 0x50) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sext.b rd, 0xc8494550\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x50, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x50, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1774,7 +1774,7 @@ void test_misc()
     if (result != 0x39) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sext.b rd, 0x3b692f39\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x39, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x39, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1787,7 +1787,7 @@ void test_misc()
     if (result != 0xfffffffe) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sext.b rd, 0x3bc2affe\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xfffffffe, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xfffffffe, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1800,7 +1800,7 @@ void test_misc()
     if (result != 0xffffffce) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sext.b rd, 0xd0d7e6ce\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xffffffce, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xffffffce, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1813,7 +1813,7 @@ void test_misc()
     if (result != 0xffffff8d) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sext.b rd, 0x44d2178d\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xffffff8d, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xffffff8d, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1826,7 +1826,7 @@ void test_misc()
     if (result != 0x33) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sext.b rd, 0xe1f2ff33\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x33, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x33, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1839,7 +1839,7 @@ void test_misc()
     if (result != 0x6f) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sext.b rd, 0x7507c6f\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x6f, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x6f, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1852,7 +1852,7 @@ void test_misc()
     if (result != 0x64) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sext.b rd, 0x50e4564\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x64, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x64, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1865,7 +1865,7 @@ void test_misc()
     if (result != 0xffffe1fe) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sext.h rd, 0x7a46e1fe\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xffffe1fe, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xffffe1fe, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1878,7 +1878,7 @@ void test_misc()
     if (result != 0x61f4) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sext.h rd, 0xaf4661f4\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x61f4, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x61f4, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1891,7 +1891,7 @@ void test_misc()
     if (result != 0xffffc292) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sext.h rd, 0xfa56c292\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xffffc292, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xffffc292, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1904,7 +1904,7 @@ void test_misc()
     if (result != 0xffffb5a6) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sext.h rd, 0x5b7bb5a6\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xffffb5a6, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xffffb5a6, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1917,7 +1917,7 @@ void test_misc()
     if (result != 0x5dd5) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sext.h rd, 0x9bdf5dd5\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x5dd5, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x5dd5, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1930,7 +1930,7 @@ void test_misc()
     if (result != 0xffffcf3f) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sext.h rd, 0x3b18cf3f\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xffffcf3f, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xffffcf3f, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1943,7 +1943,7 @@ void test_misc()
     if (result != 0x6466) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sext.h rd, 0x4dd56466\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x6466, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x6466, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1956,7 +1956,7 @@ void test_misc()
     if (result != 0x2ea5) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sext.h rd, 0xd8902ea5\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x2ea5, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x2ea5, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1969,7 +1969,7 @@ void test_misc()
     if (result != 0xffffe604) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sext.h rd, 0xc157e604\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xffffe604, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xffffe604, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1982,7 +1982,7 @@ void test_misc()
     if (result != 0x6b23) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sext.h rd, 0xa5896b23\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x6b23, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x6b23, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -1995,7 +1995,7 @@ void test_misc()
     if (result != 0x1df3) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sext.h rd, 0xb8ad1df3\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x1df3, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x1df3, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2008,7 +2008,7 @@ void test_misc()
     if (result != 0x670e) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sext.h rd, 0x3028670e\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x670e, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x670e, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2021,7 +2021,7 @@ void test_misc()
     if (result != 0x6573) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sext.h rd, 0x3f56573\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x6573, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x6573, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2034,7 +2034,7 @@ void test_misc()
     if (result != 0xffffbae6) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sext.h rd, 0x4deebae6\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xffffbae6, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xffffbae6, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2047,7 +2047,7 @@ void test_misc()
     if (result != 0x47ec) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sext.h rd, 0xf0bc47ec\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x47ec, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x47ec, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2060,7 +2060,7 @@ void test_misc()
     if (result != 0xffffe641) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("sext.h rd, 0xf7d7e641\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xffffe641, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xffffe641, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2073,7 +2073,7 @@ void test_misc()
     if (result != 0xa485) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("zext.h rd, 0x1c21a485\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xa485, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xa485, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2086,7 +2086,7 @@ void test_misc()
     if (result != 0x8f20) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("zext.h rd, 0xe0dd8f20\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x8f20, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x8f20, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2099,7 +2099,7 @@ void test_misc()
     if (result != 0x428e) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("zext.h rd, 0x7d27428e\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x428e, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x428e, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2112,7 +2112,7 @@ void test_misc()
     if (result != 0x430f) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("zext.h rd, 0x7f0c430f\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x430f, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x430f, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2125,7 +2125,7 @@ void test_misc()
     if (result != 0xfec1) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("zext.h rd, 0xf4fec1\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xfec1, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xfec1, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2138,7 +2138,7 @@ void test_misc()
     if (result != 0x717b) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("zext.h rd, 0xd0e4717b\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x717b, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x717b, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2151,7 +2151,7 @@ void test_misc()
     if (result != 0x4413) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("zext.h rd, 0x31d44413\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x4413, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x4413, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2164,7 +2164,7 @@ void test_misc()
     if (result != 0xd417) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("zext.h rd, 0xc241d417\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xd417, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xd417, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2177,7 +2177,7 @@ void test_misc()
     if (result != 0xd61f) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("zext.h rd, 0x49f8d61f\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xd61f, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xd61f, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2190,7 +2190,7 @@ void test_misc()
     if (result != 0x3f50) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("zext.h rd, 0xd8cf3f50\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x3f50, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x3f50, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2203,7 +2203,7 @@ void test_misc()
     if (result != 0x272c) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("zext.h rd, 0x73d4272c\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x272c, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x272c, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2216,7 +2216,7 @@ void test_misc()
     if (result != 0x442e) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("zext.h rd, 0x2203442e\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x442e, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x442e, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2229,7 +2229,7 @@ void test_misc()
     if (result != 0xfd76) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("zext.h rd, 0x707afd76\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xfd76, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xfd76, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2242,7 +2242,7 @@ void test_misc()
     if (result != 0x2f86) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("zext.h rd, 0xa7702f86\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x2f86, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x2f86, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2255,7 +2255,7 @@ void test_misc()
     if (result != 0x4208) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("zext.h rd, 0x2f0a4208\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x4208, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x4208, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2268,7 +2268,7 @@ void test_misc()
     if (result != 0xf170) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("zext.h rd, 0xf101f170\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xf170, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xf170, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2281,7 +2281,7 @@ void test_misc()
     if (result != 0x40f65a3) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("rev8 rd, 0xa3650f04\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x40f65a3, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x40f65a3, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2294,7 +2294,7 @@ void test_misc()
     if (result != 0x5bbdb886) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("rev8 rd, 0x86b8bd5b\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x5bbdb886, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x5bbdb886, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2307,7 +2307,7 @@ void test_misc()
     if (result != 0xc07e2e7) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("rev8 rd, 0xe7e2070c\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xc07e2e7, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xc07e2e7, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2320,7 +2320,7 @@ void test_misc()
     if (result != 0xcb24ed16) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("rev8 rd, 0x16ed24cb\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xcb24ed16, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xcb24ed16, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2333,7 +2333,7 @@ void test_misc()
     if (result != 0xebc3dba0) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("rev8 rd, 0xa0dbc3eb\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xebc3dba0, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xebc3dba0, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2346,7 +2346,7 @@ void test_misc()
     if (result != 0xc364181e) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("rev8 rd, 0x1e1864c3\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xc364181e, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xc364181e, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2359,7 +2359,7 @@ void test_misc()
     if (result != 0x4304a944) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("rev8 rd, 0x44a90443\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x4304a944, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x4304a944, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2372,7 +2372,7 @@ void test_misc()
     if (result != 0xd2b8f21) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("rev8 rd, 0x218f2b0d\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xd2b8f21, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xd2b8f21, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2385,7 +2385,7 @@ void test_misc()
     if (result != 0x20d69370) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("rev8 rd, 0x7093d620\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x20d69370, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x20d69370, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2398,7 +2398,7 @@ void test_misc()
     if (result != 0xf734223b) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("rev8 rd, 0x3b2234f7\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xf734223b, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xf734223b, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2411,7 +2411,7 @@ void test_misc()
     if (result != 0x6be1a10c) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("rev8 rd, 0xca1e16b\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x6be1a10c, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x6be1a10c, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2424,7 +2424,7 @@ void test_misc()
     if (result != 0x3907945c) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("rev8 rd, 0x5c940739\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x3907945c, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x3907945c, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2437,7 +2437,7 @@ void test_misc()
     if (result != 0x63580bcd) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("rev8 rd, 0xcd0b5863\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x63580bcd, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x63580bcd, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2450,7 +2450,7 @@ void test_misc()
     if (result != 0xb446c067) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("rev8 rd, 0x67c046b4\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xb446c067, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xb446c067, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2463,7 +2463,7 @@ void test_misc()
     if (result != 0x2ee8d7c5) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("rev8 rd, 0xc5d7e82e\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x2ee8d7c5, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x2ee8d7c5, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2476,7 +2476,7 @@ void test_misc()
     if (result != 0x33caadf6) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("rev8 rd, 0xf6adca33\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x33caadf6, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x33caadf6, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2489,7 +2489,7 @@ void test_misc()
     if (result != 0xffffffff) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("orc.b rd, 0xafab5a3a\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xffffffff, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xffffffff, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2502,7 +2502,7 @@ void test_misc()
     if (result != 0xffffffff) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("orc.b rd, 0x866d4a77\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xffffffff, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xffffffff, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2515,7 +2515,7 @@ void test_misc()
     if (result != 0xffffffff) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("orc.b rd, 0x76c9b327\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xffffffff, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xffffffff, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2528,7 +2528,7 @@ void test_misc()
     if (result != 0xffffffff) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("orc.b rd, 0x8e3d7af\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xffffffff, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xffffffff, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2541,7 +2541,7 @@ void test_misc()
     if (result != 0xffffffff) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("orc.b rd, 0x317194b8\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xffffffff, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xffffffff, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2554,7 +2554,7 @@ void test_misc()
     if (result != 0xffffffff) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("orc.b rd, 0xc49cd7db\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xffffffff, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xffffffff, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2567,7 +2567,7 @@ void test_misc()
     if (result != 0xffffffff) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("orc.b rd, 0xe04c63a5\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xffffffff, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xffffffff, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2580,7 +2580,7 @@ void test_misc()
     if (result != 0xffffffff) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("orc.b rd, 0x20473731\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xffffffff, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xffffffff, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2593,7 +2593,7 @@ void test_misc()
     if (result != 0xffffffff) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("orc.b rd, 0xba909408\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xffffffff, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xffffffff, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2606,7 +2606,7 @@ void test_misc()
     if (result != 0xffffffff) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("orc.b rd, 0xe98948bf\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xffffffff, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xffffffff, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2619,7 +2619,7 @@ void test_misc()
     if (result != 0xffffffff) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("orc.b rd, 0x763d2af7\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xffffffff, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xffffffff, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2632,7 +2632,7 @@ void test_misc()
     if (result != 0xffffffff) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("orc.b rd, 0x5daaf0c4\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xffffffff, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xffffffff, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2645,7 +2645,7 @@ void test_misc()
     if (result != 0xffffffff) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("orc.b rd, 0x2cd63ae1\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xffffffff, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xffffffff, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2658,7 +2658,7 @@ void test_misc()
     if (result != 0xffffffff) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("orc.b rd, 0x264afe29\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xffffffff, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xffffffff, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2671,7 +2671,7 @@ void test_misc()
     if (result != 0xffffffff) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("orc.b rd, 0x593ebda5\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xffffffff, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xffffffff, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2684,7 +2684,7 @@ void test_misc()
     if (result != 0xffffffff) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("orc.b rd, 0xda17dbf2\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xffffffff, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xffffffff, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2697,7 +2697,7 @@ void test_misc()
     if (result != 0x0) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("clz rd, 0xca773b35\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x0, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x0, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2710,7 +2710,7 @@ void test_misc()
     if (result != 0x0) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("clz rd, 0xbd16f716\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x0, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x0, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2723,7 +2723,7 @@ void test_misc()
     if (result != 0x0) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("clz rd, 0xe0ce5e35\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x0, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x0, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2736,7 +2736,7 @@ void test_misc()
     if (result != 0x0) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("clz rd, 0xd361a178\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x0, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x0, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2749,7 +2749,7 @@ void test_misc()
     if (result != 0x0) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("clz rd, 0x8bda31bb\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x0, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x0, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2762,7 +2762,7 @@ void test_misc()
     if (result != 0x1) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("clz rd, 0x53871532\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x1, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x1, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2775,7 +2775,7 @@ void test_misc()
     if (result != 0x0) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("clz rd, 0xf2b57d8f\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x0, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x0, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2788,7 +2788,7 @@ void test_misc()
     if (result != 0x0) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("clz rd, 0x8858118e\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x0, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x0, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2801,7 +2801,7 @@ void test_misc()
     if (result != 0x0) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("clz rd, 0xc27472a2\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x0, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x0, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2814,7 +2814,7 @@ void test_misc()
     if (result != 0x1) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("clz rd, 0x79cb2b63\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x1, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x1, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2827,7 +2827,7 @@ void test_misc()
     if (result != 0x0) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("clz rd, 0xebda8223\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x0, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x0, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2840,7 +2840,7 @@ void test_misc()
     if (result != 0x4) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("clz rd, 0xc438fc5\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x4, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x4, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2853,7 +2853,7 @@ void test_misc()
     if (result != 0x1) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("clz rd, 0x4b43c8a0\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x1, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x1, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2866,7 +2866,7 @@ void test_misc()
     if (result != 0x1) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("clz rd, 0x4a253fe8\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x1, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x1, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2879,7 +2879,7 @@ void test_misc()
     if (result != 0x0) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("clz rd, 0xee66fdb1\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x0, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x0, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2892,7 +2892,7 @@ void test_misc()
     if (result != 0x0) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("clz rd, 0xa377d933\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x0, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x0, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2905,7 +2905,7 @@ void test_misc()
     if (result != 0xd) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("cpop rd, 0x101714dd\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xd, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xd, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2918,7 +2918,7 @@ void test_misc()
     if (result != 0x10) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("cpop rd, 0xc9655dd0\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x10, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x10, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2931,7 +2931,7 @@ void test_misc()
     if (result != 0x12) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("cpop rd, 0xa9af5cca\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x12, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x12, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2944,7 +2944,7 @@ void test_misc()
     if (result != 0x12) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("cpop rd, 0xac457de9\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x12, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x12, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2957,7 +2957,7 @@ void test_misc()
     if (result != 0x10) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("cpop rd, 0x2b722aad\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x10, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x10, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2970,7 +2970,7 @@ void test_misc()
     if (result != 0x11) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("cpop rd, 0x1bbafd4\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x11, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x11, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2983,7 +2983,7 @@ void test_misc()
     if (result != 0x12) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("cpop rd, 0xd837da4b\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x12, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x12, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -2996,7 +2996,7 @@ void test_misc()
     if (result != 0x11) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("cpop rd, 0x8f165d4b\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x11, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x11, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3009,7 +3009,7 @@ void test_misc()
     if (result != 0x12) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("cpop rd, 0xc76cad63\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x12, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x12, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3022,7 +3022,7 @@ void test_misc()
     if (result != 0xf) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("cpop rd, 0x7815245f\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xf, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xf, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3035,7 +3035,7 @@ void test_misc()
     if (result != 0x12) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("cpop rd, 0xe93403ff\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x12, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x12, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3048,7 +3048,7 @@ void test_misc()
     if (result != 0xf) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("cpop rd, 0x562a1675\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xf, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xf, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3061,7 +3061,7 @@ void test_misc()
     if (result != 0x14) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("cpop rd, 0x6ef37a8d\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x14, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x14, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3074,7 +3074,7 @@ void test_misc()
     if (result != 0x12) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("cpop rd, 0x698be3bc\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x12, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x12, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3087,7 +3087,7 @@ void test_misc()
     if (result != 0xd) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("cpop rd, 0x1070f18e\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xd, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xd, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3100,7 +3100,7 @@ void test_misc()
     if (result != 0x11) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("cpop rd, 0x79fc093a\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x11, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x11, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3113,7 +3113,7 @@ void test_misc()
     if (result != 0x1) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("ctz rd, 0xbd745d8e\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x1, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x1, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3126,7 +3126,7 @@ void test_misc()
     if (result != 0x0) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("ctz rd, 0x31f49c0d\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x0, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x0, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3139,7 +3139,7 @@ void test_misc()
     if (result != 0x0) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("ctz rd, 0xa3ef5b03\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x0, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x0, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3152,7 +3152,7 @@ void test_misc()
     if (result != 0x0) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("ctz rd, 0x1d6d557d\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x0, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x0, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3165,7 +3165,7 @@ void test_misc()
     if (result != 0x2) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("ctz rd, 0x7f992e14\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x2, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x2, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3178,7 +3178,7 @@ void test_misc()
     if (result != 0x1) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("ctz rd, 0xd029150a\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x1, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x1, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3191,7 +3191,7 @@ void test_misc()
     if (result != 0x1) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("ctz rd, 0x266dc672\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x1, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x1, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3204,7 +3204,7 @@ void test_misc()
     if (result != 0x0) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("ctz rd, 0x2ee205e3\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x0, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x0, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3217,7 +3217,7 @@ void test_misc()
     if (result != 0x1) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("ctz rd, 0x4ccca12a\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x1, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x1, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3230,7 +3230,7 @@ void test_misc()
     if (result != 0x0) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("ctz rd, 0xea011715\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x0, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x0, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3243,7 +3243,7 @@ void test_misc()
     if (result != 0x3) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("ctz rd, 0x306ad0e8\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x3, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x3, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3256,7 +3256,7 @@ void test_misc()
     if (result != 0x4) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("ctz rd, 0x269490\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x4, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x4, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3269,7 +3269,7 @@ void test_misc()
     if (result != 0x1) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("ctz rd, 0x3f2f5a82\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x1, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x1, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3282,7 +3282,7 @@ void test_misc()
     if (result != 0x1) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("ctz rd, 0x226b6602\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x1, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x1, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3295,7 +3295,7 @@ void test_misc()
     if (result != 0x3) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("ctz rd, 0xb7d11c68\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x3, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x3, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3308,7 +3308,7 @@ void test_misc()
     if (result != 0x3) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("ctz rd, 0x972dabb8\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x3, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x3, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3322,7 +3322,7 @@ void test_misc()
     if (result != 0xf762b7bb) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("ror rd, 0x6f77eec5, 0xe9a69971\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xf762b7bb, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xf762b7bb, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3336,7 +3336,7 @@ void test_misc()
     if (result != 0xec5a5b73) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("ror rd, 0xe7d8b4b6, 0x8a53a719\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xec5a5b73, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xec5a5b73, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3350,7 +3350,7 @@ void test_misc()
     if (result != 0xc450811a) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("ror rd, 0xc450811a, 0x721fddc0\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xc450811a, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xc450811a, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3364,7 +3364,7 @@ void test_misc()
     if (result != 0xce32d260) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("ror rd, 0xc65a4c19, 0x42d79085\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xce32d260, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xce32d260, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3378,7 +3378,7 @@ void test_misc()
     if (result != 0x845a9034) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("ror rd, 0xd2116a40, 0x5669405a\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x845a9034, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x845a9034, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3392,7 +3392,7 @@ void test_misc()
     if (result != 0x4383366f) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("ror rd, 0x37a1c19b, 0x71cbf6f7\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x4383366f, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x4383366f, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3406,7 +3406,7 @@ void test_misc()
     if (result != 0x1fe02b6f) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("ror rd, 0xff015b78, 0x8fc5df23\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x1fe02b6f, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x1fe02b6f, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3420,7 +3420,7 @@ void test_misc()
     if (result != 0x9dd1956b) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("ror rd, 0x774655ae, 0xa522fb22\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x9dd1956b, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x9dd1956b, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3434,7 +3434,7 @@ void test_misc()
     if (result != 0x74189071) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("ror rd, 0x5d06241c, 0xe4f9371e\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x74189071, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x74189071, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3448,7 +3448,7 @@ void test_misc()
     if (result != 0x9ce17f3d) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("ror rd, 0x9ce17f3d, 0x38f6ce80\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x9ce17f3d, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x9ce17f3d, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3462,7 +3462,7 @@ void test_misc()
     if (result != 0x65a6628e) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("ror rd, 0xa3996998, 0x119800f6\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x65a6628e, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x65a6628e, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3476,7 +3476,7 @@ void test_misc()
     if (result != 0xa279a19d) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("ror rd, 0xd0ced13c, 0x9889a54f\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xa279a19d, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xa279a19d, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3490,7 +3490,7 @@ void test_misc()
     if (result != 0x42a8fa56) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("ror rd, 0x42a8fa56, 0x6d38db00\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x42a8fa56, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x42a8fa56, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3504,7 +3504,7 @@ void test_misc()
     if (result != 0x6ad9a1db) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("ror rd, 0xd5b343b6, 0xde075941\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x6ad9a1db, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x6ad9a1db, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3518,7 +3518,7 @@ void test_misc()
     if (result != 0xa498fcc8) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("ror rd, 0x4c7e6452, 0xb1e70127\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xa498fcc8, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xa498fcc8, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3532,7 +3532,7 @@ void test_misc()
     if (result != 0x88e43cc5) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("ror rd, 0x90f31623, 0x71e5292a\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x88e43cc5, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x88e43cc5, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3545,7 +3545,7 @@ void test_misc()
     if (result != 0x57ce083d) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("rori rd, 0xabe7041e, 0x1f\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x57ce083d, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x57ce083d, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3558,7 +3558,7 @@ void test_misc()
     if (result != 0xe7538004) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("rori rd, 0x9cea7000, 0x1d\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xe7538004, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xe7538004, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3571,7 +3571,7 @@ void test_misc()
     if (result != 0x86decbdd) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("rori rd, 0xbdd86dec, 0x14\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x86decbdd, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x86decbdd, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3584,7 +3584,7 @@ void test_misc()
     if (result != 0x79ef409c) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("rori rd, 0x9ef409c7, 0x4\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x79ef409c, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x79ef409c, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3597,7 +3597,7 @@ void test_misc()
     if (result != 0xe111e4d9) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("rori rd, 0x3c223c9b, 0x1d\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xe111e4d9, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xe111e4d9, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3610,7 +3610,7 @@ void test_misc()
     if (result != 0x41f072a6) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("rori rd, 0x907c1ca9, 0x1e\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x41f072a6, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x41f072a6, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3623,7 +3623,7 @@ void test_misc()
     if (result != 0xb08f6207) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("rori rd, 0xf611ec4, 0x19\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xb08f6207, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xb08f6207, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3636,7 +3636,7 @@ void test_misc()
     if (result != 0x39664b1f) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("rori rd, 0x2cc963e7, 0x5\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x39664b1f, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x39664b1f, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3649,7 +3649,7 @@ void test_misc()
     if (result != 0x45573dd8) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("rori rd, 0xeec22ab9, 0x13\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x45573dd8, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x45573dd8, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3662,7 +3662,7 @@ void test_misc()
     if (result != 0x1934bda9) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("rori rd, 0xb5232697, 0x15\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x1934bda9, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x1934bda9, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3675,7 +3675,7 @@ void test_misc()
     if (result != 0x58feadb7) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("rori rd, 0xb6eb1fd5, 0x15\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x58feadb7, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x58feadb7, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3688,7 +3688,7 @@ void test_misc()
     if (result != 0x763cbcd7) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("rori rd, 0x35dd8f2f, 0x16\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x763cbcd7, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x763cbcd7, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3701,7 +3701,7 @@ void test_misc()
     if (result != 0x99bd8d3f) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("rori rd, 0x6f634fe6, 0x6\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x99bd8d3f, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x99bd8d3f, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3714,7 +3714,7 @@ void test_misc()
     if (result != 0x2d238b34) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("rori rd, 0x8b342d23, 0x10\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x2d238b34, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x2d238b34, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3727,7 +3727,7 @@ void test_misc()
     if (result != 0x9227f91a) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("rori rd, 0xfc8d4913, 0xf\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x9227f91a, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x9227f91a, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3740,7 +3740,7 @@ void test_misc()
     if (result != 0x36288d90) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("rori rd, 0x88d90362, 0xc\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x36288d90, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x36288d90, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3754,7 +3754,7 @@ void test_misc()
     if (result != 0xbd0e7bb8) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("rol rd, 0xe873ddc5, 0x97d77a7d\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xbd0e7bb8, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xbd0e7bb8, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3768,7 +3768,7 @@ void test_misc()
     if (result != 0xb040619b) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("rol rd, 0x19bb0406, 0x78206e2c\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xb040619b, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xb040619b, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3782,7 +3782,7 @@ void test_misc()
     if (result != 0x86265f5b) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("rol rd, 0x997d6e18, 0x54909976\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x86265f5b, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x86265f5b, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3796,7 +3796,7 @@ void test_misc()
     if (result != 0x6058424f) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("rol rd, 0xf6058424, 0xb4185664\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x6058424f, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x6058424f, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3810,7 +3810,7 @@ void test_misc()
     if (result != 0x76fcef7f) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("rol rd, 0x9defeedf, 0x220874d3\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x76fcef7f, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x76fcef7f, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3824,7 +3824,7 @@ void test_misc()
     if (result != 0xabdef8ce) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("rol rd, 0x5ef7c675, 0xced7619d\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xabdef8ce, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xabdef8ce, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3838,7 +3838,7 @@ void test_misc()
     if (result != 0x9608d010) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("rol rd, 0x34042582, 0xe65f0672\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x9608d010, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x9608d010, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3852,7 +3852,7 @@ void test_misc()
     if (result != 0x7682dc6f) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("rol rd, 0xb71bdda, 0xdfcaebb6\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x7682dc6f, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x7682dc6f, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3866,7 +3866,7 @@ void test_misc()
     if (result != 0xfce7d0de) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("rol rd, 0x7bf39f43, 0x120cee66\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xfce7d0de, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xfce7d0de, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3880,7 +3880,7 @@ void test_misc()
     if (result != 0xe66cf39b) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("rol rd, 0x6cf39be6, 0x638be98\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xe66cf39b, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xe66cf39b, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3894,7 +3894,7 @@ void test_misc()
     if (result != 0x95d18105) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("rol rd, 0x65746041, 0x123b4662\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x95d18105, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x95d18105, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3908,7 +3908,7 @@ void test_misc()
     if (result != 0xbd414263) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("rol rd, 0x7a8284c7, 0x562ca1df\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xbd414263, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xbd414263, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3922,7 +3922,7 @@ void test_misc()
     if (result != 0xdc98b9e) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("rol rd, 0x6e4c5cf0, 0xebe7b63d\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xdc98b9e, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xdc98b9e, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3936,7 +3936,7 @@ void test_misc()
     if (result != 0x7d5d03fa) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("rol rd, 0xa07f4fab, 0xbd4c71b3\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x7d5d03fa, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x7d5d03fa, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3950,7 +3950,7 @@ void test_misc()
     if (result != 0xdbd037e0) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("rol rd, 0xbf06de81, 0x2539d6ed\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xdbd037e0, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xdbd037e0, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3964,7 +3964,7 @@ void test_misc()
     if (result != 0x87668baf) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("rol rd, 0xbe1d9a2e, 0x545d1f46\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x87668baf, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x87668baf, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3978,7 +3978,7 @@ void test_misc()
     if (result != 0xee2309a1) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("xnor rd, 0xbaadb6fe, 0xab7140a0\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xee2309a1, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xee2309a1, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -3992,7 +3992,7 @@ void test_misc()
     if (result != 0x288ae53a) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("xnor rd, 0xa5f37340, 0x72866985\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x288ae53a, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x288ae53a, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4006,7 +4006,7 @@ void test_misc()
     if (result != 0x362d2228) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("xnor rd, 0x1bbb0154, 0xd269dc83\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x362d2228, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x362d2228, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4020,7 +4020,7 @@ void test_misc()
     if (result != 0xc74da65b) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("xnor rd, 0x8fc23c66, 0xb77065c2\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xc74da65b, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xc74da65b, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4034,7 +4034,7 @@ void test_misc()
     if (result != 0xdb728e6c) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("xnor rd, 0xbef1d423, 0x9a7ca5b0\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xdb728e6c, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xdb728e6c, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4048,7 +4048,7 @@ void test_misc()
     if (result != 0x59fe4eb5) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("xnor rd, 0xee20903c, 0x48212176\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x59fe4eb5, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x59fe4eb5, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4062,7 +4062,7 @@ void test_misc()
     if (result != 0x4bdbfc71) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("xnor rd, 0x5392da12, 0xe7b6d99c\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x4bdbfc71, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x4bdbfc71, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4076,7 +4076,7 @@ void test_misc()
     if (result != 0xf43a238c) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("xnor rd, 0xf8c64781, 0xf3039bf2\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xf43a238c, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xf43a238c, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4090,7 +4090,7 @@ void test_misc()
     if (result != 0xa68c1904) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("xnor rd, 0x8cbb6344, 0xd5c885bf\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xa68c1904, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xa68c1904, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4104,7 +4104,7 @@ void test_misc()
     if (result != 0x5ab81b9) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("xnor rd, 0x25919ba0, 0xdfc5e5e6\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x5ab81b9, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x5ab81b9, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4118,7 +4118,7 @@ void test_misc()
     if (result != 0xe2b14b85) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("xnor rd, 0x8261e919, 0x9f2f5d63\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xe2b14b85, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xe2b14b85, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4132,7 +4132,7 @@ void test_misc()
     if (result != 0x1efbc172) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("xnor rd, 0x8ed9e35c, 0x6fddddd1\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x1efbc172, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x1efbc172, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4146,7 +4146,7 @@ void test_misc()
     if (result != 0xe0d63890) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("xnor rd, 0xad265faa, 0xb20f98c5\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xe0d63890, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xe0d63890, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4160,7 +4160,7 @@ void test_misc()
     if (result != 0xa41350e4) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("xnor rd, 0x852d6eb1, 0xdec1c1aa\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xa41350e4, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xa41350e4, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4174,7 +4174,7 @@ void test_misc()
     if (result != 0xd572a58a) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("xnor rd, 0x66c8a8af, 0x4c45f2da\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xd572a58a, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xd572a58a, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4188,7 +4188,7 @@ void test_misc()
     if (result != 0x99f592d) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("xnor rd, 0x3d264d16, 0xcb46ebc4\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x99f592d, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x99f592d, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4202,7 +4202,7 @@ void test_misc()
     if (result != 0x4210ad12) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("andn rd, 0x7298ed73, 0xb4ac40e5\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x4210ad12, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x4210ad12, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4216,7 +4216,7 @@ void test_misc()
     if (result != 0x4b24807) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("andn rd, 0x4ebacae7, 0xfb0cb6f0\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x4b24807, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x4b24807, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4230,7 +4230,7 @@ void test_misc()
     if (result != 0x301f3) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("andn rd, 0x94c325fb, 0x95d83608\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x301f3, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x301f3, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4244,7 +4244,7 @@ void test_misc()
     if (result != 0x1081084) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("andn rd, 0x6189bd84, 0x66a3ed39\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x1081084, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x1081084, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4258,7 +4258,7 @@ void test_misc()
     if (result != 0x8c99a41) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("andn rd, 0x28ebda71, 0x623240be\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x8c99a41, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x8c99a41, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4272,7 +4272,7 @@ void test_misc()
     if (result != 0x100215) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("andn rd, 0x92968a95, 0xb787ac82\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x100215, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x100215, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4286,7 +4286,7 @@ void test_misc()
     if (result != 0x4003701) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("andn rd, 0x3448b7a3, 0xf3f880be\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x4003701, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x4003701, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4300,7 +4300,7 @@ void test_misc()
     if (result != 0xb80604a8) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("andn rd, 0xf896d6ae, 0x4491db56\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xb80604a8, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xb80604a8, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4314,7 +4314,7 @@ void test_misc()
     if (result != 0x8255667) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("andn rd, 0x6cbf5667, 0xf4da0190\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x8255667, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x8255667, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4328,7 +4328,7 @@ void test_misc()
     if (result != 0x7840500a) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("andn rd, 0xf97ad50b, 0x833e8565\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x7840500a, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x7840500a, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4342,7 +4342,7 @@ void test_misc()
     if (result != 0x65819628) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("andn rd, 0x6dc1976b, 0x18464943\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x65819628, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x65819628, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4356,7 +4356,7 @@ void test_misc()
     if (result != 0x81880201) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("andn rd, 0x85981b05, 0x2e76997c\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x81880201, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x81880201, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4370,7 +4370,7 @@ void test_misc()
     if (result != 0x4260208) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("andn rd, 0x26bf272c, 0xebd9b525\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x4260208, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x4260208, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4384,7 +4384,7 @@ void test_misc()
     if (result != 0x80c39020) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("andn rd, 0x88cbbe20, 0x5b282f0d\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x80c39020, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x80c39020, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4398,7 +4398,7 @@ void test_misc()
     if (result != 0x82087000) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("andn rd, 0x83297a64, 0x51370b7d\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x82087000, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x82087000, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4412,7 +4412,7 @@ void test_misc()
     if (result != 0x4e19802) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("andn rd, 0x8ce39e46, 0x8a1267d4\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x4e19802, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x4e19802, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4426,7 +4426,7 @@ void test_misc()
     if (result != 0x7e67ef9f) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("orn rd, 0x7c44eb17, 0xfddcb876\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x7e67ef9f, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x7e67ef9f, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4440,7 +4440,7 @@ void test_misc()
     if (result != 0x7b3d37ef) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("orn rd, 0x733937e2, 0xe6dacc50\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x7b3d37ef, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x7b3d37ef, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4454,7 +4454,7 @@ void test_misc()
     if (result != 0x3f3b6e9f) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("orn rd, 0x3a336a9d, 0xd0f59374\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x3f3b6e9f, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x3f3b6e9f, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4468,7 +4468,7 @@ void test_misc()
     if (result != 0x5a3f6cf5) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("orn rd, 0x401d6875, 0xe5c1d30f\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x5a3f6cf5, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x5a3f6cf5, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4482,7 +4482,7 @@ void test_misc()
     if (result != 0xe7eeedef) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("orn rd, 0xe52665c9, 0x19333359\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xe7eeedef, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xe7eeedef, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4496,7 +4496,7 @@ void test_misc()
     if (result != 0x37cdde6c) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("orn rd, 0x58d9c2c, 0xcc3bb197\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x37cdde6c, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x37cdde6c, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4510,7 +4510,7 @@ void test_misc()
     if (result != 0xbf25dfef) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("orn rd, 0xbf21064a, 0xf5fa265a\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xbf25dfef, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xbf25dfef, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4524,7 +4524,7 @@ void test_misc()
     if (result != 0xf9fef3f8) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("orn rd, 0xf93673f0, 0xa6212d27\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xf9fef3f8, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xf9fef3f8, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4538,7 +4538,7 @@ void test_misc()
     if (result != 0xfefe5df7) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("orn rd, 0xa6965975, 0xa103fb0c\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xfefe5df7, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xfefe5df7, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4552,7 +4552,7 @@ void test_misc()
     if (result != 0xf31ffbfd) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("orn rd, 0xd11eba79, 0xcdf23c3b\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xf31ffbfd, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xf31ffbfd, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4566,7 +4566,7 @@ void test_misc()
     if (result != 0xefbfedfd) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("orn rd, 0x8d9fa53c, 0x1043920e\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xefbfedfd, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xefbfedfd, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4580,7 +4580,7 @@ void test_misc()
     if (result != 0xce9bcbbf) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("orn rd, 0xca8bca9d, 0x73e5b444\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xce9bcbbf, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xce9bcbbf, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4594,7 +4594,7 @@ void test_misc()
     if (result != 0xf7e7ffbe) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("orn rd, 0x7065d82e, 0x381d5043\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xf7e7ffbe, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xf7e7ffbe, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4608,7 +4608,7 @@ void test_misc()
     if (result != 0xb6f7fbe9) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("orn rd, 0x32c3e2a0, 0x5bcba4b6\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xb6f7fbe9, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xb6f7fbe9, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4622,7 +4622,7 @@ void test_misc()
     if (result != 0xaaf303ad) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("orn rd, 0x2282028c, 0x558cfe56\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xaaf303ad, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xaaf303ad, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4636,7 +4636,7 @@ void test_misc()
     if (result != 0xdaed2fff) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("orn rd, 0x5aed2a5e, 0x6f57da56\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xdaed2fff, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xdaed2fff, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4664,7 +4664,7 @@ void test_zbs()
     if (result != 0x5504a5dd) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bset rd, 0x5504a5dd, 0x7096d20f\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x5504a5dd, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x5504a5dd, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4678,7 +4678,7 @@ void test_zbs()
     if (result != 0xaca129ef) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bset rd, 0xaca129eb, 0xaa140462\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xaca129ef, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xaca129ef, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4692,7 +4692,7 @@ void test_zbs()
     if (result != 0x9f4721be) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bset rd, 0x9f4721be, 0xa8d428d9\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x9f4721be, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x9f4721be, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4706,7 +4706,7 @@ void test_zbs()
     if (result != 0x1fd71ec6) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bset rd, 0x1dd71ec6, 0x5bd520b9\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x1fd71ec6, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x1fd71ec6, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4720,7 +4720,7 @@ void test_zbs()
     if (result != 0x65f72337) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bset rd, 0x65f72336, 0xbce6ce00\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x65f72337, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x65f72337, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4734,7 +4734,7 @@ void test_zbs()
     if (result != 0x65c474ad) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bset rd, 0x65c474ad, 0xd2d048bd\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x65c474ad, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x65c474ad, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4748,7 +4748,7 @@ void test_zbs()
     if (result != 0xc6c37c30) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bset rd, 0x46c37c30, 0x3012819f\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xc6c37c30, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xc6c37c30, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4762,7 +4762,7 @@ void test_zbs()
     if (result != 0xd02c81c2) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bset rd, 0xd02c81c2, 0x8bfaa9df\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xd02c81c2, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xd02c81c2, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4776,7 +4776,7 @@ void test_zbs()
     if (result != 0x8f65551b) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bset rd, 0x8e65551b, 0x2667f9d8\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x8f65551b, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x8f65551b, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4790,7 +4790,7 @@ void test_zbs()
     if (result != 0xc0995005) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bset rd, 0xc0995004, 0xde7d8b00\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xc0995005, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xc0995005, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4804,7 +4804,7 @@ void test_zbs()
     if (result != 0x75214a8e) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bset rd, 0x75204a8e, 0x220dbf0\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x75214a8e, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x75214a8e, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4818,7 +4818,7 @@ void test_zbs()
     if (result != 0x93c01563) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bset rd, 0x13c01563, 0xe9c3a19f\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x93c01563, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x93c01563, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4832,7 +4832,7 @@ void test_zbs()
     if (result != 0xfc5cd7c7) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bset rd, 0xfc5cd7c7, 0x51be2afc\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xfc5cd7c7, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xfc5cd7c7, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4846,7 +4846,7 @@ void test_zbs()
     if (result != 0x45af7779) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bset rd, 0x45af7769, 0x294d584\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x45af7779, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x45af7779, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4860,7 +4860,7 @@ void test_zbs()
     if (result != 0xc8ff0c3c) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bset rd, 0xc8ff0c3c, 0x3a2a1702\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xc8ff0c3c, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xc8ff0c3c, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4874,7 +4874,7 @@ void test_zbs()
     if (result != 0x2a8e8a6f) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bset rd, 0x288e8a6f, 0x995961d9\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x2a8e8a6f, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x2a8e8a6f, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4887,7 +4887,7 @@ void test_zbs()
     if (result != 0xc58cbcd7) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bseti rd, 0x858cbcd7, 0x1e\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xc58cbcd7, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xc58cbcd7, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4900,7 +4900,7 @@ void test_zbs()
     if (result != 0x1fbf1054) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bseti rd, 0x1fbf1050, 0x2\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x1fbf1054, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x1fbf1054, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4913,7 +4913,7 @@ void test_zbs()
     if (result != 0x42c6a34a) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bseti rd, 0x42c6a14a, 0x9\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x42c6a34a, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x42c6a34a, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4926,7 +4926,7 @@ void test_zbs()
     if (result != 0x5ae91c67) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bseti rd, 0x5ae91c67, 0x1c\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x5ae91c67, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x5ae91c67, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4939,7 +4939,7 @@ void test_zbs()
     if (result != 0xa1421de7) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bseti rd, 0x81421de7, 0x1d\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xa1421de7, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xa1421de7, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4952,7 +4952,7 @@ void test_zbs()
     if (result != 0x60c0d7) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bseti rd, 0x20c0d7, 0x16\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x60c0d7, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x60c0d7, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4965,7 +4965,7 @@ void test_zbs()
     if (result != 0x1e434d0a) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bseti rd, 0x1e434d0a, 0xb\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x1e434d0a, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x1e434d0a, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4978,7 +4978,7 @@ void test_zbs()
     if (result != 0x264a55ea) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bseti rd, 0x264a55ea, 0x16\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x264a55ea, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x264a55ea, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -4991,7 +4991,7 @@ void test_zbs()
     if (result != 0x9d405dbf) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bseti rd, 0x9d405dbf, 0x16\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x9d405dbf, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x9d405dbf, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5004,7 +5004,7 @@ void test_zbs()
     if (result != 0x35fd6f8e) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bseti rd, 0x35fd6f0e, 0x7\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x35fd6f8e, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x35fd6f8e, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5017,7 +5017,7 @@ void test_zbs()
     if (result != 0xc64465da) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bseti rd, 0x864465da, 0x1e\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xc64465da, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xc64465da, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5030,7 +5030,7 @@ void test_zbs()
     if (result != 0xc5c4bcca) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bseti rd, 0xc5c4bcca, 0x18\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xc5c4bcca, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xc5c4bcca, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5043,7 +5043,7 @@ void test_zbs()
     if (result != 0xbfedbc49) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bseti rd, 0xbfedbc49, 0xf\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xbfedbc49, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xbfedbc49, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5056,7 +5056,7 @@ void test_zbs()
     if (result != 0xc8c885ed) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bseti rd, 0xc8c885e5, 0x3\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xc8c885ed, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xc8c885ed, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5069,7 +5069,7 @@ void test_zbs()
     if (result != 0xb8bad091) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bseti rd, 0xb0bad091, 0x1b\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xb8bad091, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xb8bad091, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5082,7 +5082,7 @@ void test_zbs()
     if (result != 0xcdfd6638) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bseti rd, 0xcdbd6638, 0x16\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xcdfd6638, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xcdfd6638, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5096,7 +5096,7 @@ void test_zbs()
     if (result != 0x1) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bext rd, 0x9f0f5398, 0x3c32cd2\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x1, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x1, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5110,7 +5110,7 @@ void test_zbs()
     if (result != 0x1) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bext rd, 0xc563b144, 0x6d911f9e\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x1, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x1, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5124,7 +5124,7 @@ void test_zbs()
     if (result != 0x0) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bext rd, 0x1660258c, 0xe1c99dd7\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x0, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x0, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5138,7 +5138,7 @@ void test_zbs()
     if (result != 0x0) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bext rd, 0x90f6760c, 0x14f6e3e7\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x0, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x0, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5152,7 +5152,7 @@ void test_zbs()
     if (result != 0x1) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bext rd, 0x64668280, 0xe4010055\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x1, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x1, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5166,7 +5166,7 @@ void test_zbs()
     if (result != 0x1) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bext rd, 0x622d5892, 0x49eaa6ec\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x1, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x1, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5180,7 +5180,7 @@ void test_zbs()
     if (result != 0x0) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bext rd, 0xbb8e9513, 0x36e3d11e\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x0, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x0, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5194,7 +5194,7 @@ void test_zbs()
     if (result != 0x0) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bext rd, 0xf5a04e35, 0x14d00a4d\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x0, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x0, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5208,7 +5208,7 @@ void test_zbs()
     if (result != 0x1) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bext rd, 0xe7cae8e, 0x8e2ef654\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x1, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x1, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5222,7 +5222,7 @@ void test_zbs()
     if (result != 0x1) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bext rd, 0xc1d30c0c, 0x5c988896\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x1, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x1, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5236,7 +5236,7 @@ void test_zbs()
     if (result != 0x1) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bext rd, 0x689671bf, 0xb0aa7112\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x1, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x1, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5250,7 +5250,7 @@ void test_zbs()
     if (result != 0x1) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bext rd, 0x50f86ca8, 0xcd88b583\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x1, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x1, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5264,7 +5264,7 @@ void test_zbs()
     if (result != 0x0) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bext rd, 0x6047277, 0x69c28416\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x0, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x0, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5278,7 +5278,7 @@ void test_zbs()
     if (result != 0x0) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bext rd, 0xdbe14fc6, 0x8fc90153\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x0, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x0, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5292,7 +5292,7 @@ void test_zbs()
     if (result != 0x1) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bext rd, 0x8a4a4abc, 0xf3bee2a3\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x1, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x1, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5306,7 +5306,7 @@ void test_zbs()
     if (result != 0x1) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bext rd, 0x69659a4a, 0xfd2a6956\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x1, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x1, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5319,7 +5319,7 @@ void test_zbs()
     if (result != 0x1) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bexti rd, 0x99afd688, 0x1c\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x1, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x1, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5332,7 +5332,7 @@ void test_zbs()
     if (result != 0x1) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bexti rd, 0x419cb278, 0x18\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x1, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x1, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5345,7 +5345,7 @@ void test_zbs()
     if (result != 0x0) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bexti rd, 0x42ef410b, 0x9\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x0, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x0, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5358,7 +5358,7 @@ void test_zbs()
     if (result != 0x0) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bexti rd, 0xa483fd3d, 0x12\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x0, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x0, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5371,7 +5371,7 @@ void test_zbs()
     if (result != 0x0) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bexti rd, 0xc8f6550b, 0x4\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x0, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x0, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5384,7 +5384,7 @@ void test_zbs()
     if (result != 0x1) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bexti rd, 0x348edf78, 0xf\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x1, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x1, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5397,7 +5397,7 @@ void test_zbs()
     if (result != 0x1) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bexti rd, 0x412d058f, 0x8\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x1, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x1, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5410,7 +5410,7 @@ void test_zbs()
     if (result != 0x1) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bexti rd, 0x3dc97699, 0x1a\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x1, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x1, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5423,7 +5423,7 @@ void test_zbs()
     if (result != 0x1) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bexti rd, 0xd9cccb7b, 0xf\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x1, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x1, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5436,7 +5436,7 @@ void test_zbs()
     if (result != 0x0) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bexti rd, 0xb15d7877, 0x9\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x0, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x0, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5449,7 +5449,7 @@ void test_zbs()
     if (result != 0x0) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bexti rd, 0x732bafd0, 0x14\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x0, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x0, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5462,7 +5462,7 @@ void test_zbs()
     if (result != 0x0) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bexti rd, 0x85812504, 0xe\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x0, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x0, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5475,7 +5475,7 @@ void test_zbs()
     if (result != 0x0) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bexti rd, 0x66e5ad68, 0x2\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x0, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x0, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5488,7 +5488,7 @@ void test_zbs()
     if (result != 0x1) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bexti rd, 0x82260eb, 0x3\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x1, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x1, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5501,7 +5501,7 @@ void test_zbs()
     if (result != 0x1) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bexti rd, 0x3ef73170, 0x11\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x1, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x1, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5514,7 +5514,7 @@ void test_zbs()
     if (result != 0x1) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bexti rd, 0x824ce140, 0x1f\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x1, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x1, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5528,7 +5528,7 @@ void test_zbs()
     if (result != 0x13ee3a1d) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("binv rd, 0x93ee3a1d, 0xef75f1bf\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x13ee3a1d, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x13ee3a1d, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5542,7 +5542,7 @@ void test_zbs()
     if (result != 0x2efa3040) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("binv rd, 0x2efa3840, 0xa06e09eb\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x2efa3040, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x2efa3040, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5556,7 +5556,7 @@ void test_zbs()
     if (result != 0x10bbce8a) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("binv rd, 0x11bbce8a, 0xa16ba4d8\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x10bbce8a, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x10bbce8a, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5570,7 +5570,7 @@ void test_zbs()
     if (result != 0xfefbb4e7) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("binv rd, 0xfcfbb4e7, 0x3f5a4a39\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xfefbb4e7, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xfefbb4e7, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5584,7 +5584,7 @@ void test_zbs()
     if (result != 0x1e7b7147) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("binv rd, 0x3e7b7147, 0xec4ce03d\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x1e7b7147, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x1e7b7147, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5598,7 +5598,7 @@ void test_zbs()
     if (result != 0xba3667cc) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("binv rd, 0xba3667c4, 0xafdbe263\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xba3667cc, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xba3667cc, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5612,7 +5612,7 @@ void test_zbs()
     if (result != 0x7227bc3a) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("binv rd, 0x72273c3a, 0x1514622f\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x7227bc3a, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x7227bc3a, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5626,7 +5626,7 @@ void test_zbs()
     if (result != 0x1921fbd5) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("binv rd, 0x1921f3d5, 0xf87272ab\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x1921fbd5, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x1921fbd5, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5640,7 +5640,7 @@ void test_zbs()
     if (result != 0xeebadc7f) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("binv rd, 0xeebafc7f, 0x43929ead\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xeebadc7f, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xeebadc7f, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5654,7 +5654,7 @@ void test_zbs()
     if (result != 0xfee04192) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("binv rd, 0xfee04392, 0x5cebe349\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xfee04192, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xfee04192, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5668,7 +5668,7 @@ void test_zbs()
     if (result != 0xaf0343f9) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("binv rd, 0xaf0143f9, 0x5b180571\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xaf0343f9, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xaf0343f9, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5682,7 +5682,7 @@ void test_zbs()
     if (result != 0x2f63522a) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("binv rd, 0x2763522a, 0xe4895fdb\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x2f63522a, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x2f63522a, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5696,7 +5696,7 @@ void test_zbs()
     if (result != 0x77868325) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("binv rd, 0x77828325, 0xac61ecb2\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x77868325, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x77868325, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5710,7 +5710,7 @@ void test_zbs()
     if (result != 0x50ae4f60) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("binv rd, 0x50ae4f62, 0x1dbabfc1\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x50ae4f60, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x50ae4f60, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5724,7 +5724,7 @@ void test_zbs()
     if (result != 0x430b9a2e) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("binv rd, 0x432b9a2e, 0x8e105c55\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x430b9a2e, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x430b9a2e, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5738,7 +5738,7 @@ void test_zbs()
     if (result != 0xa39de89f) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("binv rd, 0xa39de8df, 0xca51fc06\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xa39de89f, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xa39de89f, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5751,7 +5751,7 @@ void test_zbs()
     if (result != 0xb3ce04ad) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("binvi rd, 0xb3ce24ad, 0xd\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xb3ce04ad, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xb3ce04ad, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5764,7 +5764,7 @@ void test_zbs()
     if (result != 0x35fe804a) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("binvi rd, 0x35fa804a, 0x12\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x35fe804a, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x35fe804a, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5777,7 +5777,7 @@ void test_zbs()
     if (result != 0x6af684a7) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("binvi rd, 0x6ab684a7, 0x16\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x6af684a7, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x6af684a7, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5790,7 +5790,7 @@ void test_zbs()
     if (result != 0x60094e39) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("binvi rd, 0x61094e39, 0x18\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x60094e39, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x60094e39, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5803,7 +5803,7 @@ void test_zbs()
     if (result != 0xb26ec7b) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("binvi rd, 0xb26ecfb, 0x7\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xb26ec7b, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xb26ec7b, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5816,7 +5816,7 @@ void test_zbs()
     if (result != 0xb557fd6) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("binvi rd, 0xb557fde, 0x3\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xb557fd6, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xb557fd6, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5829,7 +5829,7 @@ void test_zbs()
     if (result != 0x518976e3) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("binvi rd, 0x518974e3, 0x9\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x518976e3, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x518976e3, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5842,7 +5842,7 @@ void test_zbs()
     if (result != 0x3094e6ab) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("binvi rd, 0xb094e6ab, 0x1f\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x3094e6ab, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x3094e6ab, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5855,7 +5855,7 @@ void test_zbs()
     if (result != 0x4066496e) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("binvi rd, 0x4066496c, 0x1\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x4066496e, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x4066496e, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5868,7 +5868,7 @@ void test_zbs()
     if (result != 0xcbc00d51) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("binvi rd, 0xcbc20d51, 0x11\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xcbc00d51, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xcbc00d51, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5881,7 +5881,7 @@ void test_zbs()
     if (result != 0x90ea9d8c) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("binvi rd, 0x90e29d8c, 0x13\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x90ea9d8c, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x90ea9d8c, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5894,7 +5894,7 @@ void test_zbs()
     if (result != 0xa7ecac8d) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("binvi rd, 0xa7eca88d, 0xa\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xa7ecac8d, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xa7ecac8d, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5907,7 +5907,7 @@ void test_zbs()
     if (result != 0x16a42bc4) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("binvi rd, 0x16a429c4, 0x9\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x16a42bc4, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x16a42bc4, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5920,7 +5920,7 @@ void test_zbs()
     if (result != 0x6e6ce936) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("binvi rd, 0x6e6ced36, 0xa\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x6e6ce936, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x6e6ce936, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5933,7 +5933,7 @@ void test_zbs()
     if (result != 0x87c50cb9) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("binvi rd, 0x87c51cb9, 0xc\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x87c50cb9, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x87c50cb9, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5946,7 +5946,7 @@ void test_zbs()
     if (result != 0x90a8253a) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("binvi rd, 0x90a8252a, 0x4\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x90a8253a, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x90a8253a, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5960,7 +5960,7 @@ void test_zbs()
     if (result != 0x56de298f) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bclr rd, 0x56de29cf, 0x7ed89ea6\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x56de298f, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x56de298f, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5974,7 +5974,7 @@ void test_zbs()
     if (result != 0xbee01d9a) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bclr rd, 0xfee01d9a, 0x51a6e1be\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xbee01d9a, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xbee01d9a, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -5988,7 +5988,7 @@ void test_zbs()
     if (result != 0x12ea1817) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bclr rd, 0x12ea1817, 0x127ef4f2\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x12ea1817, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x12ea1817, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -6002,7 +6002,7 @@ void test_zbs()
     if (result != 0x33889d2f) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bclr rd, 0x3b889d2f, 0x37657a7b\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x33889d2f, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x33889d2f, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -6016,7 +6016,7 @@ void test_zbs()
     if (result != 0x9886937e) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bclr rd, 0xd886937e, 0xc6eff2de\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x9886937e, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x9886937e, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -6030,7 +6030,7 @@ void test_zbs()
     if (result != 0xf5acfa1a) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bclr rd, 0xf5acfa1a, 0xd0f1c996\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xf5acfa1a, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xf5acfa1a, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -6044,7 +6044,7 @@ void test_zbs()
     if (result != 0xc6c17c36) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bclr rd, 0xc7c17c36, 0x7bc4dc38\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xc6c17c36, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xc6c17c36, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -6058,7 +6058,7 @@ void test_zbs()
     if (result != 0xd069cb4a) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bclr rd, 0xd069cb4a, 0x8dcaa020\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xd069cb4a, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xd069cb4a, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -6072,7 +6072,7 @@ void test_zbs()
     if (result != 0x6e49e5b8) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bclr rd, 0x6e49e5bc, 0x52abcc62\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x6e49e5b8, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x6e49e5b8, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -6086,7 +6086,7 @@ void test_zbs()
     if (result != 0x27020e24) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bclr rd, 0x27020f24, 0xf3b57848\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x27020e24, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x27020e24, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -6100,7 +6100,7 @@ void test_zbs()
     if (result != 0xd9432e00) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bclr rd, 0xd9432e00, 0xd05ec44c\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xd9432e00, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xd9432e00, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -6114,7 +6114,7 @@ void test_zbs()
     if (result != 0xed3c2d7f) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bclr rd, 0xed3c2dff, 0xf50920c7\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xed3c2d7f, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xed3c2d7f, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -6128,7 +6128,7 @@ void test_zbs()
     if (result != 0x34ba532b) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bclr rd, 0x34ba572b, 0xcecffdca\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x34ba532b, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x34ba532b, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -6142,7 +6142,7 @@ void test_zbs()
     if (result != 0xbb3a0cf2) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bclr rd, 0xbb3a4cf2, 0xf762c72e\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xbb3a0cf2, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xbb3a0cf2, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -6156,7 +6156,7 @@ void test_zbs()
     if (result != 0x6e6b6f6e) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bclr rd, 0xee6b6f6e, 0xdd91e03f\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x6e6b6f6e, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x6e6b6f6e, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -6170,7 +6170,7 @@ void test_zbs()
     if (result != 0x12cb2641) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bclr rd, 0x12cb6641, 0xe10c5b8e\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x12cb2641, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x12cb2641, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -6183,7 +6183,7 @@ void test_zbs()
     if (result != 0x3379e380) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bclri rd, 0x3779e380, 0x1a\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x3379e380, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x3379e380, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -6196,7 +6196,7 @@ void test_zbs()
     if (result != 0xed0f6e14) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bclri rd, 0xed0f6e15, 0x0\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xed0f6e14, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xed0f6e14, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -6209,7 +6209,7 @@ void test_zbs()
     if (result != 0x7faa723c) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bclri rd, 0x7faa723c, 0x14\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x7faa723c, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x7faa723c, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -6222,7 +6222,7 @@ void test_zbs()
     if (result != 0xdd895314) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bclri rd, 0xdd995314, 0x14\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xdd895314, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xdd895314, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -6235,7 +6235,7 @@ void test_zbs()
     if (result != 0x1a8d860b) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bclri rd, 0x1a8da60b, 0xd\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x1a8d860b, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x1a8d860b, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -6248,7 +6248,7 @@ void test_zbs()
     if (result != 0x7bc064f7) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bclri rd, 0x7bc064f7, 0x11\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x7bc064f7, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x7bc064f7, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -6261,7 +6261,7 @@ void test_zbs()
     if (result != 0xafca500f) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bclri rd, 0xafca540f, 0xa\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xafca500f, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xafca500f, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -6274,7 +6274,7 @@ void test_zbs()
     if (result != 0xb5e18128) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bclri rd, 0xb5e18168, 0x6\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xb5e18128, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xb5e18128, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -6287,7 +6287,7 @@ void test_zbs()
     if (result != 0x60c5b31f) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bclri rd, 0x60c7b31f, 0x11\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x60c5b31f, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x60c5b31f, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -6300,7 +6300,7 @@ void test_zbs()
     if (result != 0xb835bc03) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bclri rd, 0xb8b5bc03, 0x17\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xb835bc03, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xb835bc03, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -6313,7 +6313,7 @@ void test_zbs()
     if (result != 0x3cab0674) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bclri rd, 0x3cab0674, 0x12\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x3cab0674, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x3cab0674, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -6326,7 +6326,7 @@ void test_zbs()
     if (result != 0x31640b6) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bclri rd, 0x31650b6, 0xc\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x31640b6, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x31640b6, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -6339,7 +6339,7 @@ void test_zbs()
     if (result != 0xcd931fd2) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bclri rd, 0xcd931fd2, 0x1c\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xcd931fd2, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xcd931fd2, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -6352,7 +6352,7 @@ void test_zbs()
     if (result != 0x8fdfbc8b) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bclri rd, 0x8fdfbc8b, 0x5\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x8fdfbc8b, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x8fdfbc8b, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -6365,7 +6365,7 @@ void test_zbs()
     if (result != 0x18283f5f) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bclri rd, 0x182a3f5f, 0x11\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0x18283f5f, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0x18283f5f, result);
         printf("This is a critical error, exiting\n");
         return;
     }
@@ -6378,7 +6378,7 @@ void test_zbs()
     if (result != 0xf986cbba) {
         printf("\nThe test has FAILED with the following instruction:\n");
         printf("bclri rd, 0xf986cbba, 0xc\n");
-        printf("expected = 0x%x, actual = 0x%s\n", 0xf986cbba, result);
+        printf("expected = 0x%x, actual = 0x%x\n", 0xf986cbba, result);
         printf("This is a critical error, exiting\n");
         return;
     }
