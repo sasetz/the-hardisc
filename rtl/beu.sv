@@ -63,14 +63,12 @@ module beu (
         end
     endgenerate
 
-    genvar i;
     generate
         for (i = 0; i < 32; i += 8) begin: gen_rev8
             assign s_rev8[i +: 8] = s_op1_i[(31 - i) -: 8];
         end
     endgenerate
 
-    genvar i;
     generate
         for (i = 0; i < 32; i += 8) begin: gen_orcb
             assign s_orcb[i +: 8] = s_op1_i[i +: 8] == 8'b0 ? 8'b00000000 : 8'b11111111;
