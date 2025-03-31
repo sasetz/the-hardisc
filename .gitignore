@@ -4,6 +4,8 @@ transcript
 vsim.wlf
 vsim_stacktrace.vstf
 
+todolist.md
+
 # Editor specific stuff
 .nvim
 .vscode
