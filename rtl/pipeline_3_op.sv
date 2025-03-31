@@ -31,14 +31,9 @@ module pipeline_3_op (
     input rf_add s_exma_rd_i[PROT_3REP],            //MA-stage destination register address
     input logic[31:0] s_exma_val_i[PROT_3REP],      //MA-stage instruction result
     input ictrl s_exma_ictrl_i[PROT_3REP],          //MA-stage instruction control indicator
-
-`ifdef PROTECTED
-    input logic[1:0] s_rf_uce_i[PROT_2REP],         //uncorrectable error in the register-file
-    input logic[1:0] s_rf_ce_i[PROT_2REP],          //correctable error in the register-file
-`endif
       
-    input logic[31:0] s_idop_p1_i,                  //value read from RS1 address of register file
-    input logic[31:0] s_idop_p2_i,                  //value read from RS2 address of register file
+    input logic[31:0] s_idop_p1_i[PROT_2REP],       //value read from RS1 address of register file
+    input logic[31:0] s_idop_p2_i[PROT_2REP],       //value read from RS2 address of register file
     input logic[20:0] s_idop_payload_i[PROT_2REP],  //instruction payload information
     input f_part s_idop_f_i[PROT_2REP],             //instruction function
     input rf_add s_idop_rs1_i[PROT_2REP],           //source register 1 address
@@ -99,9 +94,6 @@ module pipeline_3_op (
     seu_ff_we #(.LABEL({"OPEX_FWD"}),.W(4),.N(PROT_2REP)) m_opex_fwd (.s_c_i(s_clk_prw),.s_we_i(s_opex_we_fwd),.s_d_i(s_wopex_fwd),.s_q_o(s_ropex_fwd));
 
     logic s_id_misconduct[PROT_2REP], s_op_empty[PROT_2REP];
-`ifdef PROTECTED
-    logic s_op_misconduct[PROT_2REP], s_uce[PROT_2REP], s_ce[PROT_2REP];
-`endif
 
     genvar i;
     generate
@@ -127,10 +119,6 @@ module pipeline_3_op (
             assign s_opex_we_aux[i]     = !(s_flush_op[i] || s_stall_op[i] || s_op_empty[i]);
             //Write-enable signals for essential OPEX registers
             assign s_opex_we_esn[i]     = s_flush_op[i] || !s_stall_op[i];
-`ifdef PROTECTED
-            //Correctable error or differences between read-address registers lead to restart of the instruction
-            assign s_op_misconduct[i]   = (s_ce[i] | (s_idop_rs1_i[0] != s_idop_rs1_i[1]) | (s_idop_rs2_i[0] != s_idop_rs2_i[1])); 
-`endif
 
             //Prepare operands for the EX stage
             preparer m_preparer
@@ -144,8 +132,8 @@ module pipeline_3_op (
                 .s_opex_rd_i(s_ropex_rd[i]),
                 .s_opex_ictrl_i(s_ropex_ictrl[i]),
 
-                .s_idop_p1_i(s_idop_p1_i),
-                .s_idop_p2_i(s_idop_p2_i),
+                .s_idop_p1_i(s_idop_p1_i[i]),
+                .s_idop_p2_i(s_idop_p2_i[i]),
                 .s_idop_payload_i(s_idop_payload_i[i]),
                 .s_idop_f_i(s_idop_f_i[i]),
                 .s_idop_rs1_i(s_idop_rs1_i[i]),
@@ -153,12 +141,7 @@ module pipeline_3_op (
                 .s_idop_ictrl_i(s_idop_ictrl_i[i]),
                 .s_idop_sctrl_i(s_idop_sctrl_i[i]),
                 .s_idop_fixed_i(s_idop_fixed_i[i]),
-`ifdef PROTECTED 
-                .s_rf_uce_i(s_rf_uce_i[i]),
-                .s_rf_ce_i(s_rf_ce_i[i]),
-                .s_uce_o(s_uce[i]),
-                .s_ce_o(s_ce[i]),
-`endif
+
                 .s_operand1_o(s_operand1[i]),
                 .s_operand2_o(s_operand2[i]),
                 .s_fwd_o(s_forward[i]),
@@ -172,17 +155,14 @@ module pipeline_3_op (
                 s_wopex_ictrl[i]    = s_idop_ictrl_i[i];
                 s_wopex_payload[i]  = s_idop_payload_i[i];
                 s_wopex_ictrl[i]    = 
-`ifdef PROTECTED
-                                        (s_id_misconduct[i]) ? s_idop_ictrl_i[i] : 
-                                        (s_op_misconduct[i] | s_uce[i]) ? 7'd0 : 
+`ifdef PROT_INTF
+                                        (s_id_misconduct[i]) ? s_idop_ictrl_i[i] :
 `endif
                                         s_idop_ictrl_i[i];
                 s_wopex_imiscon[i]  = 
-`ifdef PROTECTED                                          
-                                        (s_id_misconduct[i]) ? s_idop_imiscon_i[i] : 
-                                        (s_op_misconduct[i]) ? IMISCON_DSCR : 
-                                        (s_uce[i]) ? IMISCON_RUCE : 
-`endif                                          
+`ifdef PROT_INTF                                          
+                                        (s_id_misconduct[i]) ? s_idop_imiscon_i[i] :
+`endif                                      
                                         s_idop_imiscon_i[i];
                 if(s_flush_op[i] || s_op_empty[i])begin 
                     s_wopex_ictrl[i]    = 7'b0;

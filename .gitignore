@@ -1,5 +1,6 @@
-hardisc_*.log
+example/freertos/build
 sim/
+hardisc_*.log
 transcript
 vsim.wlf
 vsim_stacktrace.vstf

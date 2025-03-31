@@ -24,9 +24,7 @@ module pipeline_2_id (
     input logic[4:0] s_stall_i[PROT_3REP],          //stall signals from upper stages
     input logic s_flush_i[PROT_3REP],               //flush signal from MA stage
     output logic s_stall_o[PROT_3REP],              //signalize stalling to the FE stage
-`ifdef PROTECTED
-    input logic[1:0] s_acm_settings_i,              //acm settings
-`endif
+    input logic[31:0] s_mhrdctrl0_i[PROT_3REP],     //settings
     input logic[4:0] s_feid_info_i[PROT_2REP],      //instruction payload information
     input logic[31:0] s_feid_instr_i[PROT_2REP],    //instruction to execute
     input logic[1:0] s_feid_pred_i[PROT_2REP],      //instruction prediction information
@@ -45,7 +43,7 @@ module pipeline_2_id (
     logic[20:0] s_widop_payload[PROT_2REP], s_ridop_payload[PROT_2REP];
     f_part s_widop_f[PROT_2REP],s_ridop_f[PROT_2REP]; 
     rf_add s_widop_rd[PROT_2REP], s_ridop_rd[PROT_2REP], s_widop_rs1[PROT_2REP], s_ridop_rs1[PROT_2REP], 
-            s_widop_rs2[PROT_2REP], s_ridop_rs2[PROT_2REP], s_widop_acmadd[1], s_ridop_acmadd[1]; 
+            s_widop_rs2[PROT_2REP], s_ridop_rs2[PROT_2REP]; 
     sctrl s_widop_sctrl[PROT_2REP],s_ridop_sctrl[PROT_2REP];
     ictrl s_widop_ictrl[PROT_2REP],s_ridop_ictrl[PROT_2REP];
     imiscon s_widop_imiscon[PROT_2REP],s_ridop_imiscon[PROT_2REP];
@@ -78,15 +76,23 @@ module pipeline_2_id (
     seu_ff_we_rst #(.LABEL("IDOP_ICTRL"),.W($size(ictrl)),.N(PROT_2REP)) m_idop_ictrl (.s_c_i(s_clk_prw),.s_we_i(s_idop_we_esn),.s_r_i(s_resetn_prw),.s_d_i(s_widop_ictrl),.s_q_o(s_ridop_ictrl));
     //Instruction misconduct indicator
     seu_ff_we_rst #(.LABEL("IDOP_IMISCON"),.W($size(imiscon)),.N(PROT_2REP)) m_idop_imiscon (.s_c_i(s_clk_prw),.s_we_i(s_idop_we_esn),.s_r_i(s_resetn_prw),.s_d_i(s_widop_imiscon),.s_q_o(s_ridop_imiscon));
-`ifdef PROTECTED
+`ifdef PROT_INTF
     //Instruction was fixed (SEU corrected)
     seu_ff_rst #(.LABEL("IDOP_FIXED"),.W(1),.N(PROT_2REP)) m_idop_fixed (.s_c_i(s_clk_prw),.s_r_i(s_resetn_prw),.s_d_i(s_widop_fixed),.s_q_o(s_ridop_fixed));
-    //ACM address
-    seu_ff_rst #(.LABEL("IDOP_ACMADD"),.W($size(rf_add)),.N(1),.RSTVAL(5'd1)) m_idop_acmadd (.s_c_i({s_clk_i[0]}),.s_r_i({s_resetn_i[0]}),.s_d_i(s_widop_acmadd),.s_q_o(s_ridop_acmadd));
 `else
     assign s_ridop_fixed[0] = 1'b0;
 `endif
+`ifdef PROT_PIPE
+    rf_add s_widop_acmadd[1], s_ridop_acmadd[1];
+    logic[5:0] s_widop_acmcnt[1], s_ridop_acmcnt[1];
+    //ACM address
+    seu_ff_rst #(.LABEL("IDOP_ACMADD"),.W($size(rf_add)),.N(1),.RSTVAL(5'd1)) m_idop_acmadd (.s_c_i({s_clk_i[0]}),.s_r_i({s_resetn_i[0]}),.s_d_i(s_widop_acmadd),.s_q_o(s_ridop_acmadd));
+    seu_ff_rst #(.LABEL("IDOP_ACMCNT"),.W(6),.N(1),.RSTVAL(6'd0)) m_idop_acmcnt (.s_c_i({s_clk_i[0]}),.s_r_i({s_resetn_i[0]}),.s_d_i(s_widop_acmcnt),.s_q_o(s_ridop_acmcnt));
 
+    logic s_acmadd_update, s_acmadd_enable, s_acm_restart;
+    logic[1:0] s_op_free_rp[2];
+`endif
+    logic [1:0] s_id_free_rp[PROT_2REP];
 	logic s_flush_id[PROT_2REP], s_stall_id[PROT_2REP];
     logic[31:0] s_aligner_instr[PROT_2REP];
     logic[20:0] s_payload[PROT_2REP];
@@ -98,10 +104,6 @@ module pipeline_2_id (
     logic s_aligner_stall[PROT_2REP], s_align_error[PROT_2REP], 
           s_aligner_nop[PROT_2REP], s_aligner_pred[PROT_2REP], s_idop_empty[PROT_2REP];
     logic [2:0] s_fetch_error[PROT_2REP];
-`ifdef PROTECTED
-    logic s_acmadd_update, s_acmadd_enable;
-    logic[1:0] s_op_free_rp[2],s_id_free_rp[2];
-`endif
 
     genvar i;
     generate  
@@ -115,7 +117,11 @@ module pipeline_2_id (
 
             //Stall is valid, only if IDOP registers contains executable instruction
             assign s_stall_id[i]   = (|s_stall_i[i][PIPE_MA:PIPE_OP]) & ~s_idop_empty[i];
-            assign s_flush_id[i]   = s_flush_i[i]; 
+            assign s_flush_id[i]   = s_flush_i[i]
+`ifdef PROT_PIPE
+                                    || s_acm_restart
+`endif
+                ; 
             
             //Instruction alignment 
             aligner m_aligner
@@ -172,31 +178,51 @@ module pipeline_2_id (
                 if(s_flush_id[i] || s_aligner_nop[i])begin
                     //Default during reset, flush, or if the Aligner's output is not valid (and ID stage not stalled)
                     s_widop_ictrl[i]    = 7'b0;
-                    s_widop_imiscon[i]  = IMISCON_FREE; 
+                    s_widop_imiscon[i]  = IMISCON_FREE;
+`ifdef PROT_PIPE 
+                    if(s_acm_restart)begin
+                        s_widop_imiscon[i] = IMISCON_DSCR;
+                    end
+`endif
                 end
             end
-
-`ifndef PROTECTED
-            //Update values for IDOP read-address registers
-            assign s_idop_we_rs1[i] = s_idop_we_aux[i];
-            assign s_idop_we_rs2[i] = s_idop_we_aux[i];
-            assign s_widop_rs1[i]   = s_rs1[i];
-            assign s_widop_rs2[i]   = s_rs2[i];
-`else
-            /*  Automatic Correction Mechanism - read-address preparation */
 
             //The decoded instruction will not need read port 1 in the OP stage
             assign s_id_free_rp[i][0]   = (s_src_ctrl[i][SCTRL_ZERO1] | ~s_src_ctrl[i][SCTRL_RFRP1]);
             //The decoded instruction will not need read port 2 in the OP stage
             assign s_id_free_rp[i][1]   = (s_src_ctrl[i][SCTRL_ZERO2] | ~s_src_ctrl[i][SCTRL_RFRP2]);
+
+`ifndef PROT_PIPE
+            //Update values for IDOP read-address registers
+            assign s_idop_we_rs1[i] = s_idop_we_aux[i] && ~s_id_free_rp[i][0];
+            assign s_idop_we_rs2[i] = s_idop_we_aux[i] && ~s_id_free_rp[i][1];
+            assign s_widop_rs1[i]   = s_rs1[i];
+            assign s_widop_rs2[i]   = s_rs2[i];
+`else
+            /* Read-Port Address Scrubbing */
+
             //The instruction in OP stage does not need read port 1
-            assign s_op_free_rp[i][0]   = (s_ridop_sctrl[i][SCTRL_ZERO1] | ~s_ridop_sctrl[i][SCTRL_RFRP1]);
+            assign s_op_free_rp[i][0]   = (s_ridop_sctrl[i][SCTRL_ZERO1] | ~s_ridop_sctrl[i][SCTRL_RFRP1] | (s_ridop_ictrl[i] == IMISCON_DSCR));
             //The instruction in OP stage does not need read port 1
-            assign s_op_free_rp[i][1]   = (s_ridop_sctrl[i][SCTRL_ZERO2] | ~s_ridop_sctrl[i][SCTRL_RFRP2]);
+            assign s_op_free_rp[i][1]   = (s_ridop_sctrl[i][SCTRL_ZERO2] | ~s_ridop_sctrl[i][SCTRL_RFRP2] | (s_ridop_ictrl[i] == IMISCON_DSCR));
 
             //Update values for IDOP read-address registers
-            assign s_idop_we_rs1[i] = s_acmadd_enable ? ~(~s_flush_id[i] & s_stall_id[i] & ~s_op_free_rp[i][0]) : s_idop_we_aux[i];
-            assign s_idop_we_rs2[i] = s_acmadd_enable ? ~(~s_flush_id[i] & s_stall_id[i] & ~s_op_free_rp[i][1]) : s_idop_we_aux[i];
+            always_comb begin : rsx_we_add_en
+                if(s_acmadd_enable)begin
+                    s_idop_we_rs1[i] = ~s_aligner_nop[i] && ~(s_id_free_rp[i][0] && s_id_free_rp[i][1]);
+                    s_idop_we_rs2[i] = 1'b1;
+                    if(s_flush_id[i])begin
+                        s_idop_we_rs1[i] = 1'b0;
+                    end else if(s_stall_id[i])begin
+                        s_idop_we_rs1[i] = s_op_free_rp[i][0] && ~s_op_free_rp[i][1];
+                        s_idop_we_rs2[i] = s_op_free_rp[i][1];
+                    end                  
+                end else begin
+                    s_idop_we_rs1[i] = s_idop_we_aux[i] && ~s_id_free_rp[i][0];
+                    s_idop_we_rs2[i] = s_idop_we_aux[i] && ~s_id_free_rp[i][1];                    
+                end
+            end
+
             always_comb begin : pipe_2_writer_1
                 s_widop_rs1[i]  = s_ridop_acmadd[0];
                 s_widop_rs2[i]  = s_ridop_acmadd[0];
@@ -207,7 +233,8 @@ module pipeline_2_id (
                         s_widop_rs2[i]  = s_rs2[i];
                 end
             end
-
+`endif
+`ifdef PROT_INTF
             always_comb begin : pipe_2_fixed_writer
                 if(s_flush_id[i] | (s_aligner_nop[i] & ~s_stall_id[i]))begin
                     s_widop_fixed[i]= 1'b0;
@@ -221,24 +248,42 @@ module pipeline_2_id (
         end
     endgenerate
 
-`ifdef PROTECTED
-    /*  Automatic Correction Mechanism - read-address preparation */
+`ifdef PROT_PIPE
+    /* Read-Port Address Scrubbing */
 
     //The HRDCTRL register enables pro-active search of the register file 
-    assign s_acmadd_enable = s_acm_settings_i != 2'b0;
+    assign s_acmadd_enable = s_mhrdctrl0_i[0][5];
     //Increment the ACM's search address
-    assign s_acmadd_update = (~s_stall_id[0] & ((s_id_free_rp[0] != 2'b00) | s_aligner_nop[0])) | (s_stall_id[0] &  (s_op_free_rp[0] != 2'b00));
+    assign s_acmadd_update = s_stall_id[0] ? (s_op_free_rp[0] != 2'b00) : ((s_id_free_rp[0] != 2'b00) | s_aligner_nop[0]);
+    //Artification insertion of pipeline restart, if ACM counter cannot increment for more than 7 clock cycles
+    assign s_acm_restart   = (s_ridop_acmcnt[0][3:0] == 4'b1111) && (s_mhrdctrl0_i[0][5:4] == 2'b11);
 
     //Update ACM search address
     always_comb begin
-        if(s_flush_id[0] | s_acmadd_update)begin
-            if(s_ridop_acmadd[0] != 5'd31) begin
-                s_widop_acmadd[0] <= s_ridop_acmadd[0] + 5'b1;
-            end else begin
-                s_widop_acmadd[0] <= 5'd1;
-            end
-        end else begin
-            s_widop_acmadd[0] <= s_ridop_acmadd[0];
+        //Enabled from Level 2
+        s_widop_acmadd[0] = s_ridop_acmadd[0];
+        if(s_acmadd_enable)begin
+            if(s_flush_id[0] | s_acmadd_update)begin
+                if(s_ridop_acmadd[0] != 5'd31) begin
+                    s_widop_acmadd[0] = s_ridop_acmadd[0] + 5'b1;
+                end else begin
+                    s_widop_acmadd[0] = 5'd1;
+                end
+            end            
+        end
+        //Enabled from Level 3
+        s_widop_acmcnt[0] = s_ridop_acmcnt[0];
+        if(s_mhrdctrl0_i[0][5:4] == 2'b11)begin
+            s_widop_acmcnt[0][3:0] = s_ridop_acmcnt[0][3:0] + 4'd1;
+            if(s_flush_id[0] | s_acmadd_update)begin
+                s_widop_acmcnt[0][5:4] = s_ridop_acmcnt[0][5:4] + 2'd1;
+                if(s_ridop_acmcnt[0][5:4] == 2'b11)begin
+                    s_widop_acmcnt[0][3:0] = 4'b0;
+                end
+            end 
+            if(s_ridop_acmcnt[0][3:0] == 4'b1111)begin
+                s_widop_acmcnt[0][5:4] = 2'b0;
+            end           
         end
     end
 `endif

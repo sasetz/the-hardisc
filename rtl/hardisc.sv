@@ -18,8 +18,8 @@
 import p_hardisc::*;
 
 module hardisc #(
-    parameter PMA_REGIONS = 1,
-    parameter pma_cfg_t PMA_CFG[PMA_REGIONS-1:0] = '{default:PMA_DEFAULT}
+    parameter PMA_REGIONS = 3,
+    parameter pma_cfg_t PMA_CFG[PMA_REGIONS-1:0] = PMA_DEFAULT
 )(
     input logic s_clk_i[PROT_3REP],         //clock signal
     input logic s_resetn_i[PROT_3REP],      //reset signal
@@ -62,7 +62,7 @@ module hardisc #(
     output logic[6:0] s_d_hwchecksum_o,     //AHB data bus - outgoing checksum
     output logic[5:0] s_d_hparity_o,        //AHB data bus - outgoing parity
 
-    output logic s_hrdmax_rst_o             //max consecutive pipeline restarts reached
+    output logic s_unrec_err_o[PROT_2REP]   //unrecoverable error
 );
 
     logic[4:0] s_stall[PROT_3REP];
@@ -71,10 +71,9 @@ module hardisc #(
     logic[20:0] s_opex_payload[PROT_2REP];
     logic[31:0]s_feid_instr[PROT_2REP];
     logic[4:0] s_feid_info[PROT_2REP];
-    logic s_pred_disable, s_hrdmax_rst;
     logic[19:0] s_exma_offset;
     logic[11:0] s_exma_payload[PROT_3REP];
-    logic[31:0] s_exma_val[PROT_3REP], s_mawb_val[PROT_3REP], s_idop_p1, s_idop_p2, s_opex_op1[PROT_2REP], s_opex_op2[PROT_2REP], 
+    logic[31:0] s_exma_val[PROT_3REP], s_mawb_val[PROT_3REP], s_idop_p1[PROT_2REP], s_idop_p2[PROT_2REP], s_opex_op1[PROT_2REP], s_opex_op2[PROT_2REP], 
                 s_toc_addr[PROT_3REP], s_rf_val[PROT_3REP], s_lsu_wdata[PROT_3REP], s_read_data[PROT_3REP], s_lsu_fixed_data[PROT_3REP];
     logic[20:0] s_idop_payload[PROT_2REP];
     logic[1:0] s_feid_pred[PROT_2REP];
@@ -86,16 +85,17 @@ module hardisc #(
     sctrl s_idop_sctrl[PROT_2REP];
     logic s_stall_ma[PROT_3REP],s_stall_ex[PROT_3REP],s_stall_op[PROT_3REP],s_stall_id[PROT_3REP],
             s_pred_bpu, s_pred_jpu, s_pred_btrue, s_pred_btbu, s_pred_clean, s_lsu_busy[PROT_3REP], s_lsu_approve[PROT_3REP], s_lsu_idempotent[PROT_3REP];
-    logic[31:0] s_rst_point[PROT_3REP], s_lsu_ap_address, s_lsu_dp_data;
-    logic[30:0] s_bop_tadd;
-    logic s_bop_pred, s_bop_pop, s_int_uce, s_lsu_ap_approve, s_lsu_dp_ready[PROT_3REP], s_lsu_dp_hresp[PROT_3REP];
-    logic[2:0] s_lsu_einfo[PROT_3REP];
-`ifdef PROTECTED
-    logic[1:0] s_rf_uce[PROT_2REP],s_rf_ce[PROT_2REP], s_acm_settings;
-    logic s_exma_neq[PROT_3REP];
-`endif
+    logic[31:0] s_pc[PROT_3REP], s_mhrdctrl0[PROT_3REP], s_lsu_ap_address, s_lsu_dp_data;
+    logic[30:0] s_bop_tadd[PROT_2REP];
+    logic s_bop_pred[PROT_2REP], s_bop_pop, s_lsu_ap_approve, s_lsu_dp_ready[PROT_3REP], s_lsu_dp_hresp[PROT_3REP], s_lsu_dp_save[PROT_3REP];
+    logic[1:0] s_lsu_einfo[PROT_3REP];
 
-    assign s_hrdmax_rst_o   = s_hrdmax_rst;
+`ifdef PROT_PIPE
+    assign s_unrec_err_o[0]   = s_mhrdctrl0[0][2];
+    assign s_unrec_err_o[1]   = s_mhrdctrl0[1][2];
+`else                        
+    assign s_unrec_err_o[0]   = 1'b0;                   
+`endif
     
     //AHB instruction bus - hardwired signals
     assign s_i_hwchecksum_o = 7'b0;
@@ -126,11 +126,13 @@ module hardisc #(
         .s_stall_i(s_stall), 
         .s_flush_i(s_flush),
 
+        .s_mhrdctrl0_i(s_mhrdctrl0),
+
         .s_bop_pop_i(s_bop_pop),
         .s_bop_pred_o(s_bop_pred),
         .s_bop_tadd_o(s_bop_tadd),
 
-        .s_pred_base_i(s_rst_point[0]),
+        .s_pred_base_i(s_pc[0]),
         .s_pred_offset_i(s_exma_offset),
         .s_pred_rvc_i(s_exma_ictrl[0][ICTRL_RVC]),
         .s_pred_clean_i(s_pred_clean),
@@ -138,7 +140,6 @@ module hardisc #(
         .s_pred_btrue_i(s_pred_btrue),
         .s_pred_bpu_i(s_pred_bpu),
         .s_pred_jpu_i(s_pred_jpu),
-        .s_pred_disable_i(s_pred_disable),
         .s_toc_add_i(s_toc_addr),
 
         .s_hrdcheck_i(s_i_hrchecksum_i),
@@ -161,9 +162,7 @@ module hardisc #(
         .s_stall_i(s_stall),
         .s_flush_i(s_flush),
         .s_stall_o(s_stall_id),
-`ifdef PROTECTED
-        .s_acm_settings_i(s_acm_settings),
-`endif
+        .s_mhrdctrl0_i(s_mhrdctrl0),
         .s_feid_info_i(s_feid_info),
         .s_feid_instr_i(s_feid_instr),
         .s_feid_pred_i(s_feid_pred),
@@ -194,10 +193,6 @@ module hardisc #(
         .s_exma_val_i(s_exma_val),
         .s_exma_ictrl_i(s_exma_ictrl),
 
-`ifdef PROTECTED
-        .s_rf_uce_i(s_rf_uce),
-        .s_rf_ce_i(s_rf_ce),
-`endif
         .s_idop_p1_i(s_idop_p1),
         .s_idop_p2_i(s_idop_p2),
         .s_idop_payload_i(s_idop_payload),
@@ -240,15 +235,12 @@ module hardisc #(
         .s_opex_ictrl_i(s_opex_ictrl),
         .s_opex_imiscon_i(s_opex_imiscon),
         .s_opex_fwd_i(s_opex_fwd),
-        .s_rstpoint_i(s_rst_point),
+        .s_pc_i(s_pc),
 
         .s_lsu_approve_o(s_lsu_approve),
         .s_lsu_idempotent_o(s_lsu_idempotent),
         .s_lsu_wdata_o(s_lsu_wdata),
 
-`ifdef PROTECTED
-        .s_exma_neq_o(s_exma_neq),
-`endif
         .s_exma_f_o(s_exma_f),
         .s_exma_ictrl_o(s_exma_ictrl),
         .s_exma_imiscon_o(s_exma_imiscon),
@@ -288,6 +280,7 @@ module hardisc #(
         .s_dp_address_i(s_exma_val),
         .s_dp_ready_o(s_lsu_dp_ready),
         .s_dp_hresp_o(s_lsu_dp_hresp),
+        .s_dp_save_o(s_lsu_dp_save),
         .s_dp_data_o(s_lsu_dp_data),
 
         .s_read_data_i(s_read_data),
@@ -303,20 +296,15 @@ module hardisc #(
 
         .s_int_meip_i(s_int_meip_i),
         .s_int_mtip_i(s_int_mtip_i),
-        .s_int_uce_i(s_int_uce),
         .s_int_fcer_i(s_int_fcer),
 
         .s_lsu_ready_i(s_lsu_dp_ready),
         .s_lsu_hresp_i(s_lsu_dp_hresp),
         .s_lsu_data_i(s_lsu_dp_data),
+        .s_lsu_save_i(s_lsu_dp_save),
         .s_lsu_einfo_i(s_lsu_einfo),
         .s_lsu_fixed_data_i(s_lsu_fixed_data),
         .s_lsu_busy_i(s_lsu_busy),
-
-`ifdef PROTECTED
-        .s_acm_settings_o(s_acm_settings),
-        .s_exma_neq_i(s_exma_neq),
-`endif
 
         .s_stall_o(s_stall_ma),
         .s_flush_o(s_flush),
@@ -344,9 +332,8 @@ module hardisc #(
         .s_rf_val_o(s_rf_val),
         .s_read_data_o(s_read_data),
 
-        .s_rst_point_o(s_rst_point),
-        .s_pred_disable_o(s_pred_disable),
-        .s_hrdmax_rst_o(s_hrdmax_rst)
+        .s_pc_o(s_pc),
+        .s_mhrdctrl0_o(s_mhrdctrl0)
     );
 
     rf_controller m_rfc
@@ -361,24 +348,19 @@ module hardisc #(
         .s_r_p1_add_i(s_idop_rs1),
         .s_r_p2_add_i(s_idop_rs2),
 
-`ifdef PROTECTED
-        .s_exma_add_i(s_exma_rd),
-        .s_exma_ictrl_i(s_exma_ictrl),
-        .s_opex_add_i(s_opex_rd),
-        .s_opex_ictrl_i(s_opex_ictrl),
-        .s_uce_o(s_rf_uce),
-        .s_ce_o(s_rf_ce),
-`endif
+        .s_mhrdctrl0_i(s_mhrdctrl0),
+
         .s_p1_val_o(s_idop_p1),
         .s_p2_val_o(s_idop_p2)
     );
 
-`ifdef PROTECTED
-    assign s_int_uce    = s_rf_uce[0] != 2'b0;
-    assign s_int_fcer   = (s_idop_fixed[0] & ((s_opex_ictrl[0] == 7'b0) & (s_exma_ictrl[0] == 7'b0))) | 
-                           s_idop_fixed[1] & ((s_opex_ictrl[1] == 7'b0) & (s_exma_ictrl[1] == 7'b0));
+`ifdef PROT_INTF
+    assign s_int_fcer   = (s_idop_fixed[0] & ((s_opex_ictrl[0] == 7'b0) & (s_exma_ictrl[0] == 7'b0))) 
+`ifdef PROT_PIPE
+                         | s_idop_fixed[1] & ((s_opex_ictrl[1] == 7'b0) & (s_exma_ictrl[1] == 7'b0))
+`endif                         
+                         ;
 `else
-    assign s_int_uce    = 1'b0;
     assign s_int_fcer   = 1'b0;
 `endif
 

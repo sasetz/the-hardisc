@@ -23,7 +23,7 @@ package p_hardisc;
     parameter IFB_WIDTH     = 38;
     parameter BOP_WIDTH     = 31;
 
-`ifdef PROTECTED
+`ifdef PROT_PIPE
     parameter PROT_2REP     = 2;
     parameter PROT_3REP     = 3;
 `else
@@ -126,8 +126,8 @@ package p_hardisc;
                 //reserved
                 IMISCON_FUCE    = 3'd4, //fetch uncorrectable error
                 IMISCON_ILLE    = 3'd5, //illegal instruction
-                IMISCON_DSCR    = 3'd6, //discrepancy in pipeline
-                IMISCON_RUCE    = 3'd7; //register uncorrectable error 
+                IMISCON_DSCR    = 3'd6; //discrepancy in pipeline
+                //reserved
     parameter [2:0]
                 FETCH_VALID     = 3'd0, //no fetch error
                 FETCH_BSERR     = 3'd1, //fetch bus error
@@ -135,14 +135,14 @@ package p_hardisc;
                 //reserved
                 FETCH_INUCE     = 3'd4, //fetch interface uncorrectable error
                 //reserved
-                //reserved
+                FETCH_DSCR      = 3'd6, //fetch discrepancy
                 FETCH_INCER     = 3'd7; //fetch interface correctable error
     parameter [1:0]
                 //LEVEL_USER      = 2'b00,
                 //LEVEL_SUVISOR   = 2'b01,
                 LEVEL_MACHINE   = 2'b11; 
 
-`ifdef PROTECTED
+`ifdef PROT_INTF
     parameter MAX_MCSR    = 15;
 `else
     parameter MAX_MCSR    = 14;
@@ -249,6 +249,10 @@ package p_hardisc;
                 LSU_RMW_IDLE    = 2'b00,
                 LSU_RMW_READ    = 2'b01,
                 LSU_RMW_WRITE   = 2'b10;
+    parameter [1:0]
+                ACM_IDLE    = 2'b00,
+                ACM_CHECK   = 2'b01,
+                ACM_CORRECT = 2'b10;
     parameter [5:0]
                 SEEGR_CORE_REG  = 0,
                 SEEGR_REG_FILE  = 1,
@@ -279,6 +283,10 @@ package p_hardisc;
     } pma_cfg_t;
 
     // Default attribution when PMA is configured
-    parameter pma_cfg_t PMA_DEFAULT = '{base  : 32'b0, mask  : 32'b0, read_only  : 1'b0, executable: 1'b1, idempotent : 1'b1};
+    parameter pma_cfg_t PMA_DEFAULT[3] = '{
+        '{base  : 32'h10000000, mask  : 32'hFFF00000, read_only  : 1'b0, executable: 1'b1, idempotent : 1'b1},
+        '{base  : 32'h80000000, mask  : 32'hFFFFF400, read_only  : 1'b0, executable: 1'b1, idempotent : 1'b1},
+        '{base  : 32'h80001000, mask  : 32'hFFFFF400, read_only  : 1'b0, executable: 1'b1, idempotent : 1'b1}
+    };   
 
 endpackage
