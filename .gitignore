@@ -10,7 +10,7 @@ todolist.md
 # testbench stuff
 rtl/tb_mh_wrapper.sv
 peripherals/ahb_to_uart_controller.sv                                                                                                                             │
-peripherals/uart_controller.sv  
+peripherals/uart_controller.sv
 peripherals/ahb_to_uart_controller.sv
 
 # Editor specific stuff
