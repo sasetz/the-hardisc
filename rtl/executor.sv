@@ -85,7 +85,7 @@ module executor (
         .s_result_o(s_mdu_result)
     );
 
-    beu m_beu
+    (* dont_touch = "yes" *) beu m_beu
     (
         .s_function_i(s_b_function),
         .s_compare_i(s_alu_result[0]),
