@@ -14,6 +14,8 @@
    limitations under the License.
 */
 
+import seed_instance::*;
+
 module ahb_ram#(
     parameter MEM_SIZE = 32'h00001000,
     parameter SIMULATION = 0,
@@ -76,10 +78,93 @@ generate
             $readmemh(MEM_FILE,r_memory);
         end
     end
-    assign s_we     = r_write;
-    assign s_ra     = s_haddr_i[$clog2(MEM_SIZE)-1:0];
-    assign r_delay  = 2'b0;
-    assign s_cclock = s_clk_i;
+    if(SIMULATION == 1)begin
+        int logging, see_prob, see_group;
+        logic latency;
+        logic[31:0] seed, randomval;
+
+        initial begin
+            latency = 0;
+            logging = 0;
+            seed_instance::srandom($sformatf("%m"));
+            if($value$plusargs ("SEE_PROB=%d", see_prob));
+            if($value$plusargs ("SEE_GROUP=%d", see_group));
+            if($value$plusargs ("LOGGING=%d", logging));
+            if($value$plusargs ("LAT=%d", latency));
+            seed = $urandom;
+            see_prob = see_prob * MPROB;
+            if(latency != 0)
+                $write("MEMORY SEED: %d\n",seed);
+        end
+
+        if(ENABLE_LOG == 1)begin
+            always_ff @( posedge s_clk_i ) begin : trace
+                if(s_we)begin
+                    if(logging == 0)begin
+                        $write("%c",s_write_data);
+                    end else if(logging > 1)begin
+                        $write("Storing of %x to %s[%x]\n",s_write_data,LABEL,r_address);
+                    end
+                end
+            end
+        end
+
+        //Latency generation
+        always_ff @(posedge s_clk_i or negedge s_resetn_i) begin : delay_control
+            if(~s_resetn_i | ~latency)begin
+                r_delay   <= 2'b0;
+                randomval <= 32'b0; 
+            end else if(r_delay != 2'b0)begin
+                r_delay   <= r_delay - 2'b1;
+                randomval <= randomval;
+            end else if(s_hsel_i & s_transfer & s_hready_o)begin
+                r_delay   <= s_parity_error ? 2'b0 : randomval[1:0];
+                randomval <= $urandom(seed+randomval);
+            end else begin
+                r_delay   <= 2'b0;
+                randomval <= randomval;
+            end
+        end
+
+        //Error generation
+        if(IFP == 1)begin
+            logic[31:0] r_seu_randomval, s_filtered;
+            logic[MSB:0] s_error_addr;
+            logic[7:0] s_error_bit;
+
+            assign s_error_addr = r_seu_randomval[31:31-MSB+2];
+            assign s_error_bit  = r_seu_randomval[7:0]; //error probability 39/256
+
+            always_ff @( posedge s_clk_i ) begin
+                if((see_prob != 0) & ((GROUP_MASK & see_group) != 0))begin
+                    r_seu_randomval <= $urandom(seed + r_seu_randomval);
+                    if(s_error_bit < 8'd39)begin
+                        r_memory[s_error_addr] <= r_memory[s_error_addr] ^ (1 << s_error_bit);
+                        if(s_error_bit > 8'd31)
+                            r_cmemory[s_error_addr] <= r_cmemory[s_error_addr] ^ (1 << s_error_bit);
+                        if(logging > 2)
+                            $write("SEU in %s[%08h][%02h]\n",LABEL,{s_error_addr,2'b0},s_error_bit);    
+                    end                        
+                end                
+            end
+        end
+        
+        //Disable update of the internal registers if a response is being delayed
+        always_latch begin : clockgating
+            if(~s_clk_i)
+                l_clock <= (r_delay == 2'b00);
+        end
+        
+        assign s_cclock = s_clk_i & l_clock;
+
+        assign s_we     = r_write & (r_delay == 2'b00);
+        assign s_ra     = (r_delay == 2'b00) ? s_haddr_i[$clog2(MEM_SIZE)-1:0] : r_address;
+    end else begin
+        assign s_we     = r_write;
+        assign s_ra     = s_haddr_i[$clog2(MEM_SIZE)-1:0];
+        assign r_delay  = 2'b0;
+        assign s_cclock = s_clk_i;
+    end
     if(IFP == 1)begin
         assign s_parity_error   = s_parity != s_hparity_i;
         assign s_wrong_comb     = (^s_htrans_i) ^ s_hparity_i[5];
