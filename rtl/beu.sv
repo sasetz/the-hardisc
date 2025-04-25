@@ -23,8 +23,9 @@ module beu (
     input logic[31:0] s_op2_i,          // operand 2
     output logic[31:0] s_result_o       // combinatorial result
 );
-    logic[5:0] s_cpop[32], s_ctz[32], s_clz[32], s_rev8, s_orcb;
+    logic[5:0] s_cpop[32], s_ctz[32], s_clz[32];
     logic s_ctz_prev[32], s_clz_prev[32];
+    logic[31:0] s_rev8, s_orcb;
 
     assign s_cpop[0] = {4'b0, s_op1_i[0]};
     assign s_ctz[0] = {4'b0, ~s_op1_i[0]};
