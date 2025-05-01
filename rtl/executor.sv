@@ -53,8 +53,7 @@ module executor (
     //preparation of program counter offset for AUIPC and BRU instructions
     assign s_pc_offset  = s_ictrl_i[ICTRL_UNIT_BRU] ? {{11{s_payload_i[19]}},s_payload_i[19:0]} : {s_payload_i[19:0],11'b0} ;
 
-    assign s_b_function = (s_ictrl_i[ICTRL_UNIT_ALU]) ? BEU_MINMAX :
-                          (s_ictrl_i[ICTRL_UNIT_MDU]) ? BEU_CLMUL :
+    assign s_b_function = (s_ictrl_i[ICTRL_UNIT_MDU]) ? BEU_CLMUL :
                            s_function_i;
 
     alu m_alu
@@ -88,7 +87,7 @@ module executor (
     (* dont_touch = "yes" *) beu m_beu
     (
         .s_function_i(s_b_function),
-        .s_compare_i(s_alu_result[0]),
+        .s_compare_i(s_ictrl_i[ICTRL_UNIT_ALU]),
         .s_op1_i(s_operand1_i),
         .s_op2_i(s_operand2_i),
         .s_result_o(s_beu_result)
