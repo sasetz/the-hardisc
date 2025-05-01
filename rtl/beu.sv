@@ -18,7 +18,7 @@ import p_hardisc::*;
 
 module beu (
     input f_part s_function_i,          // instruction function
-    input logic s_compare_i,            // response from ALU
+    input logic s_compare_i,            // enable partial ALU operations
     input logic[31:0] s_op1_i,          // operand 1
     input logic[31:0] s_op2_i,          // operand 2
     output logic[31:0] s_result_o       // combinatorial result
@@ -47,6 +47,20 @@ module beu (
     //
     // 31  30  29  28  27  26  25  24  23  22  21  20  19  18  17  16  15 ...
     // [0] [0] [0] [1] [0] [1] [1] [0] [1] [0] [1] [0] [1] [1] [1] [1] [1]...
+
+    logic s_slt, s_sltu;
+    assign s_slt = (s_op1_i[31] ^ s_op2_i[31]) ? s_op1_i[31] : s_sltu;
+    assign s_sltu= s_op1_i < s_op2_i;
+
+    // min, minu, max, maxu
+    // there are no remaining bits left in the f_part for 4 new instructions,
+    // so ALU cooperation was initially used here. Unfortunately it put too
+    // much restrictions for synthesis, extending the critical path beyond the
+    // desired limit
+    //
+    // here, the decoding is left intact, so the ALU function values are used.
+    // This ALU replacement mode is activated in executor module through the
+    // s_ictrl_i[ICTRL_UNIT_ALU]
 
     genvar i;
     generate
@@ -77,64 +91,77 @@ module beu (
     endgenerate
 
     always_comb begin : beu_comb
-        case (s_function_i)
-            BEU_SH1ADD:
-                s_result_o = s_op2_i + (s_op1_i << 1);
-            BEU_SH2ADD:
-                s_result_o = s_op2_i + (s_op1_i << 2);
-            BEU_SH3ADD:
-                s_result_o = s_op2_i + (s_op1_i << 3);
-            BEU_BSET:
-                s_result_o = s_op1_i | (1 << s_op2_i[4:0]);
-            BEU_BEXT:
-                s_result_o = {31'b0, s_op1_i[s_op2_i[4:0]]};
-            BEU_BINV:
-                s_result_o = s_op1_i ^ (1 << s_op2_i[4:0]);
-            BEU_BCLR:
-                s_result_o = s_op1_i & ~(1 << s_op2_i[4:0]);
-            BEU_CLMUL: // FIXME: delete CLMUL or finish it
-                s_result_o = s_op1_i;
-            BEU_MINMAX:
-                s_result_o = s_compare_i ? s_op2_i : s_op1_i;
-            BEU_MISC: begin
-                case (s_op2_i[11:0])
-                    BEU_I_SEXTB:
-                        s_result_o = {{24{s_op1_i[7]}}, s_op1_i[7:0]};
-                    BEU_I_SEXTH:
-                        s_result_o = {{16{s_op1_i[15]}}, s_op1_i[15:0]};
-                    BEU_I_ZEXTH:
-                        s_result_o = {16'b0, s_op1_i[15:0]};
-                    BEU_I_REV8:
-                        s_result_o = s_rev8;
-                    BEU_I_ORCB:
-                        s_result_o = s_orcb;
-                    BEU_I_CLZ:
-                        s_result_o = {26'b0, s_clz[31][5:0]};
-                    BEU_I_CPOP:
-                        s_result_o = {26'b0, s_cpop[31][5:0]};
-                    BEU_I_CTZ:
-                        s_result_o = {26'b0, s_ctz[31][5:0]};
-                    default:
-                        s_result_o = 32'd0;
-                endcase
-            end
-            BEU_ROR:
-                s_result_o =
-                (s_op1_i >> s_op2_i[4:0]) |
-                (s_op1_i << (32 - s_op2_i[4:0]));
-            BEU_ROL:
-                s_result_o =
-                (s_op1_i << s_op2_i[4:0]) |
-                (s_op1_i >> (32 - s_op2_i[4:0]));
-            BEU_XNOR:
-                s_result_o = ~(s_op1_i ^ s_op2_i);
-            BEU_ANDN:
-                s_result_o = s_op1_i & ~(s_op2_i);
-            BEU_ORN:
-                s_result_o = s_op1_i | ~(s_op2_i);
-            default:
-                s_result_o = 32'd0;
-        endcase
+        if (~s_compare_i) begin
+            case (s_function_i)
+                BEU_SH1ADD:
+                    s_result_o = s_op2_i + (s_op1_i << 1);
+                BEU_SH2ADD:
+                    s_result_o = s_op2_i + (s_op1_i << 2);
+                BEU_SH3ADD:
+                    s_result_o = s_op2_i + (s_op1_i << 3);
+                BEU_BSET:
+                    s_result_o = s_op1_i | (1 << s_op2_i[4:0]);
+                BEU_BEXT:
+                    s_result_o = {31'b0, s_op1_i[s_op2_i[4:0]]};
+                BEU_BINV:
+                    s_result_o = s_op1_i ^ (1 << s_op2_i[4:0]);
+                BEU_BCLR:
+                    s_result_o = s_op1_i & ~(1 << s_op2_i[4:0]);
+                BEU_CLMUL: // FIXME: delete CLMUL or finish it
+                    s_result_o = s_op1_i;
+                BEU_MISC: begin
+                    case (s_op2_i[11:0])
+                        BEU_I_SEXTB:
+                            s_result_o = {{24{s_op1_i[7]}}, s_op1_i[7:0]};
+                        BEU_I_SEXTH:
+                            s_result_o = {{16{s_op1_i[15]}}, s_op1_i[15:0]};
+                        BEU_I_ZEXTH:
+                            s_result_o = {16'b0, s_op1_i[15:0]};
+                        BEU_I_REV8:
+                            s_result_o = s_rev8;
+                        BEU_I_ORCB:
+                            s_result_o = s_orcb;
+                        BEU_I_CLZ:
+                            s_result_o = {26'b0, s_clz[31][5:0]};
+                        BEU_I_CPOP:
+                            s_result_o = {26'b0, s_cpop[31][5:0]};
+                        BEU_I_CTZ:
+                            s_result_o = {26'b0, s_ctz[31][5:0]};
+                        default:
+                            s_result_o = 32'd0;
+                    endcase
+                end
+                BEU_ROR:
+                    s_result_o =
+                    (s_op1_i >> s_op2_i[4:0]) |
+                    (s_op1_i << (32 - s_op2_i[4:0]));
+                BEU_ROL:
+                    s_result_o =
+                    (s_op1_i << s_op2_i[4:0]) |
+                    (s_op1_i >> (32 - s_op2_i[4:0]));
+                BEU_XNOR:
+                    s_result_o = ~(s_op1_i ^ s_op2_i);
+                BEU_ANDN:
+                    s_result_o = s_op1_i & ~(s_op2_i);
+                BEU_ORN:
+                    s_result_o = s_op1_i | ~(s_op2_i);
+                default:
+                    s_result_o = 32'd0;
+            endcase
+        end else begin // enable BEU to execute some of the ALU functions
+            case (s_function_i)
+                ALU_SLT:
+                    s_result_o = ~s_slt ? s_op1_i : s_op2_i;
+                ALU_SLTU:
+                    s_result_o = ~s_sltu ? s_op1_i : s_op2_i;
+                ALU_GE:
+                    s_result_o = s_slt ? s_op1_i : s_op2_i;
+                ALU_GEU:
+                    s_result_o = s_sltu ? s_op1_i : s_op2_i;
+                default:
+                    s_result_o = 32'd0;
+            endcase
+        end
     end
 
 endmodule
