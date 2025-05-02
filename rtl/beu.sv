@@ -23,11 +23,12 @@ module beu (
     input logic[31:0] s_op2_i,          // operand 2
     output logic[31:0] s_result_o       // combinatorial result
 );
-    logic[5:0] s_cpop[32], s_ctz[32], s_clz[32];
+    logic[5:0] s_ctz[32], s_clz[32], s_cpop;
     logic s_ctz_prev[32], s_clz_prev[32];
     logic[31:0] s_rev8, s_orcb;
+    logic[3:0] s_byte_adder[4];
 
-    assign s_cpop[0] = {4'b0, s_op1_i[0]};
+    ///////////////////////////////////////////////////////////////////////////
     assign s_ctz[0] = {4'b0, ~s_op1_i[0]};
     assign s_clz[0] = {4'b0, ~s_op1_i[31]};
 
@@ -47,6 +48,8 @@ module beu (
     //
     // 31  30  29  28  27  26  25  24  23  22  21  20  19  18  17  16  15 ...
     // [0] [0] [0] [1] [0] [1] [1] [0] [1] [0] [1] [0] [1] [1] [1] [1] [1]...
+    //
+    ///////////////////////////////////////////////////////////////////////////
 
     logic s_slt, s_sltu;
     assign s_slt = (s_op1_i[31] ^ s_op2_i[31]) ? s_op1_i[31] : s_sltu;
@@ -61,6 +64,27 @@ module beu (
     // here, the decoding is left intact, so the ALU function values are used.
     // This ALU replacement mode is activated in executor module through the
     // s_ictrl_i[ICTRL_UNIT_ALU]
+    //
+    ///////////////////////////////////////////////////////////////////////////
+
+    assign s_byte_adder[0] = s_op1_i[0] + s_op1_i[1] + s_op1_i[2] + s_op1_i[3] +
+                             s_op1_i[4] + s_op1_i[5] + s_op1_i[6] + s_op1_i[7];
+    assign s_byte_adder[1] = s_op1_i[8] + s_op1_i[9] + s_op1_i[10] + s_op1_i[11] +
+                             s_op1_i[12] + s_op1_i[13] + s_op1_i[14] + s_op1_i[15];
+    assign s_byte_adder[2] = s_op1_i[16] + s_op1_i[17] + s_op1_i[18] + s_op1_i[19] +
+                             s_op1_i[20] + s_op1_i[21] + s_op1_i[22] + s_op1_i[23];
+    assign s_byte_adder[3] = s_op1_i[24] + s_op1_i[25] + s_op1_i[26] + s_op1_i[27] +
+                             s_op1_i[28] + s_op1_i[29] + s_op1_i[30] + s_op1_i[31];
+
+    assign s_cpop = s_byte_adder[0] + s_byte_adder[1] + s_byte_adder[2] + s_byte_adder[3];
+
+    // parallel cpop
+    // Here, to reduce the critical path, we split the addition into more
+    // parts that are parallel to each other. Adding 8 bits is enough,
+    // although a more elaborate design could probably decrease the critical
+    // path even further
+    //
+    ///////////////////////////////////////////////////////////////////////////
 
     genvar i;
     generate
@@ -72,9 +96,6 @@ module beu (
             // calculate leading zeros
             assign s_clz_prev[i] = s_clz_prev[i - 1] & ~s_op1_i[31 - i];
             assign s_clz[i]  = s_clz[i - 1] + s_clz_prev[i];
-
-            // count set bits
-            assign s_cpop[i] = s_cpop[i - 1] + s_op1_i[i];
         end
     endgenerate
 
@@ -124,7 +145,7 @@ module beu (
                         BEU_I_CLZ:
                             s_result_o = {26'b0, s_clz[31][5:0]};
                         BEU_I_CPOP:
-                            s_result_o = {26'b0, s_cpop[31][5:0]};
+                            s_result_o = {26'b0, s_cpop[5:0]};
                         BEU_I_CTZ:
                             s_result_o = {26'b0, s_ctz[31][5:0]};
                         default:
