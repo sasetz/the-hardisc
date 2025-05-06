@@ -23,10 +23,32 @@ module beu (
     input logic[31:0] s_op2_i,          // operand 2
     output logic[31:0] s_result_o       // combinatorial result
 );
-    logic[5:0] s_cpop, s_ctz, s_clz;
+    logic[5:0] s_ctz[32], s_clz[32], s_cpop;
+    logic s_ctz_prev[32], s_clz_prev[32];
     logic[31:0] s_rev8, s_orcb;
-    logic[3:0] s_byte_adder[4], s_clz_counter[4], s_ctz_counter[4];
+    logic[3:0] s_byte_adder[4];
 
+    ///////////////////////////////////////////////////////////////////////////
+    assign s_ctz[0] = {4'b0, ~s_op1_i[0]};
+    assign s_clz[0] = {4'b0, ~s_op1_i[31]};
+
+    assign s_ctz_prev[0] = ~s_op1_i[0];
+    assign s_clz_prev[0] = ~s_op1_i[31];
+
+    // s_ctz_prev
+    // it accumulates the data if we should continue to add zeros to the total
+    // count or not. It needs to multiply its previous value with the current
+    // bit in the op1. Then, this value is used to add up to the total count
+    // of trailing/leading zeros
+    //
+    // 31  30  29  28  27  26  25  24  23  22  21  20  19  18  17  16  15 ...
+    // [1] [1] [1] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0]...
+    //
+    // ...if s_op1_i is the following
+    //
+    // 31  30  29  28  27  26  25  24  23  22  21  20  19  18  17  16  15 ...
+    // [0] [0] [0] [1] [0] [1] [1] [0] [1] [0] [1] [0] [1] [1] [1] [1] [1]...
+    //
     ///////////////////////////////////////////////////////////////////////////
 
     logic s_slt, s_sltu;
@@ -66,49 +88,16 @@ module beu (
 
     genvar i;
     generate
-        for(i = 0; i < 4; i++) begin : gen_ctlz
-            assign s_clz_counter[i] = s_op1_i[31 - (i * 8)] ? 4'd0 :
-                s_op1_i[31 - (i * 8 + 1)] ? 4'd1 :
-                s_op1_i[31 - (i * 8 + 2)] ? 4'd2 :
-                s_op1_i[31 - (i * 8 + 3)] ? 4'd3 :
-                s_op1_i[31 - (i * 8 + 4)] ? 4'd4 :
-                s_op1_i[31 - (i * 8 + 5)] ? 4'd5 :
-                s_op1_i[31 - (i * 8 + 6)] ? 4'd6 :
-                s_op1_i[31 - (i * 8 + 7)] ? 4'd7 : 4'd8;
-            assign s_ctz_counter[i] = s_op1_i[31 - (i * 8 + 7)] ? 4'd0 :
-                s_op1_i[31 - (i * 8 + 6)] ? 4'd1 :
-                s_op1_i[31 - (i * 8 + 5)] ? 4'd2 :
-                s_op1_i[31 - (i * 8 + 4)] ? 4'd3 :
-                s_op1_i[31 - (i * 8 + 3)] ? 4'd4 :
-                s_op1_i[31 - (i * 8 + 2)] ? 4'd5 :
-                s_op1_i[31 - (i * 8 + 1)] ? 4'd6 :
-                s_op1_i[31 - (i * 8)] ? 4'd7 : 4'd8;
+        for(i = 1; i < 32; i++) begin: gen_bitcounting
+            // calculate trailing zeros
+            assign s_ctz_prev[i] = s_ctz_prev[i - 1] & ~s_op1_i[i];
+            assign s_ctz[i]  = s_ctz[i - 1] + s_ctz_prev[i];
+
+            // calculate leading zeros
+            assign s_clz_prev[i] = s_clz_prev[i - 1] & ~s_op1_i[31 - i];
+            assign s_clz[i]  = s_clz[i - 1] + s_clz_prev[i];
         end
     endgenerate
-    assign s_ctz = ~s_ctz_counter[3][3] ? s_ctz_counter[3] :
-        ~s_ctz_counter[2][3] ? s_ctz_counter[3] + s_ctz_counter[2] :
-        ~s_ctz_counter[1][3] ? s_ctz_counter[3] + s_ctz_counter[2] + s_ctz_counter[1] :
-            s_ctz_counter[3] + s_ctz_counter[2] + s_ctz_counter[1] + s_ctz_counter[0];
-    assign s_clz = ~s_clz_counter[0][3] ? s_clz_counter[0] :
-        ~s_clz_counter[1][3] ? s_clz_counter[0] + s_clz_counter[1] :
-        ~s_clz_counter[2][3] ? s_clz_counter[0] + s_clz_counter[1] + s_clz_counter[2] :
-            s_clz_counter[0] + s_clz_counter[1] + s_clz_counter[2] + s_clz_counter[3];
-
-    // parallel ctz/clz
-    // Here, an optimization from "RISC-V Extensions for Bit Manipulation
-    // Instructions" was adopted. This optimization makes clz/ctz calculation
-    // more parallel. Due to the design of provided FPGA, it is more effective
-    // to count each byte as a whole, instead of bit-by-bit. Each slice has
-    // LUTs that operate in powers of 2 inputs (16, 8, 4 inputs), so
-    // bit-by-bit design would be unnecessary utilization and propagation
-    // delay.
-    //
-    // Each byte first is counted, how many bits are zeros from beginning and
-    // from end. Then, those results are combined: if previous byte contains
-    // 8 zeros, we can continue adding the results in a chain, otherwise we
-    // output the result we already got.
-    //
-    ///////////////////////////////////////////////////////////////////////////
 
     generate
         for (i = 0; i < 32; i += 8) begin: gen_rev8
@@ -154,11 +143,11 @@ module beu (
                         BEU_I_ORCB:
                             s_result_o = s_orcb;
                         BEU_I_CLZ:
-                            s_result_o = {26'b0, s_clz[5:0]};
+                            s_result_o = {26'b0, s_clz[31][5:0]};
                         BEU_I_CPOP:
                             s_result_o = {26'b0, s_cpop[5:0]};
                         BEU_I_CTZ:
-                            s_result_o = {26'b0, s_ctz[5:0]};
+                            s_result_o = {26'b0, s_ctz[31][5:0]};
                         default:
                             s_result_o = 32'd0;
                     endcase
