@@ -76,6 +76,10 @@ package p_hardisc;
                 BEU_XNOR   = 4'b0100,
                 BEU_ANDN   = 4'b0111,
                 BEU_ORN    = 4'b0110;
+    parameter[3:0]
+                BEU_MDU_CLMUL  = 4'b1000,
+                BEU_MDU_CLMULH = 4'b1001,
+                BEU_MDU_CLMULR = 4'b1010;
     parameter[11:0]
                 BEU_I_SEXTB = 12'b011000000100,
                 BEU_I_SEXTH = 12'b011000000101,

@@ -32,7 +32,7 @@ LD_SCRIPT           := ${HARDISC_DIR}/example/custom/link.ld
 SYSCALLS            := ${HARDISC_DIR}/example/custom/syscalls.c
 STARTUP             := ${HARDISC_DIR}/example/custom/crt0.S
 VECTORS             := ${HARDISC_DIR}/example/custom/vectors.S
-CFLAGS              := -static -O2 -mcmodel=medany -march=rv32imc_zicsr_zba_zbb_zbs -mabi=ilp32 -nostdlib
+CFLAGS              := -static -O2 -mcmodel=medany -march=rv32imc_zicsr_zba_zbb_zbs_zbc -mabi=ilp32 -nostdlib
 RISCV               := /opt/riscv
 COREMARK            := ~/compile/coremark
 
