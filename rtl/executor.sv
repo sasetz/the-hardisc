@@ -37,13 +37,14 @@ module executor (
     logic[31:0] s_alu_result, s_mdu_result, s_beu_result, s_result[1], s_result_see[1];
     logic[30:0] s_pc_offset;
     logic s_mdu_finished[1], s_mdu_finished_see[1];
-    f_part s_b_function;
+    logic s_beu_finished[1], s_beu_finished_see[1];
 
     assign s_result_o   = s_result_see[0];
-    assign s_finished_o = s_mdu_finished_see[0];
+    assign s_finished_o = (s_ictrl_i[ICTRL_UNIT_MDU] & s_mdu_finished_see[0]) | (s_ictrl_i[ICTRL_UNIT_BEU] & s_beu_finished_see[0]);
 
     see_wires #(.LABEL("ALU_RES"),.GROUP(SEEGR_CORE_WIRE),.W(32)) see_alu(.s_c_i(s_clk_i),.s_d_i(s_result),.s_d_o(s_result_see));
     see_wires #(.LABEL("ALU_FIN"),.GROUP(SEEGR_CORE_WIRE),.W(1)) see_fin(.s_c_i(s_clk_i),.s_d_i(s_mdu_finished),.s_d_o(s_mdu_finished_see));
+    see_wires #(.LABEL("BEU_FIN"),.GROUP(SEEGR_CORE_WIRE),.W(1)) see_beu(.s_c_i(s_clk_i),.s_d_i(s_beu_finished),.s_d_o(s_beu_finished_see));
 
     //result selection
     assign s_result[0]  = s_ictrl_i[ICTRL_UNIT_BEU] ? s_beu_result :
@@ -52,9 +53,6 @@ module executor (
 
     //preparation of program counter offset for AUIPC and BRU instructions
     assign s_pc_offset  = s_ictrl_i[ICTRL_UNIT_BRU] ? {{11{s_payload_i[19]}},s_payload_i[19:0]} : {s_payload_i[19:0],11'b0} ;
-
-    assign s_b_function = (s_ictrl_i[ICTRL_UNIT_MDU]) ? BEU_CLMUL :
-                           s_function_i;
 
     alu m_alu
     (
@@ -76,7 +74,7 @@ module executor (
         .s_resetn_i(s_resetn_i),
         .s_stall_i(s_stall_i),
         .s_flush_i(s_flush_i),
-        .s_compute_i(s_ictrl_i[ICTRL_UNIT_MDU]),
+        .s_compute_i(s_ictrl_i[ICTRL_UNIT_MDU] & ~s_ictrl_i[ICTRL_UNIT_BEU]),
         .s_function_i(s_function_i),
         .s_operand1_i(s_operand1_i),
         .s_operand2_i(s_operand2_i),
@@ -86,10 +84,16 @@ module executor (
 
     beu m_beu
     (
-        .s_function_i(s_b_function),
+        .s_clk_i(s_clk_i),
+        .s_resetn_i(s_resetn_i),
+        .s_stall_i(s_stall_i),
+        .s_flush_i(s_flush_i),
+        .s_compute_i(s_ictrl_i[ICTRL_UNIT_MDU] & s_ictrl_i[ICTRL_UNIT_BEU]),
+        .s_function_i(s_function_i),
         .s_compare_i(s_ictrl_i[ICTRL_UNIT_ALU]),
         .s_op1_i(s_operand1_i),
         .s_op2_i(s_operand2_i),
+        .s_finished_o(s_beu_finished[0]),
         .s_result_o(s_beu_result)
     );
 

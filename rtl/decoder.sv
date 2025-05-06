@@ -133,7 +133,7 @@ module decoder (
     assign s_b_minmax   = s_b_op &
                           s_b_opcode == BE_GROUP_MINMAX &
                           s_instr_i[14] == 1'b1;
-    assign s_b_clmul    = 0 & s_b_op & // FIXME: complete/remove CLMUL
+    assign s_b_clmul    = s_b_op &
                           s_b_opcode == BE_GROUP_CLMUL &
                           s_instr_i[14:12] != 3'b000 & s_instr_i[14] == 1'b0;
     assign s_b_ror      = (s_b_op || s_b_op_imm) &
@@ -213,9 +213,9 @@ module decoder (
                               s_b_misc    ? BEU_MISC[2:0] :
                               s_b_minmax  ? {s_b_is_min, 1'b1, s_instr_i[12]} :
                               s_b_clmul ? (
-                                  s_instr_i[13:12] == 2'b01 ? 3'd0 :
-                                  s_instr_i[13:12] == 2'b11 ? 3'd1 :
-                                                              3'd2
+                                  s_instr_i[13:12] == 2'b01 ? 3'd0 : // BEU_MDU_CLMUL
+                                  s_instr_i[13:12] == 2'b11 ? 3'd1 : // BEU_MDU_CLMULH
+                                                              3'd2   // BEU_MDU_CLMULR
                                   ) : 3'bxxx // FIXME: for debugging purposes
                               ) :
                           (s_instr_ctrl[ICTRL_UNIT_BRU]) ? s_brj_f: (s_lui | s_auipc) ? ((s_auipc) ? 3'b100 : 3'b000) : s_instr_i[14:12];

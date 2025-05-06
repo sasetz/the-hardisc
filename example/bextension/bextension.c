@@ -6387,12 +6387,691 @@ void test_zbs()
     printf("\n\n--------------\nZbs extension successfully PASSED\n--------------\n\n");
 }
 
+void test_zbc()
+{
+    uint32_t result, rs1, rs2;
+
+    // 16x3 automatically generated tests
+    // generated using python
+    printf("clmul TEST #0... ");
+    rs1 = 0x3f6d6d0f;
+    rs2 = 0xa4227f4;
+    INSTRUCTION("clmul", &result, &rs1, &rs2);
+    if (result != 0xdb5fcc6c) {
+        printf("\nThe test has FAILED with the following instruction:\n");
+        printf("clmul rd, 0x3f6d6d0f, 0xa4227f4\n");
+        printf("expected = 0x%x, actual = 0x%x\n", 0xdb5fcc6c, result);
+        printf("This is a critical error, exiting\n");
+        return;
+    }
+    printf("PASSED\n");
+
+
+    printf("clmul TEST #1... ");
+    rs1 = 0xe9933b49;
+    rs2 = 0x268354a5;
+    INSTRUCTION("clmul", &result, &rs1, &rs2);
+    if (result != 0x7af5efcd) {
+        printf("\nThe test has FAILED with the following instruction:\n");
+        printf("clmul rd, 0xe9933b49, 0x268354a5\n");
+        printf("expected = 0x%x, actual = 0x%x\n", 0x7af5efcd, result);
+        printf("This is a critical error, exiting\n");
+        return;
+    }
+    printf("PASSED\n");
+
+
+    printf("clmul TEST #2... ");
+    rs1 = 0xa1dd9f94;
+    rs2 = 0xa940a5d8;
+    INSTRUCTION("clmul", &result, &rs1, &rs2);
+    if (result != 0xc446ee0) {
+        printf("\nThe test has FAILED with the following instruction:\n");
+        printf("clmul rd, 0xa1dd9f94, 0xa940a5d8\n");
+        printf("expected = 0x%x, actual = 0x%x\n", 0xc446ee0, result);
+        printf("This is a critical error, exiting\n");
+        return;
+    }
+    printf("PASSED\n");
+
+
+    printf("clmul TEST #3... ");
+    rs1 = 0x4713288b;
+    rs2 = 0x5cdb011d;
+    INSTRUCTION("clmul", &result, &rs1, &rs2);
+    if (result != 0xd7e9cd4f) {
+        printf("\nThe test has FAILED with the following instruction:\n");
+        printf("clmul rd, 0x4713288b, 0x5cdb011d\n");
+        printf("expected = 0x%x, actual = 0x%x\n", 0xd7e9cd4f, result);
+        printf("This is a critical error, exiting\n");
+        return;
+    }
+    printf("PASSED\n");
+
+
+    printf("clmul TEST #4... ");
+    rs1 = 0x81dadcbe;
+    rs2 = 0xfe5976d9;
+    INSTRUCTION("clmul", &result, &rs1, &rs2);
+    if (result != 0x9feea62e) {
+        printf("\nThe test has FAILED with the following instruction:\n");
+        printf("clmul rd, 0x81dadcbe, 0xfe5976d9\n");
+        printf("expected = 0x%x, actual = 0x%x\n", 0x9feea62e, result);
+        printf("This is a critical error, exiting\n");
+        return;
+    }
+    printf("PASSED\n");
+
+
+    printf("clmul TEST #5... ");
+    rs1 = 0x75385cd8;
+    rs2 = 0xe23084e3;
+    INSTRUCTION("clmul", &result, &rs1, &rs2);
+    if (result != 0xc3e54468) {
+        printf("\nThe test has FAILED with the following instruction:\n");
+        printf("clmul rd, 0x75385cd8, 0xe23084e3\n");
+        printf("expected = 0x%x, actual = 0x%x\n", 0xc3e54468, result);
+        printf("This is a critical error, exiting\n");
+        return;
+    }
+    printf("PASSED\n");
+
+
+    printf("clmul TEST #6... ");
+    rs1 = 0x31c04d68;
+    rs2 = 0x69257028;
+    INSTRUCTION("clmul", &result, &rs1, &rs2);
+    if (result != 0x55e24640) {
+        printf("\nThe test has FAILED with the following instruction:\n");
+        printf("clmul rd, 0x31c04d68, 0x69257028\n");
+        printf("expected = 0x%x, actual = 0x%x\n", 0x55e24640, result);
+        printf("This is a critical error, exiting\n");
+        return;
+    }
+    printf("PASSED\n");
+
+
+    printf("clmul TEST #7... ");
+    rs1 = 0x3a48745f;
+    rs2 = 0x73939728;
+    INSTRUCTION("clmul", &result, &rs1, &rs2);
+    if (result != 0x18fbc418) {
+        printf("\nThe test has FAILED with the following instruction:\n");
+        printf("clmul rd, 0x3a48745f, 0x73939728\n");
+        printf("expected = 0x%x, actual = 0x%x\n", 0x18fbc418, result);
+        printf("This is a critical error, exiting\n");
+        return;
+    }
+    printf("PASSED\n");
+
+
+    printf("clmul TEST #8... ");
+    rs1 = 0xdab2b7fa;
+    rs2 = 0x7eaf100f;
+    INSTRUCTION("clmul", &result, &rs1, &rs2);
+    if (result != 0xed811836) {
+        printf("\nThe test has FAILED with the following instruction:\n");
+        printf("clmul rd, 0xdab2b7fa, 0x7eaf100f\n");
+        printf("expected = 0x%x, actual = 0x%x\n", 0xed811836, result);
+        printf("This is a critical error, exiting\n");
+        return;
+    }
+    printf("PASSED\n");
+
+
+    printf("clmul TEST #9... ");
+    rs1 = 0x54553bf7;
+    rs2 = 0x2a2b1052;
+    INSTRUCTION("clmul", &result, &rs1, &rs2);
+    if (result != 0xf049455e) {
+        printf("\nThe test has FAILED with the following instruction:\n");
+        printf("clmul rd, 0x54553bf7, 0x2a2b1052\n");
+        printf("expected = 0x%x, actual = 0x%x\n", 0xf049455e, result);
+        printf("This is a critical error, exiting\n");
+        return;
+    }
+    printf("PASSED\n");
+
+
+    printf("clmul TEST #10... ");
+    rs1 = 0x23e3e5a1;
+    rs2 = 0xf3b245fa;
+    INSTRUCTION("clmul", &result, &rs1, &rs2);
+    if (result != 0x6078d5ba) {
+        printf("\nThe test has FAILED with the following instruction:\n");
+        printf("clmul rd, 0x23e3e5a1, 0xf3b245fa\n");
+        printf("expected = 0x%x, actual = 0x%x\n", 0x6078d5ba, result);
+        printf("This is a critical error, exiting\n");
+        return;
+    }
+    printf("PASSED\n");
+
+
+    printf("clmul TEST #11... ");
+    rs1 = 0xe388a1b5;
+    rs2 = 0x240425d1;
+    INSTRUCTION("clmul", &result, &rs1, &rs2);
+    if (result != 0xb1bfcc25) {
+        printf("\nThe test has FAILED with the following instruction:\n");
+        printf("clmul rd, 0xe388a1b5, 0x240425d1\n");
+        printf("expected = 0x%x, actual = 0x%x\n", 0xb1bfcc25, result);
+        printf("This is a critical error, exiting\n");
+        return;
+    }
+    printf("PASSED\n");
+
+
+    printf("clmul TEST #12... ");
+    rs1 = 0x76ac262d;
+    rs2 = 0x339fd022;
+    INSTRUCTION("clmul", &result, &rs1, &rs2);
+    if (result != 0x50d899fa) {
+        printf("\nThe test has FAILED with the following instruction:\n");
+        printf("clmul rd, 0x76ac262d, 0x339fd022\n");
+        printf("expected = 0x%x, actual = 0x%x\n", 0x50d899fa, result);
+        printf("This is a critical error, exiting\n");
+        return;
+    }
+    printf("PASSED\n");
+
+
+    printf("clmul TEST #13... ");
+    rs1 = 0x737f4b28;
+    rs2 = 0x808f9b83;
+    INSTRUCTION("clmul", &result, &rs1, &rs2);
+    if (result != 0x3c1ef178) {
+        printf("\nThe test has FAILED with the following instruction:\n");
+        printf("clmul rd, 0x737f4b28, 0x808f9b83\n");
+        printf("expected = 0x%x, actual = 0x%x\n", 0x3c1ef178, result);
+        printf("This is a critical error, exiting\n");
+        return;
+    }
+    printf("PASSED\n");
+
+
+    printf("clmul TEST #14... ");
+    rs1 = 0xb7df996;
+    rs2 = 0xf14f520c;
+    INSTRUCTION("clmul", &result, &rs1, &rs2);
+    if (result != 0xdfc5e6e8) {
+        printf("\nThe test has FAILED with the following instruction:\n");
+        printf("clmul rd, 0xb7df996, 0xf14f520c\n");
+        printf("expected = 0x%x, actual = 0x%x\n", 0xdfc5e6e8, result);
+        printf("This is a critical error, exiting\n");
+        return;
+    }
+    printf("PASSED\n");
+
+
+    printf("clmul TEST #15... ");
+    rs1 = 0xdebd2177;
+    rs2 = 0x52dbf741;
+    INSTRUCTION("clmul", &result, &rs1, &rs2);
+    if (result != 0x2bdde9b7) {
+        printf("\nThe test has FAILED with the following instruction:\n");
+        printf("clmul rd, 0xdebd2177, 0x52dbf741\n");
+        printf("expected = 0x%x, actual = 0x%x\n", 0x2bdde9b7, result);
+        printf("This is a critical error, exiting\n");
+        return;
+    }
+    printf("PASSED\n");
+
+
+    printf("clmulh TEST #0... ");
+    rs1 = 0x172f1935;
+    rs2 = 0xfdc0aeea;
+    INSTRUCTION("clmulh", &result, &rs1, &rs2);
+    if (result != 0xd37e629) {
+        printf("\nThe test has FAILED with the following instruction:\n");
+        printf("clmulh rd, 0x172f1935, 0xfdc0aeea\n");
+        printf("expected = 0x%x, actual = 0x%x\n", 0xd37e629, result);
+        printf("This is a critical error, exiting\n");
+        return;
+    }
+    printf("PASSED\n");
+
+
+    printf("clmulh TEST #1... ");
+    rs1 = 0xf69f4137;
+    rs2 = 0x1c4bfa82;
+    INSTRUCTION("clmulh", &result, &rs1, &rs2);
+    if (result != 0xb3c2ae4) {
+        printf("\nThe test has FAILED with the following instruction:\n");
+        printf("clmulh rd, 0xf69f4137, 0x1c4bfa82\n");
+        printf("expected = 0x%x, actual = 0x%x\n", 0xb3c2ae4, result);
+        printf("This is a critical error, exiting\n");
+        return;
+    }
+    printf("PASSED\n");
+
+
+    printf("clmulh TEST #2... ");
+    rs1 = 0xf3643dce;
+    rs2 = 0xe03ff6cb;
+    INSTRUCTION("clmulh", &result, &rs1, &rs2);
+    if (result != 0x5b13d9ad) {
+        printf("\nThe test has FAILED with the following instruction:\n");
+        printf("clmulh rd, 0xf3643dce, 0xe03ff6cb\n");
+        printf("expected = 0x%x, actual = 0x%x\n", 0x5b13d9ad, result);
+        printf("This is a critical error, exiting\n");
+        return;
+    }
+    printf("PASSED\n");
+
+
+    printf("clmulh TEST #3... ");
+    rs1 = 0x12c9135d;
+    rs2 = 0xe705fcd;
+    INSTRUCTION("clmulh", &result, &rs1, &rs2);
+    if (result != 0xff3c7f) {
+        printf("\nThe test has FAILED with the following instruction:\n");
+        printf("clmulh rd, 0x12c9135d, 0xe705fcd\n");
+        printf("expected = 0x%x, actual = 0x%x\n", 0xff3c7f, result);
+        printf("This is a critical error, exiting\n");
+        return;
+    }
+    printf("PASSED\n");
+
+
+    printf("clmulh TEST #4... ");
+    rs1 = 0x1ed0871f;
+    rs2 = 0xd9945193;
+    INSTRUCTION("clmulh", &result, &rs1, &rs2);
+    if (result != 0x9d7c6c6) {
+        printf("\nThe test has FAILED with the following instruction:\n");
+        printf("clmulh rd, 0x1ed0871f, 0xd9945193\n");
+        printf("expected = 0x%x, actual = 0x%x\n", 0x9d7c6c6, result);
+        printf("This is a critical error, exiting\n");
+        return;
+    }
+    printf("PASSED\n");
+
+
+    printf("clmulh TEST #5... ");
+    rs1 = 0xaaf6a5da;
+    rs2 = 0x1c42496;
+    INSTRUCTION("clmulh", &result, &rs1, &rs2);
+    if (result != 0xd78c2d) {
+        printf("\nThe test has FAILED with the following instruction:\n");
+        printf("clmulh rd, 0xaaf6a5da, 0x1c42496\n");
+        printf("expected = 0x%x, actual = 0x%x\n", 0xd78c2d, result);
+        printf("This is a critical error, exiting\n");
+        return;
+    }
+    printf("PASSED\n");
+
+
+    printf("clmulh TEST #6... ");
+    rs1 = 0x56321aee;
+    rs2 = 0x744c845f;
+    INSTRUCTION("clmulh", &result, &rs1, &rs2);
+    if (result != 0x1b6763af) {
+        printf("\nThe test has FAILED with the following instruction:\n");
+        printf("clmulh rd, 0x56321aee, 0x744c845f\n");
+        printf("expected = 0x%x, actual = 0x%x\n", 0x1b6763af, result);
+        printf("This is a critical error, exiting\n");
+        return;
+    }
+    printf("PASSED\n");
+
+
+    printf("clmulh TEST #7... ");
+    rs1 = 0xb8b49ceb;
+    rs2 = 0xa290e753;
+    INSTRUCTION("clmulh", &result, &rs1, &rs2);
+    if (result != 0x4a6a03b8) {
+        printf("\nThe test has FAILED with the following instruction:\n");
+        printf("clmulh rd, 0xb8b49ceb, 0xa290e753\n");
+        printf("expected = 0x%x, actual = 0x%x\n", 0x4a6a03b8, result);
+        printf("This is a critical error, exiting\n");
+        return;
+    }
+    printf("PASSED\n");
+
+
+    printf("clmulh TEST #8... ");
+    rs1 = 0xfe3c1604;
+    rs2 = 0x85e13e47;
+    INSTRUCTION("clmulh", &result, &rs1, &rs2);
+    if (result != 0x7c477a10) {
+        printf("\nThe test has FAILED with the following instruction:\n");
+        printf("clmulh rd, 0xfe3c1604, 0x85e13e47\n");
+        printf("expected = 0x%x, actual = 0x%x\n", 0x7c477a10, result);
+        printf("This is a critical error, exiting\n");
+        return;
+    }
+    printf("PASSED\n");
+
+
+    printf("clmulh TEST #9... ");
+    rs1 = 0xcf90a891;
+    rs2 = 0xbd74049f;
+    INSTRUCTION("clmulh", &result, &rs1, &rs2);
+    if (result != 0x776bcebb) {
+        printf("\nThe test has FAILED with the following instruction:\n");
+        printf("clmulh rd, 0xcf90a891, 0xbd74049f\n");
+        printf("expected = 0x%x, actual = 0x%x\n", 0x776bcebb, result);
+        printf("This is a critical error, exiting\n");
+        return;
+    }
+    printf("PASSED\n");
+
+
+    printf("clmulh TEST #10... ");
+    rs1 = 0x34ca9c88;
+    rs2 = 0x30363511;
+    INSTRUCTION("clmulh", &result, &rs1, &rs2);
+    if (result != 0x5d0902d) {
+        printf("\nThe test has FAILED with the following instruction:\n");
+        printf("clmulh rd, 0x34ca9c88, 0x30363511\n");
+        printf("expected = 0x%x, actual = 0x%x\n", 0x5d0902d, result);
+        printf("This is a critical error, exiting\n");
+        return;
+    }
+    printf("PASSED\n");
+
+
+    printf("clmulh TEST #11... ");
+    rs1 = 0x1c82dc98;
+    rs2 = 0x2d22d651;
+    INSTRUCTION("clmulh", &result, &rs1, &rs2);
+    if (result != 0x3196563) {
+        printf("\nThe test has FAILED with the following instruction:\n");
+        printf("clmulh rd, 0x1c82dc98, 0x2d22d651\n");
+        printf("expected = 0x%x, actual = 0x%x\n", 0x3196563, result);
+        printf("This is a critical error, exiting\n");
+        return;
+    }
+    printf("PASSED\n");
+
+
+    printf("clmulh TEST #12... ");
+    rs1 = 0x4290e5b;
+    rs2 = 0xbc333058;
+    INSTRUCTION("clmulh", &result, &rs1, &rs2);
+    if (result != 0x2e21144) {
+        printf("\nThe test has FAILED with the following instruction:\n");
+        printf("clmulh rd, 0x4290e5b, 0xbc333058\n");
+        printf("expected = 0x%x, actual = 0x%x\n", 0x2e21144, result);
+        printf("This is a critical error, exiting\n");
+        return;
+    }
+    printf("PASSED\n");
+
+
+    printf("clmulh TEST #13... ");
+    rs1 = 0xc7bd638;
+    rs2 = 0xb53abf4f;
+    INSTRUCTION("clmulh", &result, &rs1, &rs2);
+    if (result != 0x7498ce8) {
+        printf("\nThe test has FAILED with the following instruction:\n");
+        printf("clmulh rd, 0xc7bd638, 0xb53abf4f\n");
+        printf("expected = 0x%x, actual = 0x%x\n", 0x7498ce8, result);
+        printf("This is a critical error, exiting\n");
+        return;
+    }
+    printf("PASSED\n");
+
+
+    printf("clmulh TEST #14... ");
+    rs1 = 0xb4d4dc40;
+    rs2 = 0x2acf240c;
+    INSTRUCTION("clmulh", &result, &rs1, &rs2);
+    if (result != 0x1224774d) {
+        printf("\nThe test has FAILED with the following instruction:\n");
+        printf("clmulh rd, 0xb4d4dc40, 0x2acf240c\n");
+        printf("expected = 0x%x, actual = 0x%x\n", 0x1224774d, result);
+        printf("This is a critical error, exiting\n");
+        return;
+    }
+    printf("PASSED\n");
+
+
+    printf("clmulh TEST #15... ");
+    rs1 = 0x7a2c6c86;
+    rs2 = 0xf113136d;
+    INSTRUCTION("clmulh", &result, &rs1, &rs2);
+    if (result != 0x2b0761db) {
+        printf("\nThe test has FAILED with the following instruction:\n");
+        printf("clmulh rd, 0x7a2c6c86, 0xf113136d\n");
+        printf("expected = 0x%x, actual = 0x%x\n", 0x2b0761db, result);
+        printf("This is a critical error, exiting\n");
+        return;
+    }
+    printf("PASSED\n");
+
+
+    printf("clmulr TEST #0... ");
+    rs1 = 0x9c43794a;
+    rs2 = 0xe4f42f2;
+    INSTRUCTION("clmulr", &result, &rs1, &rs2);
+    if (result != 0xf172314) {
+        printf("\nThe test has FAILED with the following instruction:\n");
+        printf("clmulr rd, 0x9c43794a, 0xe4f42f2\n");
+        printf("expected = 0x%x, actual = 0x%x\n", 0xf172314, result);
+        printf("This is a critical error, exiting\n");
+        return;
+    }
+    printf("PASSED\n");
+
+
+    printf("clmulr TEST #1... ");
+    rs1 = 0x2cb57a7d;
+    rs2 = 0x233e4d31;
+    INSTRUCTION("clmulr", &result, &rs1, &rs2);
+    if (result != 0xbcb53f9) {
+        printf("\nThe test has FAILED with the following instruction:\n");
+        printf("clmulr rd, 0x2cb57a7d, 0x233e4d31\n");
+        printf("expected = 0x%x, actual = 0x%x\n", 0xbcb53f9, result);
+        printf("This is a critical error, exiting\n");
+        return;
+    }
+    printf("PASSED\n");
+
+
+    printf("clmulr TEST #2... ");
+    rs1 = 0xd0cf54a4;
+    rs2 = 0xd8a9df59;
+    INSTRUCTION("clmulr", &result, &rs1, &rs2);
+    if (result != 0xaf551b65) {
+        printf("\nThe test has FAILED with the following instruction:\n");
+        printf("clmulr rd, 0xd0cf54a4, 0xd8a9df59\n");
+        printf("expected = 0x%x, actual = 0x%x\n", 0xaf551b65, result);
+        printf("This is a critical error, exiting\n");
+        return;
+    }
+    printf("PASSED\n");
+
+
+    printf("clmulr TEST #3... ");
+    rs1 = 0xc5b3fbdf;
+    rs2 = 0x38b64818;
+    INSTRUCTION("clmulr", &result, &rs1, &rs2);
+    if (result != 0x2568828d) {
+        printf("\nThe test has FAILED with the following instruction:\n");
+        printf("clmulr rd, 0xc5b3fbdf, 0x38b64818\n");
+        printf("expected = 0x%x, actual = 0x%x\n", 0x2568828d, result);
+        printf("This is a critical error, exiting\n");
+        return;
+    }
+    printf("PASSED\n");
+
+
+    printf("clmulr TEST #4... ");
+    rs1 = 0x3bbfa39e;
+    rs2 = 0xe76c330f;
+    INSTRUCTION("clmulr", &result, &rs1, &rs2);
+    if (result != 0x29dab95e) {
+        printf("\nThe test has FAILED with the following instruction:\n");
+        printf("clmulr rd, 0x3bbfa39e, 0xe76c330f\n");
+        printf("expected = 0x%x, actual = 0x%x\n", 0x29dab95e, result);
+        printf("This is a critical error, exiting\n");
+        return;
+    }
+    printf("PASSED\n");
+
+
+    printf("clmulr TEST #5... ");
+    rs1 = 0xe8b134a1;
+    rs2 = 0xced22db3;
+    INSTRUCTION("clmulr", &result, &rs1, &rs2);
+    if (result != 0x96079f7e) {
+        printf("\nThe test has FAILED with the following instruction:\n");
+        printf("clmulr rd, 0xe8b134a1, 0xced22db3\n");
+        printf("expected = 0x%x, actual = 0x%x\n", 0x96079f7e, result);
+        printf("This is a critical error, exiting\n");
+        return;
+    }
+    printf("PASSED\n");
+
+
+    printf("clmulr TEST #6... ");
+    rs1 = 0x9c1e7fe3;
+    rs2 = 0x21e429a1;
+    INSTRUCTION("clmulr", &result, &rs1, &rs2);
+    if (result != 0x26ce7a6f) {
+        printf("\nThe test has FAILED with the following instruction:\n");
+        printf("clmulr rd, 0x9c1e7fe3, 0x21e429a1\n");
+        printf("expected = 0x%x, actual = 0x%x\n", 0x26ce7a6f, result);
+        printf("This is a critical error, exiting\n");
+        return;
+    }
+    printf("PASSED\n");
+
+
+    printf("clmulr TEST #7... ");
+    rs1 = 0xa1b0aa6e;
+    rs2 = 0x94c9d4ff;
+    INSTRUCTION("clmulr", &result, &rs1, &rs2);
+    if (result != 0xb071ea76) {
+        printf("\nThe test has FAILED with the following instruction:\n");
+        printf("clmulr rd, 0xa1b0aa6e, 0x94c9d4ff\n");
+        printf("expected = 0x%x, actual = 0x%x\n", 0xb071ea76, result);
+        printf("This is a critical error, exiting\n");
+        return;
+    }
+    printf("PASSED\n");
+
+
+    printf("clmulr TEST #8... ");
+    rs1 = 0x8fef9628;
+    rs2 = 0xe033ad;
+    INSTRUCTION("clmulr", &result, &rs1, &rs2);
+    if (result != 0xebd23f) {
+        printf("\nThe test has FAILED with the following instruction:\n");
+        printf("clmulr rd, 0x8fef9628, 0xe033ad\n");
+        printf("expected = 0x%x, actual = 0x%x\n", 0xebd23f, result);
+        printf("This is a critical error, exiting\n");
+        return;
+    }
+    printf("PASSED\n");
+
+
+    printf("clmulr TEST #9... ");
+    rs1 = 0x85037ac6;
+    rs2 = 0x9c6698cc;
+    INSTRUCTION("clmulr", &result, &rs1, &rs2);
+    if (result != 0x99be59a9) {
+        printf("\nThe test has FAILED with the following instruction:\n");
+        printf("clmulr rd, 0x85037ac6, 0x9c6698cc\n");
+        printf("expected = 0x%x, actual = 0x%x\n", 0x99be59a9, result);
+        printf("This is a critical error, exiting\n");
+        return;
+    }
+    printf("PASSED\n");
+
+
+    printf("clmulr TEST #10... ");
+    rs1 = 0xf2b8996c;
+    rs2 = 0x53f9275c;
+    INSTRUCTION("clmulr", &result, &rs1, &rs2);
+    if (result != 0x658326af) {
+        printf("\nThe test has FAILED with the following instruction:\n");
+        printf("clmulr rd, 0xf2b8996c, 0x53f9275c\n");
+        printf("expected = 0x%x, actual = 0x%x\n", 0x658326af, result);
+        printf("This is a critical error, exiting\n");
+        return;
+    }
+    printf("PASSED\n");
+
+
+    printf("clmulr TEST #11... ");
+    rs1 = 0xea1eb2b9;
+    rs2 = 0x8a52bfbf;
+    INSTRUCTION("clmulr", &result, &rs1, &rs2);
+    if (result != 0xe77c013c) {
+        printf("\nThe test has FAILED with the following instruction:\n");
+        printf("clmulr rd, 0xea1eb2b9, 0x8a52bfbf\n");
+        printf("expected = 0x%x, actual = 0x%x\n", 0xe77c013c, result);
+        printf("This is a critical error, exiting\n");
+        return;
+    }
+    printf("PASSED\n");
+
+
+    printf("clmulr TEST #12... ");
+    rs1 = 0xd9cda3c0;
+    rs2 = 0xd5c0e41f;
+    INSTRUCTION("clmulr", &result, &rs1, &rs2);
+    if (result != 0xa9da9ef7) {
+        printf("\nThe test has FAILED with the following instruction:\n");
+        printf("clmulr rd, 0xd9cda3c0, 0xd5c0e41f\n");
+        printf("expected = 0x%x, actual = 0x%x\n", 0xa9da9ef7, result);
+        printf("This is a critical error, exiting\n");
+        return;
+    }
+    printf("PASSED\n");
+
+
+    printf("clmulr TEST #13... ");
+    rs1 = 0xe5e6903d;
+    rs2 = 0x62c1c5f;
+    INSTRUCTION("clmulr", &result, &rs1, &rs2);
+    if (result != 0x488b390) {
+        printf("\nThe test has FAILED with the following instruction:\n");
+        printf("clmulr rd, 0xe5e6903d, 0x62c1c5f\n");
+        printf("expected = 0x%x, actual = 0x%x\n", 0x488b390, result);
+        printf("This is a critical error, exiting\n");
+        return;
+    }
+    printf("PASSED\n");
+
+
+    printf("clmulr TEST #14... ");
+    rs1 = 0x92347bd7;
+    rs2 = 0x19154f6a;
+    INSTRUCTION("clmulr", &result, &rs1, &rs2);
+    if (result != 0x1a5614d6) {
+        printf("\nThe test has FAILED with the following instruction:\n");
+        printf("clmulr rd, 0x92347bd7, 0x19154f6a\n");
+        printf("expected = 0x%x, actual = 0x%x\n", 0x1a5614d6, result);
+        printf("This is a critical error, exiting\n");
+        return;
+    }
+    printf("PASSED\n");
+
+
+    printf("clmulr TEST #15... ");
+    rs1 = 0x604de577;
+    rs2 = 0x3bdbc521;
+    INSTRUCTION("clmulr", &result, &rs1, &rs2);
+    if (result != 0x1304c393) {
+        printf("\nThe test has FAILED with the following instruction:\n");
+        printf("clmulr rd, 0x604de577, 0x3bdbc521\n");
+        printf("expected = 0x%x, actual = 0x%x\n", 0x1304c393, result);
+        printf("This is a critical error, exiting\n");
+        return;
+    }
+    printf("PASSED\n");
+}
+
 int main(void)
 {
     printf("Hello world!\n");
     test_zba();
     test_zbb();
     test_zbs();
+    test_zbc();
 
     return 0;
 }
