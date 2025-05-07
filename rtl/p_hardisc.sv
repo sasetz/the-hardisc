@@ -77,9 +77,9 @@ package p_hardisc;
                 BEU_ANDN   = 4'b0111,
                 BEU_ORN    = 4'b0110;
     parameter[3:0]
-                BEU_MDU_CLMUL  = 4'b1000,
-                BEU_MDU_CLMULH = 4'b1001,
-                BEU_MDU_CLMULR = 4'b1010;
+                CMU_CLMUL  = 4'b1000,
+                CMU_CLMULH = 4'b1001,
+                CMU_CLMULR = 4'b1010;
     parameter[11:0]
                 BEU_I_SEXTB = 12'b011000000100,
                 BEU_I_SEXTH = 12'b011000000101,
@@ -109,15 +109,16 @@ package p_hardisc;
                 SCTRL_ZERO1= 2'd2,
                 SCTRL_ZERO2= 2'd3;
 
-    parameter [2:0]
-                ICTRL_UNIT_ALU  = 3'd0,
-                ICTRL_UNIT_BRU  = 3'd1,
-                ICTRL_UNIT_LSU  = 3'd2,
-                ICTRL_UNIT_CSR  = 3'd3,
-                ICTRL_UNIT_MDU  = 3'd4,
-                ICTRL_UNIT_BEU  = 3'd5,
-                ICTRL_REG_DEST  = 3'd6,
-                ICTRL_RVC       = 3'd7;
+    parameter [3:0]
+                ICTRL_UNIT_ALU  = 4'd0,
+                ICTRL_UNIT_BRU  = 4'd1,
+                ICTRL_UNIT_LSU  = 4'd2,
+                ICTRL_UNIT_CSR  = 4'd3,
+                ICTRL_UNIT_MDU  = 4'd4,
+                ICTRL_UNIT_BEU  = 4'd5,
+                ICTRL_UNIT_CMU  = 4'd6,
+                ICTRL_REG_DEST  = 4'd7,
+                ICTRL_RVC       = 4'd8;
     parameter [6:0]
                 ICTRL_PRR_VAL   = 7'h03;     
     parameter [7:0]
@@ -272,7 +273,7 @@ package p_hardisc;
     typedef logic[3:0]f_part;
     typedef logic[3:0]operr;
     typedef logic[3:0]sctrl;
-    typedef logic[7:0]ictrl;
+    typedef logic[8:0]ictrl;
     typedef logic[2:0]imiscon;
     typedef logic[1:0]rp_info;
     typedef logic[4:0]ld_info;

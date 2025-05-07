@@ -202,13 +202,13 @@ module pipeline_5_ma (
             //Hold signal - do not start new instruction in EX stage
             assign s_hold_o[i]      = s_int_pending[i] | s_wb_error[i] | (s_lsu_busy_i[i] & s_exma_ictrl_i[i][ICTRL_UNIT_LSU]);
 
-            assign s_ma_empty[i]    = (s_exma_imiscon_i[i] == IMISCON_FREE) & (s_exma_ictrl_i[i] == 7'b0);
+            assign s_ma_empty[i]    = (s_exma_imiscon_i[i] == IMISCON_FREE) & (s_exma_ictrl_i[i] == 8'b0);
             //Write-enable signal for auxiliary MAWB registers
             assign s_mawb_we_aux[i] = !(s_flush_ma[i] || s_ma_empty[i]);
             //Write-enable signal for MAWB value register
             assign s_mawb_we_val[i] = s_mawb_we_aux[i] && (!s_exma_ictrl_i[i][ICTRL_UNIT_LSU] || s_lsu_save_i[i]);
             //Write-enable signal for essential MAWB registers
-            assign s_mawb_we_esn[i] = s_flush_ma[i] || !s_ma_empty[i] || (s_rmawb_ictrl[i] != 7'b0);
+            assign s_mawb_we_esn[i] = s_flush_ma[i] || !s_ma_empty[i] || (s_rmawb_ictrl[i] != 8'b0);
 
             //Select result of the MA stage. NOTE: the REG_DEST bit in the instruction control must be active for register file write
             assign s_write_val[i]  = (s_exma_ictrl_i[i][ICTRL_UNIT_LSU]) ? s_lsu_data_i : 
@@ -221,7 +221,7 @@ module pipeline_5_ma (
                 s_wmawb_rd[i]   = s_exma_rd_i[i];
                 s_wmawb_ldi[i]  = {s_exma_f_i[i][2:0], s_exma_val_i[i][1:0]};
                 if(s_flush_ma[i] | s_stall_ma[i])begin
-                    s_wmawb_ictrl[i]= 7'b0;
+                    s_wmawb_ictrl[i]= 8'b0;
                 end
             end
         end

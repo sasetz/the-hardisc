@@ -173,6 +173,7 @@ module c_decoder (
     assign s_instr_ctrl[ICTRL_UNIT_CSR] = (s_ebreak);
     assign s_instr_ctrl[ICTRL_UNIT_MDU] = 1'b0;
     assign s_instr_ctrl[ICTRL_UNIT_BEU] = 1'b0;
+    assign s_instr_ctrl[ICTRL_UNIT_CMU] = 1'b0;
     assign s_instr_ctrl[ICTRL_REG_DEST] = (|s_rd) & (s_load | s_jal | s_jalr | s_li | s_lui | s_op_imm | s_op);
     assign s_instr_ctrl[ICTRL_RVC]      = 1'b1;
     //Prediction is not allowed from other instructions than branch/jump

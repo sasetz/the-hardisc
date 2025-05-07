@@ -177,7 +177,7 @@ module pipeline_2_id (
                 s_widop_imiscon[i]  = s_instr_miscon[i];
                 if(s_flush_id[i] || s_aligner_nop[i])begin
                     //Default during reset, flush, or if the Aligner's output is not valid (and ID stage not stalled)
-                    s_widop_ictrl[i]    = 7'b0;
+                    s_widop_ictrl[i]    = 8'b0;
                     s_widop_imiscon[i]  = IMISCON_FREE;
 `ifdef PROT_PIPE 
                     if(s_acm_restart)begin
