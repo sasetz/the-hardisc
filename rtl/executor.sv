@@ -34,20 +34,21 @@ module executor (
     output logic s_finished_o,          //indicates end of computation
     output logic[31:0] s_result_o       //result
 );
-    logic[31:0] s_alu_result, s_mdu_result, s_beu_result, s_result[1], s_result_see[1];
+    logic[31:0] s_alu_result, s_mdu_result, s_beu_result, s_cmu_result, s_result[1], s_result_see[1];
     logic[30:0] s_pc_offset;
     logic s_mdu_finished[1], s_mdu_finished_see[1];
-    logic s_beu_finished[1], s_beu_finished_see[1];
+    logic s_cmu_finished[1], s_cmu_finished_see[1];
 
     assign s_result_o   = s_result_see[0];
-    assign s_finished_o = (s_ictrl_i[ICTRL_UNIT_MDU] & s_mdu_finished_see[0]) | (s_ictrl_i[ICTRL_UNIT_BEU] & s_beu_finished_see[0]);
+    assign s_finished_o = (s_ictrl_i[ICTRL_UNIT_MDU] & s_mdu_finished_see[0]) | (s_ictrl_i[ICTRL_UNIT_CMU] & s_cmu_finished_see[0]);
 
     see_wires #(.LABEL("ALU_RES"),.GROUP(SEEGR_CORE_WIRE),.W(32)) see_alu(.s_c_i(s_clk_i),.s_d_i(s_result),.s_d_o(s_result_see));
     see_wires #(.LABEL("ALU_FIN"),.GROUP(SEEGR_CORE_WIRE),.W(1)) see_fin(.s_c_i(s_clk_i),.s_d_i(s_mdu_finished),.s_d_o(s_mdu_finished_see));
-    see_wires #(.LABEL("BEU_FIN"),.GROUP(SEEGR_CORE_WIRE),.W(1)) see_beu(.s_c_i(s_clk_i),.s_d_i(s_beu_finished),.s_d_o(s_beu_finished_see));
+    see_wires #(.LABEL("CMU_FIN"),.GROUP(SEEGR_CORE_WIRE),.W(1)) see_cmu(.s_c_i(s_clk_i),.s_d_i(s_cmu_finished),.s_d_o(s_cmu_finished_see));
 
     //result selection
-    assign s_result[0]  = s_ictrl_i[ICTRL_UNIT_BEU] ? s_beu_result :
+    assign s_result[0]  = s_ictrl_i[ICTRL_UNIT_CMU] ? s_cmu_result :
+        s_ictrl_i[ICTRL_UNIT_BEU] ? s_beu_result :
         s_ictrl_i[ICTRL_UNIT_MDU] ? s_mdu_result :
         s_alu_result;
 
@@ -74,7 +75,7 @@ module executor (
         .s_resetn_i(s_resetn_i),
         .s_stall_i(s_stall_i),
         .s_flush_i(s_flush_i),
-        .s_compute_i(s_ictrl_i[ICTRL_UNIT_MDU] & ~s_ictrl_i[ICTRL_UNIT_BEU]),
+        .s_compute_i(s_ictrl_i[ICTRL_UNIT_MDU]),
         .s_function_i(s_function_i),
         .s_operand1_i(s_operand1_i),
         .s_operand2_i(s_operand2_i),
@@ -84,17 +85,28 @@ module executor (
 
     beu m_beu
     (
-        .s_clk_i(s_clk_i),
-        .s_resetn_i(s_resetn_i),
-        .s_stall_i(s_stall_i),
-        .s_flush_i(s_flush_i),
-        .s_compute_i(s_ictrl_i[ICTRL_UNIT_MDU] & s_ictrl_i[ICTRL_UNIT_BEU]),
         .s_function_i(s_function_i),
         .s_compare_i(s_ictrl_i[ICTRL_UNIT_ALU]),
         .s_op1_i(s_operand1_i),
         .s_op2_i(s_operand2_i),
-        .s_finished_o(s_beu_finished[0]),
         .s_result_o(s_beu_result)
+    );
+
+    carmul m_cmu
+    (
+        .s_clk_i(s_clk_i),
+        .s_resetn_i(s_resetn_i),
+        .s_stall_i(s_stall_i),
+        .s_flush_i(s_flush_i),
+
+        .s_function_i(s_function_i),
+        .s_compute_i(s_ictrl_i[ICTRL_UNIT_CMU]),
+
+        .s_op1_i(s_operand1_i),
+        .s_op2_i(s_operand2_i),
+        .s_result_o(s_cmu_result),
+
+        .s_finished_o(s_cmu_finished[0])
     );
 
 endmodule

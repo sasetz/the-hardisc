@@ -115,7 +115,7 @@ module pipeline_4_ex #(
             //Auxiliary signals for Executor
             assign s_ma_jump[i]     = (s_rexma_f[i] == ALU_SET1) || (s_rexma_f[i] == ALU_IPC);
             assign s_ma_taken[i]    = s_rexma_ictrl[i][ICTRL_UNIT_BRU] & ((~s_ma_jump[i] & s_rexma_val[i][0]) | s_ma_jump[i]);
-            assign s_pc_incr[i]     = (s_rexma_ictrl[i] != 7'b0) ? (s_rexma_ictrl[i][ICTRL_RVC] ? 2'b01 : 2'b10) : 2'b00;
+            assign s_pc_incr[i]     = (s_rexma_ictrl[i] != 8'b0) ? (s_rexma_ictrl[i][ICTRL_RVC] ? 2'b01 : 2'b10) : 2'b00;
 
             executor m_executor
             (
@@ -145,17 +145,18 @@ module pipeline_4_ex #(
             assign s_flush_ex[i]= s_flush_i[i] | (s_bubble[i] & ~s_stall_ex[i] & ~s_rstpipe[i]);
             //Prevent start of execution in Execute stage
             assign s_prevent_ex[i] = s_hold_i[i] & ~s_rexma_tstrd[i];
-            assign s_ex_empty[i]   = (s_opex_imiscon_i[i%2] == IMISCON_FREE) & (s_opex_ictrl_i[i%2] == 7'b0);
+            assign s_ex_empty[i]   = (s_opex_imiscon_i[i%2] == IMISCON_FREE) & (s_opex_ictrl_i[i%2] == 8'b0);
             //Write-enable signals for auxiliary EXMA registers
             assign s_exma_we_aux[i]= !(s_flush_ex[i] || s_stall_ex[i] || s_ex_empty[i]);
             //Write-enable signals for essential EXMA registers
             assign s_exma_we_esn[i]= s_flush_ex[i] || !s_stall_ex[i];
             //Bubble sources
-            assign s_bubble[i]  = (s_opex_ictrl_i[i%2][ICTRL_UNIT_MDU] & !s_ex_fin[i%2]) 
-                                | (s_opex_ictrl_i[i%2][ICTRL_UNIT_LSU] & !s_d_hready_i[i]);
+            assign s_bubble[i]  = (s_opex_ictrl_i[i%2][ICTRL_UNIT_MDU] & !s_ex_fin[i%2]) |
+                                  (s_opex_ictrl_i[i%2][ICTRL_UNIT_LSU] & !s_d_hready_i[i]) |
+                                  (s_opex_ictrl_i[i%2][ICTRL_UNIT_CMU] & !s_ex_fin[i%2]);
 `ifdef PROT_PIPE
             //Detect discrepancy in the availability of the executor result
-            assign s_ex_discr[i]   = s_opex_ictrl_i[i%2][ICTRL_UNIT_MDU] & (s_ex_fin[0] ^ s_ex_fin[1]);
+            assign s_ex_discr[i]   = (s_opex_ictrl_i[i%2][ICTRL_UNIT_MDU] | s_opex_ictrl_i[i%2][ICTRL_UNIT_CMU]) & (s_ex_fin[0] ^ s_ex_fin[1]);
             //Reset the instruction if discrepancy exists
             assign s_rstpipe[i]    = s_ex_discr[i] | s_opex_esn_neq[0] | s_opex_esn_neq[1] | (!s_ex_empty[i] & (s_opex_aux_neq[0] | s_opex_aux_neq[1]));
 `else
@@ -188,7 +189,8 @@ module pipeline_4_ex #(
                 s_wexma_val[i]      = (s_opex_ictrl_i[i%2][ICTRL_UNIT_ALU] | 
                                        s_opex_ictrl_i[i%2][ICTRL_UNIT_BRU] | 
                                        s_opex_ictrl_i[i%2][ICTRL_UNIT_MDU] |
-                                       s_opex_ictrl_i[i%2][ICTRL_UNIT_BEU]) ? s_result[i%2] : s_operand1[i];
+                                       s_opex_ictrl_i[i%2][ICTRL_UNIT_BEU] |
+                                       s_opex_ictrl_i[i%2][ICTRL_UNIT_CMU]) ? s_result[i%2] : s_operand1[i];
                 //Payload for the MA stage
                 s_wexma_payload[i]  = {s_opex_payload_i[i%2][20],s_opex_payload_i[i%2][10:0]};
                 s_wexma_imiscon[i]  = s_rstpipe[i] ? IMISCON_DSCR :                                          
